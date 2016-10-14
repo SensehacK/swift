@@ -50,11 +50,21 @@ class RockPaperScissorsViewController: UIViewController {
         //TODO: Present HistoryViewController
         
         let storyboard = self.storyboard
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController")as! HistoryViewController
+        let controller = storyboard!.instantiateViewControllerWithIdentifier("HistoryViewController")as! HistoryViewController
         
         controller.history = self.history
         
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    @IBAction func showHistory2(sender: AnyObject) {
+        
+        let storyboard = self.storyboard
+        let controller = storyboard!.instantiateViewControllerWithIdentifier("HistoryViewController")as! HistoryViewController
+        
+        controller.history = self.history
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+        
     }
     
     // MARK: Play!
