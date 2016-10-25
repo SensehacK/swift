@@ -11,7 +11,7 @@
         <scene sceneID="j5K-hX-kFm">
             <objects>
                 <navigationController id="o3f-Sg-gX9" userLabel="Table" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pf4-o4-osy"/>
+                    <tabBarItem key="tabBarItem" title="Villains List" id="pf4-o4-osy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6b-Jx-447">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

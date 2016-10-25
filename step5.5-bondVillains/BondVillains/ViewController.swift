@@ -26,12 +26,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("VillainCell")! 
+        let cell = tableView.dequeueReusableCellWithIdentifier("VillainCell")!
         let villain = self.allVillains[indexPath.row]
         
         // Set the name and image
         cell.textLabel?.text = villain.name
         cell.imageView?.image = UIImage(named: villain.imageName)
+        
         // If the cell has a detail label, we will put the evil scheme in.
         if let detailTextLabel = cell.detailTextLabel {
             detailTextLabel.text = "Scheme: \(villain.evilScheme)"
@@ -39,12 +40,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailController = self.storyboard?.instantiateViewControllerWithIdentifier("VillainDetailViewController") as! VillainDetailViewController
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("VillainDetailViewController") as! VillainDetailViewController
         detailController.villain = self.allVillains[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
-    
     }
 }
