@@ -42,17 +42,17 @@
 		2246FD30C48BA931513F0317 /* Pods-AlamafireTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamafireTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamafireTestUITests/Pods-AlamafireTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2AA734B1FC9DB66F0B5E76A2 /* Pods_AlamafireTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamafireTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437FD22D20B4438A00E20D04 /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
-		43ECF21920A41FEF00EA9982 /* AlamafireTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamafireTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43ECF21920A41FEF00EA9982 /* AlamofireTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ECF21C20A41FEF00EA9982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43ECF21E20A41FEF00EA9982 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43ECF22120A41FEF00EA9982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43ECF22320A41FEF00EA9982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43ECF22620A41FEF00EA9982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43ECF22820A41FEF00EA9982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43ECF22D20A41FF000EA9982 /* AlamafireTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamafireTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43ECF22D20A41FF000EA9982 /* AlamofireTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ECF23120A41FF000EA9982 /* AlamafireTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamafireTestTests.swift; sourceTree = "<group>"; };
 		43ECF23320A41FF000EA9982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43ECF23820A41FF000EA9982 /* AlamafireTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamafireTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43ECF23820A41FF000EA9982 /* AlamofireTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ECF23C20A41FF000EA9982 /* AlamafireTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamafireTestUITests.swift; sourceTree = "<group>"; };
 		43ECF23E20A41FF000EA9982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC99120C97969500C3CCC92 /* Pods-AlamafireTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamafireTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamafireTest/Pods-AlamafireTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,9 +106,9 @@
 		43ECF21A20A41FEF00EA9982 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43ECF21920A41FEF00EA9982 /* AlamafireTest.app */,
-				43ECF22D20A41FF000EA9982 /* AlamafireTestTests.xctest */,
-				43ECF23820A41FF000EA9982 /* AlamafireTestUITests.xctest */,
+				43ECF21920A41FEF00EA9982 /* AlamofireTest.app */,
+				43ECF22D20A41FF000EA9982 /* AlamofireTestTests.xctest */,
+				43ECF23820A41FF000EA9982 /* AlamofireTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43ECF21820A41FEF00EA9982 /* AlamafireTest */ = {
+		43ECF21820A41FEF00EA9982 /* AlamofireTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43ECF24120A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamafireTest" */;
+			buildConfigurationList = 43ECF24120A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamofireTest" */;
 			buildPhases = (
 				BBE6FDD3A268FE5B7F74D030 /* [CP] Check Pods Manifest.lock */,
 				43ECF21520A41FEF00EA9982 /* Sources */,
@@ -185,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = AlamafireTest;
+			name = AlamofireTest;
 			productName = AlamafireTest;
-			productReference = 43ECF21920A41FEF00EA9982 /* AlamafireTest.app */;
+			productReference = 43ECF21920A41FEF00EA9982 /* AlamofireTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		43ECF22C20A41FEF00EA9982 /* AlamafireTestTests */ = {
+		43ECF22C20A41FEF00EA9982 /* AlamofireTestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43ECF24420A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamafireTestTests" */;
+			buildConfigurationList = 43ECF24420A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamofireTestTests" */;
 			buildPhases = (
 				541A9FD0748D654ECD0D3925 /* [CP] Check Pods Manifest.lock */,
 				43ECF22920A41FEF00EA9982 /* Sources */,
@@ -204,14 +204,14 @@
 			dependencies = (
 				43ECF22F20A41FF000EA9982 /* PBXTargetDependency */,
 			);
-			name = AlamafireTestTests;
+			name = AlamofireTestTests;
 			productName = AlamafireTestTests;
-			productReference = 43ECF22D20A41FF000EA9982 /* AlamafireTestTests.xctest */;
+			productReference = 43ECF22D20A41FF000EA9982 /* AlamofireTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		43ECF23720A41FF000EA9982 /* AlamafireTestUITests */ = {
+		43ECF23720A41FF000EA9982 /* AlamofireTestUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43ECF24720A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamafireTestUITests" */;
+			buildConfigurationList = 43ECF24720A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamofireTestUITests" */;
 			buildPhases = (
 				AF6AD3223291F33E27FA8D62 /* [CP] Check Pods Manifest.lock */,
 				43ECF23420A41FF000EA9982 /* Sources */,
@@ -223,9 +223,9 @@
 			dependencies = (
 				43ECF23A20A41FF000EA9982 /* PBXTargetDependency */,
 			);
-			name = AlamafireTestUITests;
+			name = AlamofireTestUITests;
 			productName = AlamafireTestUITests;
-			productReference = 43ECF23820A41FF000EA9982 /* AlamafireTestUITests.xctest */;
+			productReference = 43ECF23820A41FF000EA9982 /* AlamofireTestUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 43ECF21420A41FEF00EA9982 /* Build configuration list for PBXProject "AlamafireTest" */;
+			buildConfigurationList = 43ECF21420A41FEF00EA9982 /* Build configuration list for PBXProject "AlamofireTest" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,9 +267,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43ECF21820A41FEF00EA9982 /* AlamafireTest */,
-				43ECF22C20A41FEF00EA9982 /* AlamafireTestTests */,
-				43ECF23720A41FF000EA9982 /* AlamafireTestUITests */,
+				43ECF21820A41FEF00EA9982 /* AlamofireTest */,
+				43ECF22C20A41FEF00EA9982 /* AlamofireTestTests */,
+				43ECF23720A41FF000EA9982 /* AlamofireTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -408,12 +408,12 @@
 /* Begin PBXTargetDependency section */
 		43ECF22F20A41FF000EA9982 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 43ECF21820A41FEF00EA9982 /* AlamafireTest */;
+			target = 43ECF21820A41FEF00EA9982 /* AlamofireTest */;
 			targetProxy = 43ECF22E20A41FF000EA9982 /* PBXContainerItemProxy */;
 		};
 		43ECF23A20A41FF000EA9982 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 43ECF21820A41FEF00EA9982 /* AlamafireTest */;
+			target = 43ECF21820A41FEF00EA9982 /* AlamofireTest */;
 			targetProxy = 43ECF23920A41FF000EA9982 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -594,7 +594,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlamafireTest.app/AlamafireTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlamofireTest.app/AlamofireTest";
 			};
 			name = Debug;
 		};
@@ -611,7 +611,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlamafireTest.app/AlamafireTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlamofireTest.app/AlamofireTest";
 			};
 			name = Release;
 		};
@@ -654,7 +654,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43ECF21420A41FEF00EA9982 /* Build configuration list for PBXProject "AlamafireTest" */ = {
+		43ECF21420A41FEF00EA9982 /* Build configuration list for PBXProject "AlamofireTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43ECF23F20A41FF000EA9982 /* Debug */,
@@ -663,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43ECF24120A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamafireTest" */ = {
+		43ECF24120A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamofireTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43ECF24220A41FF000EA9982 /* Debug */,
@@ -672,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43ECF24420A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamafireTestTests" */ = {
+		43ECF24420A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamofireTestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43ECF24520A41FF000EA9982 /* Debug */,
@@ -681,7 +681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43ECF24720A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamafireTestUITests" */ = {
+		43ECF24720A41FF000EA9982 /* Build configuration list for PBXNativeTarget "AlamofireTestUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43ECF24820A41FF000EA9982 /* Debug */,
