@@ -81,15 +81,17 @@ class ViewController: UIViewController {
         pressMeCountLabel.text = "Button Pressed " + String(buttonPressedCount)
         
         
-        if buttonPressedCount > 13  {
+        if buttonPressedCount > 13 && buttonPressedCount < 20 {
             print("Congrats you have no job to do")
             mainLabel.textColor = UIColor.red
             mainLabel.text = "Hello Jobless person"
         }
         else if buttonPressedCount > 20 {
-            var gJob = "Get a JOB"
-            mainButton.setTitle(gJob, for: .highlighted)
-            
+            var gJob:String = "Get a JOB"
+            // "For : .highlighted " doesn't change the button title text
+            mainButton.setTitle(gJob.localizedUppercase, for: .normal)
+//            mainButton.setTitle("JOB", for: .normal)
+            print("Get a JOB")
         }
         
     }
