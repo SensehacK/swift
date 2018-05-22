@@ -42,6 +42,16 @@ class ViewController: UIViewController {
 //            print(self.countries.name)
 //            print(self.countries.capital)
             
+            // Looping JSON Data in for loop for printing / accessing
+            
+            for country in self.countries {
+                let countryName = country.name
+                let countryCapital = country.capital
+                
+                print("\n Country " + countryName + "'s Capital is " + countryCapital + ".")
+//                print("\n")
+            }
+            
         }
         
         
