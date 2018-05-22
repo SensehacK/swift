@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 struct CountryStruct : Decodable {
     let name : String
     let capital : String
@@ -17,6 +18,12 @@ struct CountryStruct : Decodable {
 
 class ViewController: UIViewController {
     
+    // Outlets
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    @IBOutlet weak var mainButton: UIButton!
+    
+    var buttonPressedCount = 0
     var countries = [CountryStruct]()
     
     override func viewDidLoad() {
@@ -63,6 +70,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func pressMeBtn(_ sender: Any) {
+        buttonPressedCount += 1
+        print("\n Button Pressed" , buttonPressedCount)
+        
+    }
+    
 
 }
 
