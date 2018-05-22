@@ -124,7 +124,8 @@
 				43ECF22520A41FEF00EA9982 /* LaunchScreen.storyboard */,
 				43ECF22820A41FEF00EA9982 /* Info.plist */,
 			);
-			path = AlamafireTest;
+			name = AlamafireTest;
+			path = AlamofireTest;
 			sourceTree = "<group>";
 		};
 		43ECF23020A41FF000EA9982 /* AlamafireTestTests */ = {
@@ -133,7 +134,8 @@
 				43ECF23120A41FF000EA9982 /* AlamafireTestTests.swift */,
 				43ECF23320A41FF000EA9982 /* Info.plist */,
 			);
-			path = AlamafireTestTests;
+			name = AlamafireTestTests;
+			path = AlamofireTestTests;
 			sourceTree = "<group>";
 		};
 		43ECF23B20A41FF000EA9982 /* AlamafireTestUITests */ = {
@@ -142,7 +144,8 @@
 				43ECF23C20A41FF000EA9982 /* AlamafireTestUITests.swift */,
 				43ECF23E20A41FF000EA9982 /* Info.plist */,
 			);
-			path = AlamafireTestUITests;
+			name = AlamafireTestUITests;
+			path = AlamofireTestUITests;
 			sourceTree = "<group>";
 		};
 		6810F34076C945C8F9E412DC /* Frameworks */ = {
@@ -553,9 +556,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGQH99U6M2;
-				INFOPLIST_FILE = AlamafireTest/Info.plist;
+				INFOPLIST_FILE = AlamofireTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kautilya.AlamafireTest;
+				PRODUCT_BUNDLE_IDENTIFIER = kautilya.AlamofireTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -571,9 +574,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGQH99U6M2;
-				INFOPLIST_FILE = AlamafireTest/Info.plist;
+				INFOPLIST_FILE = AlamofireTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kautilya.AlamafireTest;
+				PRODUCT_BUNDLE_IDENTIFIER = kautilya.AlamofireTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
