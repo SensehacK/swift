@@ -62,6 +62,7 @@
                     <connections>
                         <outlet property="mainButton" destination="53P-2n-eTC" id="5of-7R-dDe"/>
                         <outlet property="mainLabel" destination="11n-xv-Mtl" id="ByO-Sh-juL"/>
+                        <outlet property="pressMeCountLabel" destination="IN8-cA-C5m" id="f89-nR-gNj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

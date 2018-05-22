@@ -23,12 +23,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mainButton: UIButton!
     
+    @IBOutlet weak var pressMeCountLabel: UILabel!
+    
+    
     var buttonPressedCount = 0
     var countries = [CountryStruct]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        pressMeCountLabel.text = "Button Pressed Count"
         
         let url = URL(string: "https://restcountries.eu/rest/v2/all")
         
@@ -60,9 +65,7 @@ class ViewController: UIViewController {
             }
             
         }
-        
-        
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +78,10 @@ class ViewController: UIViewController {
         buttonPressedCount += 1
         print("\n Button Pressed" , buttonPressedCount)
         
+        pressMeCountLabel.text = "Button Pressed " + String(buttonPressedCount)
+        
     }
+    
     
 
 }
