@@ -9,8 +9,16 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+struct CountryStruct : Decodable {
+    let name : String
+    let capital : String
+}
 
+
+class ViewController: UIViewController {
+    
+    var countries = [CountryStruct]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,10 +26,22 @@ class ViewController: UIViewController {
         let url = URL(string: "https://restcountries.eu/rest/v2/all")
         
         Alamofire.request(url!).responseJSON { (response) in
-            let result = response.result
+            let httpResultCode = response.result
+            let resultJSON = response.data
+            
             print("Alamofire Request Inside")
-            print("Result returned by JSON Website" , result)
-            print("Result printed again" , result)
+            print("Result returned by JSON Website" , httpResultCode)
+            print("Result printed again" , resultJSON!)
+            do {
+                self.countries = try JSONDecoder().decode([CountryStruct].self, from: resultJSON!)
+            } catch {
+                print("Error")
+            }
+            print("All JSON Data")
+            print(self.countries)
+//            print(self.countries.name)
+//            print(self.countries.capital)
+            
         }
         
         
