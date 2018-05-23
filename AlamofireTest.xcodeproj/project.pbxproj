@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		437FD22E20B4438A00E20D04 /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FD22D20B4438A00E20D04 /* CountryDetailsViewController.swift */; };
+		43808FDE20B5386A00FEC1F3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 43808FDD20B5386A00FEC1F3 /* Podfile */; };
 		43ECF21D20A41FEF00EA9982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECF21C20A41FEF00EA9982 /* AppDelegate.swift */; };
 		43ECF21F20A41FEF00EA9982 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECF21E20A41FEF00EA9982 /* ViewController.swift */; };
 		43ECF22220A41FEF00EA9982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ECF22020A41FEF00EA9982 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		2246FD30C48BA931513F0317 /* Pods-AlamafireTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamafireTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamafireTestUITests/Pods-AlamafireTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2AA734B1FC9DB66F0B5E76A2 /* Pods_AlamafireTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamafireTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437FD22D20B4438A00E20D04 /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
+		43808FDD20B5386A00FEC1F3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		43ECF21920A41FEF00EA9982 /* AlamofireTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ECF21C20A41FEF00EA9982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43ECF21E20A41FEF00EA9982 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,9 +96,9 @@
 		43ECF21020A41FEF00EA9982 = {
 			isa = PBXGroup;
 			children = (
-				43ECF21B20A41FEF00EA9982 /* AlamafireTest */,
-				43ECF23020A41FF000EA9982 /* AlamafireTestTests */,
-				43ECF23B20A41FF000EA9982 /* AlamafireTestUITests */,
+				43ECF21B20A41FEF00EA9982 /* AlamofireTest */,
+				43ECF23020A41FF000EA9982 /* AlamofireTestTests */,
+				43ECF23B20A41FF000EA9982 /* AlamofireTestUITests */,
 				43ECF21A20A41FEF00EA9982 /* Products */,
 				C013A3E8710E3BA83335CF4F /* Pods */,
 				6810F34076C945C8F9E412DC /* Frameworks */,
@@ -113,7 +115,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		43ECF21B20A41FEF00EA9982 /* AlamafireTest */ = {
+		43ECF21B20A41FEF00EA9982 /* AlamofireTest */ = {
 			isa = PBXGroup;
 			children = (
 				43ECF21C20A41FEF00EA9982 /* AppDelegate.swift */,
@@ -123,28 +125,26 @@
 				43ECF22320A41FEF00EA9982 /* Assets.xcassets */,
 				43ECF22520A41FEF00EA9982 /* LaunchScreen.storyboard */,
 				43ECF22820A41FEF00EA9982 /* Info.plist */,
+				43808FDD20B5386A00FEC1F3 /* Podfile */,
 			);
-			name = AlamafireTest;
 			path = AlamofireTest;
 			sourceTree = "<group>";
 		};
-		43ECF23020A41FF000EA9982 /* AlamafireTestTests */ = {
+		43ECF23020A41FF000EA9982 /* AlamofireTestTests */ = {
 			isa = PBXGroup;
 			children = (
 				43ECF23120A41FF000EA9982 /* AlamafireTestTests.swift */,
 				43ECF23320A41FF000EA9982 /* Info.plist */,
 			);
-			name = AlamafireTestTests;
 			path = AlamofireTestTests;
 			sourceTree = "<group>";
 		};
-		43ECF23B20A41FF000EA9982 /* AlamafireTestUITests */ = {
+		43ECF23B20A41FF000EA9982 /* AlamofireTestUITests */ = {
 			isa = PBXGroup;
 			children = (
 				43ECF23C20A41FF000EA9982 /* AlamafireTestUITests.swift */,
 				43ECF23E20A41FF000EA9982 /* Info.plist */,
 			);
-			name = AlamafireTestUITests;
 			path = AlamofireTestUITests;
 			sourceTree = "<group>";
 		};
@@ -284,6 +284,7 @@
 			files = (
 				43ECF22720A41FEF00EA9982 /* LaunchScreen.storyboard in Resources */,
 				43ECF22420A41FEF00EA9982 /* Assets.xcassets in Resources */,
+				43808FDE20B5386A00FEC1F3 /* Podfile in Resources */,
 				43ECF22220A41FEF00EA9982 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import AlamafireTest
+@testable import AlamofireTest
 
 class AlamafireTestTests: XCTestCase {
     
