@@ -9,7 +9,7 @@
 import XCTest
 @testable import AlamofireTest
 
-class AlamafireTestTests: XCTestCase {
+class AlamofireTestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

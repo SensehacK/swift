@@ -8,7 +8,7 @@
 
 import XCTest
 
-class AlamafireTestUITests: XCTestCase {
+class AlamofireTestUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "94DB3910E67B8CCBB411BC9CD74EF728"
-               BuildableName = "Pods_AlamafireTestTests.framework"
-               BlueprintName = "Pods-AlamafireTestTests"
+               BlueprintIdentifier = "3FBFFAFBA2D90DDDA1A497A2FAF5059F"
+               BuildableName = "Pods_AlamofireTest.framework"
+               BlueprintName = "Pods-AlamofireTest"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94DB3910E67B8CCBB411BC9CD74EF728"
-            BuildableName = "Pods_AlamafireTestTests.framework"
-            BlueprintName = "Pods-AlamafireTestTests"
+            BlueprintIdentifier = "3FBFFAFBA2D90DDDA1A497A2FAF5059F"
+            BuildableName = "Pods_AlamofireTest.framework"
+            BlueprintName = "Pods-AlamofireTest"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
