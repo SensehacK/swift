@@ -96,9 +96,10 @@ class ViewController: UIViewController {
         }
         let rand = Int(arc4random_uniform(251))
         print("Random number is : " ,rand)
-        print("Country at 50th position: ", countries[50].name)
+//        print("Country at 50th position: ", countries[50].name)
         
-        print("Country at random position: ", countries[rand].name)
+        // Printing information about Random country name.
+        print("Country at random position" + String(rand) + " : " + countries[rand].name)
         
     }
     
