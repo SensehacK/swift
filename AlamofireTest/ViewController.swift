@@ -23,12 +23,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mainButton: UIButton!
     
+    @IBOutlet weak var pressMeCountLabel: UILabel!
+    
+    
     var buttonPressedCount = 0
     var countries = [CountryStruct]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        pressMeCountLabel.text = "Button Pressed Count"
         
         let url = URL(string: "https://restcountries.eu/rest/v2/all")
         
@@ -60,9 +65,7 @@ class ViewController: UIViewController {
             }
             
         }
-        
-        
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +78,30 @@ class ViewController: UIViewController {
         buttonPressedCount += 1
         print("\n Button Pressed" , buttonPressedCount)
         
+        pressMeCountLabel.text = "Button Pressed " + String(buttonPressedCount)
+        
+        
+        if buttonPressedCount > 13 && buttonPressedCount < 20 {
+            print("Congrats you have no job to do")
+            mainLabel.textColor = UIColor.red
+            mainLabel.text = "Hello Jobless person"
+        }
+        else if buttonPressedCount > 20 {
+            var gJob:String = "Get a JOB"
+            // "For : .highlighted " doesn't change the button title text
+            mainButton.setTitle(gJob.localizedUppercase, for: .normal)
+//            mainButton.setTitle("JOB", for: .normal)
+            print("Get a JOB")
+            
+        }
+        let rand = Int(arc4random_uniform(251))
+        print("Random number is : " ,rand)
+        print("Country at 50th position: ", countries[50].name)
+        
+        print("Country at random position: ", countries[rand].name)
+        
     }
+    
     
 
 }
