@@ -1,6 +1,6 @@
 //
 //  CountryDetailsViewController.swift
-//  AlamafireTest
+//  AlamofireTest
 //
 //  Created by Kautilya on 22/05/18.
 //  Copyright © 2018 Kautilya. All rights reserved.

@@ -1,6 +1,6 @@
 //
-//  AlamafireTestTests.swift
-//  AlamafireTestTests
+//  AlamofireTestTests.swift
+//  AlamofireTestTests
 //
 //  Created by Kautilya on 10/05/18.
 //  Copyright © 2018 Kautilya. All rights reserved.
