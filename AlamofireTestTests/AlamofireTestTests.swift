@@ -1,15 +1,15 @@
 //
-//  AlamafireTestTests.swift
-//  AlamafireTestTests
+//  AlamofireTestTests.swift
+//  AlamofireTestTests
 //
 //  Created by Kautilya on 10/05/18.
 //  Copyright © 2018 Kautilya. All rights reserved.
 //
 
 import XCTest
-@testable import AlamafireTest
+@testable import AlamofireTest
 
-class AlamafireTestTests: XCTestCase {
+class AlamofireTestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
