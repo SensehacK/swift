@@ -94,10 +94,14 @@ class ViewController: UIViewController {
             print("Get a JOB")
             
         }
-        let rand = Int(arc4random_uniform(251))
+        let rand = Int(arc4random_uniform(250))
         print("Random number is : " ,rand)
 //        print("Country at 50th position: ", countries[50].name)
         
+        /*Fixed #4 start
+        Reason for crash, as the countries array is only till 250 keys. So accessing the 250th key in the structure crashes the apps.
+        print("Country at 50th position: ", countries[250].name)
+        Fixed #4 end */
         // Printing information about Random country name.
         print("Country at random position" + String(rand) + " : " + countries[rand].name)
         
