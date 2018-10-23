@@ -12,6 +12,7 @@
 		4313B018217F42ED00398846 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313B016217F42ED00398846 /* Main.storyboard */; };
 		4313B01A217F42F200398846 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4313B019217F42F200398846 /* Assets.xcassets */; };
 		4313B01D217F42F200398846 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313B01B217F42F200398846 /* LaunchScreen.storyboard */; };
+		43F0CF6A217F58F40053E8C0 /* SafeArea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F0CF69217F58F40053E8C0 /* SafeArea.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4313B019217F42F200398846 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4313B01C217F42F200398846 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4313B01E217F42F200398846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F0CF69217F58F40053E8C0 /* SafeArea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SafeArea.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				4313B012217F42ED00398846 /* AppDelegate.swift */,
 				4313B014217F42ED00398846 /* ViewController.swift */,
 				4313B016217F42ED00398846 /* Main.storyboard */,
+				43F0CF69217F58F40053E8C0 /* SafeArea.storyboard */,
 				4313B019217F42F200398846 /* Assets.xcassets */,
 				4313B01B217F42F200398846 /* LaunchScreen.storyboard */,
 				4313B01E217F42F200398846 /* Info.plist */,
@@ -124,6 +127,7 @@
 			files = (
 				4313B01D217F42F200398846 /* LaunchScreen.storyboard in Resources */,
 				4313B01A217F42F200398846 /* Assets.xcassets in Resources */,
+				43F0CF6A217F58F40053E8C0 /* SafeArea.storyboard in Resources */,
 				4313B018217F42ED00398846 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
