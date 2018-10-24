@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Safe Area View Controller-->
         <scene sceneID="VGo-Ku-wb0">
             <objects>
-                <viewController id="SZN-lC-ofP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NonSafeView" id="SZN-lC-ofP" customClass="SafeAreaViewController" customModule="iPhoneX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gsb-He-t5T"/>
                         <viewControllerLayoutGuide type="bottom" id="XHg-Tu-S3e"/>
@@ -20,20 +20,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gic-IA-9md">
-                                <rect key="frame" x="22" y="629" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gic-IA-9md">
+                                <rect key="frame" x="22" y="629" width="35" height="30"/>
                                 <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Hello"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBu-4D-q2M">
-                                <rect key="frame" x="291" y="629" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBu-4D-q2M">
+                                <rect key="frame" x="298" y="629" width="45" height="30"/>
                                 <color key="backgroundColor" red="0.83715969320000005" green="0.80201464889999996" blue="0.1648217142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="World!"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Du-Dw-98T">
+                                <rect key="frame" x="164.5" y="637" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fBu-4D-q2M" secondAttribute="trailing" constant="32" id="0iW-My-SBD"/>
+                            <constraint firstItem="XHg-Tu-S3e" firstAttribute="top" secondItem="fBu-4D-q2M" secondAttribute="bottom" constant="8" id="EQ6-Da-U5h"/>
+                            <constraint firstItem="XHg-Tu-S3e" firstAttribute="top" secondItem="9Du-Dw-98T" secondAttribute="bottom" id="KAk-pN-pTg"/>
+                            <constraint firstItem="9Du-Dw-98T" firstAttribute="centerX" secondItem="Fw4-tX-JHX" secondAttribute="centerX" id="Uck-OV-eKq"/>
+                            <constraint firstItem="XHg-Tu-S3e" firstAttribute="top" secondItem="gic-IA-9md" secondAttribute="bottom" constant="8" id="tEB-pS-Pbh"/>
+                            <constraint firstItem="gic-IA-9md" firstAttribute="leading" secondItem="Fw4-tX-JHX" secondAttribute="leading" constant="22" id="y8k-gO-db2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmn-XB-E2D" userLabel="First Responder" sceneMemberID="firstResponder"/>

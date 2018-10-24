@@ -12,6 +12,7 @@
 		4313B018217F42ED00398846 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313B016217F42ED00398846 /* Main.storyboard */; };
 		4313B01A217F42F200398846 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4313B019217F42F200398846 /* Assets.xcassets */; };
 		4313B01D217F42F200398846 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313B01B217F42F200398846 /* LaunchScreen.storyboard */; };
+		433CF2592180465800FA10EA /* SafeAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433CF2582180465800FA10EA /* SafeAreaViewController.swift */; };
 		43F0CF6A217F58F40053E8C0 /* SafeArea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F0CF69217F58F40053E8C0 /* SafeArea.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		4313B019217F42F200398846 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4313B01C217F42F200398846 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4313B01E217F42F200398846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		433CF2582180465800FA10EA /* SafeAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaViewController.swift; sourceTree = "<group>"; };
 		43F0CF69217F58F40053E8C0 /* SafeArea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SafeArea.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 				4313B014217F42ED00398846 /* ViewController.swift */,
 				4313B016217F42ED00398846 /* Main.storyboard */,
 				43F0CF69217F58F40053E8C0 /* SafeArea.storyboard */,
+				433CF2582180465800FA10EA /* SafeAreaViewController.swift */,
 				4313B019217F42F200398846 /* Assets.xcassets */,
 				4313B01B217F42F200398846 /* LaunchScreen.storyboard */,
 				4313B01E217F42F200398846 /* Info.plist */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4313B015217F42ED00398846 /* ViewController.swift in Sources */,
+				433CF2592180465800FA10EA /* SafeAreaViewController.swift in Sources */,
 				4313B013217F42ED00398846 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

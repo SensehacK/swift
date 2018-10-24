@@ -48,6 +48,14 @@
                                 </constraints>
                                 <state key="normal" title="Save"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-25-sAE">
+                                <rect key="frame" x="159" y="484" width="46" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="ypJ-0U-vdb" kind="show" id="xe0-QD-XvZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,6 +76,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="32.833583208395808"/>
+        </scene>
+        <!--NonSafeView-->
+        <scene sceneID="c23-7v-svF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SafeArea" referencedIdentifier="NonSafeView" id="ypJ-0U-vdb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPg-ZS-Ot7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="-391"/>
         </scene>
     </scenes>
     <resources>
