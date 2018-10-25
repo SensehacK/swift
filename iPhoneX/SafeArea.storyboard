@@ -34,17 +34,51 @@
                                 <rect key="frame" x="164.5" y="637" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EOD !!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNL-nD-dm1">
+                                <rect key="frame" x="238" y="0.0" width="49" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="Z4o-ws-Mgk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yo !!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-il-mrp">
+                                <rect key="frame" x="165.5" y="20" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5s-0i-cPN">
+                                <rect key="frame" x="153.5" y="318.5" width="68" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Press Me"/>
+                                <connections>
+                                    <action selector="randomButtons:" destination="SZN-lC-ofP" eventType="touchUpInside" id="03t-MZ-5dw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fBu-4D-q2M" secondAttribute="trailing" constant="32" id="0iW-My-SBD"/>
+                            <constraint firstItem="7xt-il-mrp" firstAttribute="centerX" secondItem="Fw4-tX-JHX" secondAttribute="centerX" id="6Kl-QI-ynK"/>
                             <constraint firstItem="XHg-Tu-S3e" firstAttribute="top" secondItem="fBu-4D-q2M" secondAttribute="bottom" constant="8" id="EQ6-Da-U5h"/>
                             <constraint firstItem="XHg-Tu-S3e" firstAttribute="top" secondItem="9Du-Dw-98T" secondAttribute="bottom" id="KAk-pN-pTg"/>
+                            <constraint firstItem="h5s-0i-cPN" firstAttribute="centerY" secondItem="Fw4-tX-JHX" secondAttribute="centerY" id="Ldy-KZ-fYo"/>
+                            <constraint firstItem="7xt-il-mrp" firstAttribute="top" secondItem="gsb-He-t5T" secondAttribute="bottom" id="NyL-N5-8h9"/>
                             <constraint firstItem="9Du-Dw-98T" firstAttribute="centerX" secondItem="Fw4-tX-JHX" secondAttribute="centerX" id="Uck-OV-eKq"/>
+                            <constraint firstItem="LNL-nD-dm1" firstAttribute="top" secondItem="Fw4-tX-JHX" secondAttribute="top" id="cgF-3k-Gto"/>
+                            <constraint firstAttribute="trailing" secondItem="LNL-nD-dm1" secondAttribute="trailing" constant="88" id="dlz-cv-VS4"/>
+                            <constraint firstItem="h5s-0i-cPN" firstAttribute="centerX" secondItem="Fw4-tX-JHX" secondAttribute="centerX" id="hQ7-jT-LGi"/>
                             <constraint firstItem="XHg-Tu-S3e" firstAttribute="top" secondItem="gic-IA-9md" secondAttribute="bottom" constant="8" id="tEB-pS-Pbh"/>
                             <constraint firstItem="gic-IA-9md" firstAttribute="leading" secondItem="Fw4-tX-JHX" secondAttribute="leading" constant="22" id="y8k-gO-db2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eodLabel" destination="LNL-nD-dm1" id="r3B-i7-i3p"/>
+                        <outlet property="helloButton" destination="gic-IA-9md" id="utP-j5-XcE"/>
+                        <outlet property="yoLabel" destination="7xt-il-mrp" id="O9Y-u8-ahO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmn-XB-E2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
