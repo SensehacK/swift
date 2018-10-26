@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         self.username.center.x += self.view.bounds.width
         },completion: nil)
     
-    UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: {
+    UIView.animate(withDuration: 0.5, delay: 0.4, options: [.repeat , .autoreverse] , animations: {
         self.password.center.x += self.view.bounds.width
     }, completion: nil)
     
