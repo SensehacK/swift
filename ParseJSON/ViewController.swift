@@ -77,9 +77,37 @@ class ViewController: UIViewController {
             
             
             
+            // calling other extra function
+            jsonNet()
             
+        
+    }
+    
+    func jsonNet () {
+        
+        let urlJSON = URL(string: "https://api.jsonbin.io/b/5c333ff77b31f426f852ad22")
+        
+//        var request = URLRequest(url: urlJSON!)
+//        request.httpMethod = "GET"
+        
+
+        let task = URLSession.shared.dataTask(with: urlJSON!) { (data, response, error) in
+            guard let dataResponse = data, error == nil else {
+                print("error")
+                return
+            }
             
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse
+                    , options: [])
+                print(jsonResponse)
+            }
+            catch {
+                print("JSON parsing error")
+            }
             
+        }
+        task.resume()
         
     }
     
