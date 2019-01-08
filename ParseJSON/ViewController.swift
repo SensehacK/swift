@@ -99,8 +99,22 @@ class ViewController: UIViewController {
             
             do {
                 let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse
-                    , options: [])
-                print(jsonResponse)
+                    , options: []) as? [String:Any]
+                print(jsonResponse ?? "Failed Fetch")
+                print("Sensehack ")
+                if let dataR = jsonResponse?["restaurant-info"] as? [String:Any] {
+                    if let dataRRS = dataR["name"] as? String {
+                        print(dataRRS)
+                    }
+                    
+                    if let dataRew = dataR["payment-methods"] as? [[String:Any]] {
+                        for raw in dataRew {
+                            print("Sensehack")
+                            print(raw["id"] ?? 0)
+                            print(raw["type"] ?? "kaido")
+                        }
+                    }
+                }
             }
             catch {
                 print("JSON parsing error")
