@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         print("Launched Success")
         
-        if let path = Bundle.main.path(forResource: "Trial", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "Trial 2", ofType: "json") {
             do {
                 let data2 = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data2 , options: .mutableLeaves)
@@ -30,7 +30,9 @@ class ViewController: UIViewController {
                 // error
             }
         }
-            
+        
+        
+        // MARK: Tile new
             
             if let path2 = Bundle.main.path(forResource: "tile", ofType: "json") {
                 do {
@@ -44,7 +46,8 @@ class ViewController: UIViewController {
                     // error
                 }
             }
-            
+        
+            // MARK: Trial new
             if let path = Bundle.main.path(forResource: "Trial", ofType: "json") {
                 do {
                     let data2 = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -75,7 +78,75 @@ class ViewController: UIViewController {
                 }
             }
             
-            
+        
+        
+        // MARK: Main Menu
+        
+        if let path = Bundle.main.path(forResource: "restaurantMenu", ofType: "json") {
+            do {
+                let data2 = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                if let jsonResult2 = try JSONSerialization.jsonObject(with: data2 , options: []) as? [String:Any] {
+                    if let categoryData = jsonResult2["category"] as? [[String:Any]] {
+                        for data in categoryData {
+                            print(data["name"] ?? "Food Type")
+                            
+                            if let data2 = data["name"] {
+                                print((data2 as AnyObject).contains("Appetizers"))
+                            }
+                            
+                            // Condition to check specific names
+                            if ((data["name"] as? String) == "Appetizers") ||  ((data["name"] as? String) == "Sharing platters") {
+                                print("--------------------")
+                                print(data["id"] ?? "No ID Received")
+                                print(data["name"] ?? "No name Received")
+
+                                
+                            }
+                            
+                            // bit efficient code v1
+                            if  let data3 = data["name"] , data3 as! String == "Appetizers" || data3 as! String == "Sharing platters" {
+                                print("----------^^^^^^^----------")
+                                print(data["id"] ?? "No ID Received")
+                                print(data["name"] ?? "No name Received")
+                                
+                                
+                            }
+                            
+                            // bit efficient code v2
+                            if let data3 : String = data["name"] as? String , data3  == "Appetizers" || data3 == "Sharing platters" {
+                                print("----------^^^^^%%%%%%%^^^^^----------")
+                                print(data["id"] ?? "No ID Received")
+                                print(data["name"] ?? "No name Received")
+                                
+                                
+                            }
+                            
+                            
+                        }
+//                        if let dataRRS = categoryData["name"] {
+//                            print(dataRRS)
+//                        }
+//
+//                        if let dataRew = dataR["payment-methods"] as? [[String:Any]] {
+//                            for raw in dataRew {
+//                                print("Sensehack")
+//                                print(raw["id"] ?? 0)
+//                                print(raw["type"] ?? "kaido")
+//                            }
+//                        }
+                    }
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+            } catch {
+                // error
+            }
+        }
             
             // calling other extra function
             jsonNet()
