@@ -77,7 +77,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Waiter"/>
                                 <connections>
-                                    <segue destination="vGK-lq-AYR" kind="show" id="4q3-YU-ZdV"/>
+                                    <segue destination="WX2-ok-a7v" kind="show" id="rRL-qZ-O1d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,6 +96,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dh-9X-mSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032.8" y="136.28185907046478"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pwc-Pb-msh">
+            <objects>
+                <viewController id="WX2-ok-a7v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J4u-DK-XYy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-fW-tSK">
+                                <rect key="frame" x="8" y="148" width="359" height="462"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mcu-4P-1iU">
+                                    <size key="itemSize" width="112" height="97"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EMx-Ky-C8a">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="97"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="112" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8O-bz-UFW">
+                                <rect key="frame" x="321" y="627" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                                <connections>
+                                    <segue destination="vGK-lq-AYR" kind="show" id="xMy-yB-Qqi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QRZ-m3-n0e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GfF-IL-em8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="910"/>
         </scene>
         <!--ServerUI View Controller-->
         <scene sceneID="thT-KY-emp">
@@ -232,6 +278,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF5-cD-kcY">
+                                <rect key="frame" x="160" y="623" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93642925129999999" green="0.70739525439999995" blue="0.39566009050000001" alpha="0.85945526539999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.93642925129999999" green="0.70739525439999995" blue="0.39566009050000001" alpha="0.85945526539999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDg-tF-Ysj">
                                 <rect key="frame" x="276" y="94" width="51" height="31"/>
                                 <connections>
@@ -256,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUA-eO-hGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="909.89505247376314"/>
+            <point key="canvasLocation" x="2586" y="910"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="34m-7r-rCr">
@@ -265,6 +320,12 @@
                     <view key="view" contentMode="scaleToFill" id="wR1-mk-xuJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-hT-1zn">
+                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9Z6-Is-bg9"/>
                     </view>
