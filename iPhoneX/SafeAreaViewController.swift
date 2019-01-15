@@ -58,7 +58,7 @@ class SafeAreaViewController : UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         //call random position
-        randomLabelPosition()
+        randomLabelPosition(person: 0)
         
     }
     
@@ -66,24 +66,85 @@ class SafeAreaViewController : UIViewController {
     @IBAction func randomButtons(_ sender: Any) {
         i += 1
         print("Button Pressed x" , i )
-        randomLabelPosition()
-        let asse =  2324
-        print("AGbnwr", asse)
+        
+//        let asse =  2324
+//        print("AGbnwr", asse)
+        
+        /*
+        var n = [2,3,5,6,7,8,8,9,9,9]
+        
+        //different for array index numbers for loop
+        for var a in 0...n.count  {
+            print("Hello Sensehack" , a)
+            a = a * 5 + 1
+            print(" a * 5 + 1 = " , a)
+        }
+        
+        //different for array numbers for loop
+        for var b in n  {
+            print("Hello Sensehack" , b)
+            b = b * 5 + 1
+            print(" b * 5 + 1 = " , b)
+        }
+        
+        n.remove(at: 6)
+        n.append(294)
+        print("//////////////////////")
+        //different for array numbers for loop
+        for var b in n  {
+            print("Hello Sensehack" , b)
+            b = b * 5 + 1
+            print(" b * 5 + 1 = " , b)
+        }
+        */
+
+        let animation = Int(arc4random_uniform(15) + 1)
+        
+//        for _ in 0...animation {
+//            print("Hello Kautilya", animation)
+//            //calling function
+//            randomLabelPosition(person: animation)
+//        }
+        randomLabelPosition(person: animation)
+        
+//        let delaySeconds = 2.0
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delaySeconds) {
+//            self.randomLabelPosition()
+//        }
+
+        
     }
     
     
     
     
-    func randomLabelPosition () {
-    
+    func randomLabelPosition (person: Int) {
+        print("person random number" , person)
+        for _ in 0...person {
         // setting random x & y values
         let xRandom = Int(arc4random_uniform(700) + 1)
         let yRandom = Int(arc4random_uniform(400) + 1)
         
-        //setting the button x & y axis
-        helloButton.frame.origin.y = CGFloat(xRandom)
-        helloButton.frame.origin.x = CGFloat(yRandom)
+        
+//        let delaySeconds = 2.0
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delaySeconds) {
+//            //setting the button x & y axis
+//            self.helloButton.frame.origin.y = CGFloat(xRandom)
+//            self.helloButton.frame.origin.x = CGFloat(yRandom)
+//        }
+        
+//        DispatchQueue.main.async {
+            //setting the button x & y axis
+            self.helloButton.frame.origin.y = CGFloat(xRandom)
+            self.helloButton.frame.origin.x = CGFloat(yRandom)
+//        }
+        
+        
         print("After Explicit setting Axis", helloButton.frame.origin.y , helloButton.frame.origin.x)
         
+        }
     }
+    
+    
+    
 }
