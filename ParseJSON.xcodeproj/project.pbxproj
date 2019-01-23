@@ -15,6 +15,7 @@
 		43C17A3921E3657100BFF7A6 /* Trial.json in Resources */ = {isa = PBXBuildFile; fileRef = 43C17A3821E3657100BFF7A6 /* Trial.json */; };
 		43C17A3B21E36A8A00BFF7A6 /* tile.json in Resources */ = {isa = PBXBuildFile; fileRef = 43C17A3A21E36A8A00BFF7A6 /* tile.json */; };
 		43C17A3D21E4779F00BFF7A6 /* restaurantMenu.json in Resources */ = {isa = PBXBuildFile; fileRef = 43C17A3C21E4779F00BFF7A6 /* restaurantMenu.json */; };
+		43C17A3F21E5EB3A00BFF7A6 /* Swift4Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C17A3E21E5EB3A00BFF7A6 /* Swift4Json.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		43C17A3821E3657100BFF7A6 /* Trial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Trial.json; sourceTree = SOURCE_ROOT; };
 		43C17A3A21E36A8A00BFF7A6 /* tile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tile.json; sourceTree = "<group>"; };
 		43C17A3C21E4779F00BFF7A6 /* restaurantMenu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurantMenu.json; sourceTree = "<group>"; };
+		43C17A3E21E5EB3A00BFF7A6 /* Swift4Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift4Json.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				43C17A2621E3629300BFF7A6 /* AppDelegate.swift */,
 				43C17A2821E3629300BFF7A6 /* ViewController.swift */,
+				43C17A3E21E5EB3A00BFF7A6 /* Swift4Json.swift */,
 				43C17A2A21E3629300BFF7A6 /* Main.storyboard */,
 				43C17A3821E3657100BFF7A6 /* Trial.json */,
 				43C17A3A21E36A8A00BFF7A6 /* tile.json */,
@@ -149,6 +152,7 @@
 			files = (
 				43C17A2921E3629300BFF7A6 /* ViewController.swift in Sources */,
 				43C17A2721E3629300BFF7A6 /* AppDelegate.swift in Sources */,
+				43C17A3F21E5EB3A00BFF7A6 /* Swift4Json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

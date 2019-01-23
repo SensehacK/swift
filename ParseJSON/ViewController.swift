@@ -154,7 +154,11 @@ class ViewController: UIViewController {
             
             // calling other extra function
 //            jsonNet()
-        jsonFullNet()
+//        jsonFullNet()
+        
+        // CAlling different object.
+        let obj = SwiftJson()
+        obj.swiftJ()
         
         
     }
