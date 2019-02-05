@@ -18,42 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SiL-JQ-36z">
-                                <rect key="frame" x="168" y="318" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SiL-JQ-36z">
+                                <rect key="frame" x="168" y="318" width="39" height="31"/>
                                 <state key="normal" title="Login"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThS-n0-1H4">
-                                <rect key="frame" x="69" y="170" width="253" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-I1-qNn">
-                                <rect key="frame" x="69" y="238" width="253" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgb-sM-FsU">
-                                <rect key="frame" x="157" y="424" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Touch ID"/>
                                 <connections>
-                                    <action selector="touchIDAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEu-wk-QIQ"/>
+                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i4H-ml-myq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BId-wc-GsB">
-                                <rect key="frame" x="164" y="532" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThS-n0-1H4">
+                                <rect key="frame" x="69" y="170" width="253" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-I1-qNn">
+                                <rect key="frame" x="69" y="238" width="253" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N9K-m1-JJY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BId-wc-GsB">
+                                <rect key="frame" x="166.5" y="533" width="42" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgb-sM-FsU">
+                                <rect key="frame" x="148" y="408" width="78" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="73" id="X5F-T6-kd5"/>
+                                    <constraint firstAttribute="height" constant="73" id="rCH-0V-w4P"/>
+                                    <constraint firstAttribute="width" constant="78" id="zKs-iJ-cdO"/>
+                                </constraints>
+                                <state key="normal" title="Touch ID" image="icons8-touch-id-512"/>
+                                <connections>
+                                    <action selector="touchIDAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEu-wk-QIQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mJJ-I1-qNn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="1QQ-Mg-NMm"/>
+                            <constraint firstItem="mJJ-I1-qNn" firstAttribute="top" secondItem="ThS-n0-1H4" secondAttribute="bottom" constant="38" id="B2x-6s-O1K"/>
+                            <constraint firstItem="SiL-JQ-36z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="168" id="C3B-KN-Y4Z"/>
+                            <constraint firstItem="BId-wc-GsB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DkW-Id-pIh"/>
+                            <constraint firstItem="mJJ-I1-qNn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="238" id="F2d-Ws-TWb"/>
+                            <constraint firstItem="Wgb-sM-FsU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-0.5" id="HSN-zY-Qx6"/>
+                            <constraint firstItem="SiL-JQ-36z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V1g-Y7-6rU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mJJ-I1-qNn" secondAttribute="trailing" constant="53" id="Wi2-q0-MAh"/>
+                            <constraint firstItem="SiL-JQ-36z" firstAttribute="top" secondItem="mJJ-I1-qNn" secondAttribute="bottom" constant="50" id="lVc-Jz-7bi"/>
+                            <constraint firstItem="mJJ-I1-qNn" firstAttribute="leading" secondItem="ThS-n0-1H4" secondAttribute="leading" id="nyJ-q2-ITw"/>
+                            <constraint firstItem="Wgb-sM-FsU" firstAttribute="top" secondItem="SiL-JQ-36z" secondAttribute="bottom" constant="59" id="qPv-sE-pL5"/>
+                            <constraint firstItem="mJJ-I1-qNn" firstAttribute="trailing" secondItem="ThS-n0-1H4" secondAttribute="trailing" id="tPQ-R4-ZOt"/>
+                            <constraint firstItem="SiL-JQ-36z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uee-Qs-onL"/>
+                            <constraint firstItem="BId-wc-GsB" firstAttribute="top" secondItem="Wgb-sM-FsU" secondAttribute="bottom" constant="52" id="y2t-gz-Zom"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -65,4 +87,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-touch-id-512" width="512" height="512"/>
+    </resources>
 </document>

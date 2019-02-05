@@ -15,10 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
 
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        
+        statusLabel.text = "Login Button Pressed"
+    }
     @IBAction func touchIDAction(_ sender: Any) {
         
         print("Hello Sensehack")
@@ -27,8 +32,10 @@ class ViewController: UIViewController {
         let myLocalizedAuthString = "Biometric Authentication test!"
         var authError : NSError?
         if #available(iOS 8.0, macOS 10.12.1, *) {
+            
+            // deviceOwnerAuthentication used parallely with Passcode or just want Touch ID then use deviceOwnerAuthenticationWithBiometrics
             if myContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
-                myContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedAuthString) { success, evaluatreError in
+                myContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: myLocalizedAuthString) { success, evaluateError in
                     
                     DispatchQueue.main.async {
                         if success {
@@ -36,12 +43,14 @@ class ViewController: UIViewController {
                             
                             print("Authenticated successfully")
                             self.statusLabel.text = "Authenticated successfully"
+                            self.view.backgroundColor = UIColor.green
                             
                         } else {
                             
                             // user not authenticated
                             print("not authenticated")
                             self.statusLabel.text = "not authenticated"
+                            self.view.backgroundColor = UIColor.red
                         }
                     }
                     
@@ -62,3 +71,15 @@ class ViewController: UIViewController {
     
 }
 
+// Put this piece of code anywhere you like
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
