@@ -10,25 +10,25 @@ import XCTest
 @testable import TravisCI
 
 class TravisCITests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testTravisCI() {
+        let a1 = 5
+        print()
+        // Default method of creating class object
+        let a4 = ViewController()
+        let b = a4.piFunction(a: 4)
+        let b1 = a4.piFunction(a: Float(a1))
+        
+        // shorthand function of creating class objects
+        let result = ViewController().piFunction(a: 6)
+        let result2 = ViewController().piFunction(a: 5)
+        print(b)
+        print(b1)
+        print(result)
+        //        let result = ViewController.piFunction(a: a1)
+        print("Selfs 2")
+        //        print(result)
+        
+        //        XCTAssertEqual(b1, result2)
+        //        XCTAssertEqual(b1, result)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
