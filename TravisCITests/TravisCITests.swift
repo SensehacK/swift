@@ -28,7 +28,7 @@ class TravisCITests: XCTestCase {
         print("Selfs 2")
         //        print(result)
         
-        //        XCTAssertEqual(b1, result2)
+        XCTAssertEqual(b1, result2)
         //        XCTAssertEqual(b1, result)
     }
 }
