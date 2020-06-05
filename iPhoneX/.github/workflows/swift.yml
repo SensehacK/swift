@@ -1,0 +1,25 @@
+name: Swift
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: echo $PWD  
+    - name: Build2
+      run: cd iPhoneX &&  ls
+    - name: Build3
+      run: xcodebuild -list -project  iPhoneX.xcodeproj
+    - name: Build4
+      run: xcodebuild -list
+    - name: Run tests
+      run: swift test -v
