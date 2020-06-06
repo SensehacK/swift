@@ -1,4 +1,4 @@
-# Sensehack Javascript
+# Swift
 
 ## Intro
 
@@ -15,12 +15,13 @@ Content would include :
 - Swift Basics
 - Swift different Frameworks
 - Swift Tests
+
 - Future plans
-  [ ] SwiftUI
-  [ ] Swift Package Manager
-  [ ] Swift 5
-  [ ] Health kit
-  [ ] Notification
+  -  [ ] SwiftUI
+  -  [ ] Swift Package Manager
+  -  [ ] Swift 5
+  -  [ ] Health kit
+  -  [ ] Notification
 
 ## Projects
 
