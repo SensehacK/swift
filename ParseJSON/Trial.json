@@ -1,0 +1,36 @@
+{
+    "restaurant-info": {
+        "id": "121721",
+        "sponsored": "0",
+        "user-favourite": "",
+        "name": "Nandos Banani",
+        "address": "Road-11, Banani, Dhaka",
+        "rating": "0.00",
+        "minimum-order-price": "300.00",
+        "delivery-fee": "75.00",
+        "avg_delivery_time": "60",
+        "logo": "https://s3-ap-southeast-2.amazonaws.com/aisdevtest/img/2b41b7bbf6da38212e1163c428d44f3a58b1487817bf3.jpg",
+        "open-status": "1",
+        "default-ad": "",
+        "review-enabled": "1",
+        "social-share": "0",
+        "value": null,
+        "total-category": "9",
+        "site-url": "",
+        "location-img": "",
+        "restaurant-url": "/restaurant/121721/menu",
+        "payment-methods": [{
+                "id": "1",
+                "type": "Card/Debit Card"
+            },
+            {
+                "id": "3",
+                "type": "bKash"
+            },
+            {
+                "id": "4",
+                "type": "Cash On Delivery"
+            }
+        ]
+    }
+}
