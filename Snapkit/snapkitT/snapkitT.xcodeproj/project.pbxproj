@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		236DBD787408236B01DED121 /* Pods_snapkitT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3C6B6D20D9B51983CC6AE5 /* Pods_snapkitT.framework */; };
+		FB66D5E124AD6D6C0047ADCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66D5E024AD6D6C0047ADCE /* AppDelegate.swift */; };
+		FB66D5E324AD6D6C0047ADCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66D5E224AD6D6C0047ADCE /* SceneDelegate.swift */; };
+		FB66D5E524AD6D6C0047ADCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66D5E424AD6D6C0047ADCE /* ViewController.swift */; };
+		FB66D5E824AD6D6C0047ADCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB66D5E624AD6D6C0047ADCE /* Main.storyboard */; };
+		FB66D5EA24AD6D7A0047ADCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB66D5E924AD6D7A0047ADCE /* Assets.xcassets */; };
+		FB66D5ED24AD6D7A0047ADCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB66D5EB24AD6D7A0047ADCE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B0D7AB117DF8541871D177B /* Pods-snapkitT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapkitT.debug.xcconfig"; path = "Target Support Files/Pods-snapkitT/Pods-snapkitT.debug.xcconfig"; sourceTree = "<group>"; };
+		9A3C6B6D20D9B51983CC6AE5 /* Pods_snapkitT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapkitT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8A35ACE3D327A209A8C21F /* Pods-snapkitT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapkitT.release.xcconfig"; path = "Target Support Files/Pods-snapkitT/Pods-snapkitT.release.xcconfig"; sourceTree = "<group>"; };
+		FB66D5DD24AD6D6C0047ADCE /* snapkitT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapkitT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB66D5E024AD6D6C0047ADCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB66D5E224AD6D6C0047ADCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FB66D5E424AD6D6C0047ADCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB66D5E724AD6D6C0047ADCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB66D5E924AD6D7A0047ADCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB66D5EC24AD6D7A0047ADCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB66D5EE24AD6D7A0047ADCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB66D5DA24AD6D6C0047ADCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236DBD787408236B01DED121 /* Pods_snapkitT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02564F311DAF7990258A4EAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A3C6B6D20D9B51983CC6AE5 /* Pods_snapkitT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B7F8C23862C2CC0B12FA045 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B0D7AB117DF8541871D177B /* Pods-snapkitT.debug.xcconfig */,
+				BD8A35ACE3D327A209A8C21F /* Pods-snapkitT.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB66D5D424AD6D6C0047ADCE = {
+			isa = PBXGroup;
+			children = (
+				FB66D5DF24AD6D6C0047ADCE /* snapkitT */,
+				FB66D5DE24AD6D6C0047ADCE /* Products */,
+				1B7F8C23862C2CC0B12FA045 /* Pods */,
+				02564F311DAF7990258A4EAB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB66D5DE24AD6D6C0047ADCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB66D5DD24AD6D6C0047ADCE /* snapkitT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB66D5DF24AD6D6C0047ADCE /* snapkitT */ = {
+			isa = PBXGroup;
+			children = (
+				FB66D5E024AD6D6C0047ADCE /* AppDelegate.swift */,
+				FB66D5E224AD6D6C0047ADCE /* SceneDelegate.swift */,
+				FB66D5E424AD6D6C0047ADCE /* ViewController.swift */,
+				FB66D5E624AD6D6C0047ADCE /* Main.storyboard */,
+				FB66D5E924AD6D7A0047ADCE /* Assets.xcassets */,
+				FB66D5EB24AD6D7A0047ADCE /* LaunchScreen.storyboard */,
+				FB66D5EE24AD6D7A0047ADCE /* Info.plist */,
+			);
+			path = snapkitT;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB66D5DC24AD6D6C0047ADCE /* snapkitT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB66D5F124AD6D7A0047ADCE /* Build configuration list for PBXNativeTarget "snapkitT" */;
+			buildPhases = (
+				62AE4113196C564605F43E3A /* [CP] Check Pods Manifest.lock */,
+				FB66D5D924AD6D6C0047ADCE /* Sources */,
+				FB66D5DA24AD6D6C0047ADCE /* Frameworks */,
+				FB66D5DB24AD6D6C0047ADCE /* Resources */,
+				E4A64063AB3F93A75235895B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snapkitT;
+			productName = snapkitT;
+			productReference = FB66D5DD24AD6D6C0047ADCE /* snapkitT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB66D5D524AD6D6C0047ADCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Sensehack;
+				TargetAttributes = {
+					FB66D5DC24AD6D6C0047ADCE = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = FB66D5D824AD6D6C0047ADCE /* Build configuration list for PBXProject "snapkitT" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB66D5D424AD6D6C0047ADCE;
+			productRefGroup = FB66D5DE24AD6D6C0047ADCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB66D5DC24AD6D6C0047ADCE /* snapkitT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB66D5DB24AD6D6C0047ADCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB66D5ED24AD6D7A0047ADCE /* LaunchScreen.storyboard in Resources */,
+				FB66D5EA24AD6D7A0047ADCE /* Assets.xcassets in Resources */,
+				FB66D5E824AD6D6C0047ADCE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62AE4113196C564605F43E3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snapkitT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A64063AB3F93A75235895B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snapkitT/Pods-snapkitT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snapkitT/Pods-snapkitT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snapkitT/Pods-snapkitT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB66D5D924AD6D6C0047ADCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB66D5E524AD6D6C0047ADCE /* ViewController.swift in Sources */,
+				FB66D5E124AD6D6C0047ADCE /* AppDelegate.swift in Sources */,
+				FB66D5E324AD6D6C0047ADCE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB66D5E624AD6D6C0047ADCE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB66D5E724AD6D6C0047ADCE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB66D5EB24AD6D7A0047ADCE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB66D5EC24AD6D7A0047ADCE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB66D5EF24AD6D7A0047ADCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB66D5F024AD6D7A0047ADCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB66D5F224AD6D7A0047ADCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B0D7AB117DF8541871D177B /* Pods-snapkitT.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R58KKF5TBV;
+				INFOPLIST_FILE = snapkitT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wearworks..snapkitT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB66D5F324AD6D7A0047ADCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD8A35ACE3D327A209A8C21F /* Pods-snapkitT.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R58KKF5TBV;
+				INFOPLIST_FILE = snapkitT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wearworks..snapkitT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB66D5D824AD6D6C0047ADCE /* Build configuration list for PBXProject "snapkitT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB66D5EF24AD6D7A0047ADCE /* Debug */,
+				FB66D5F024AD6D7A0047ADCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB66D5F124AD6D7A0047ADCE /* Build configuration list for PBXNativeTarget "snapkitT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB66D5F224AD6D7A0047ADCE /* Debug */,
+				FB66D5F324AD6D7A0047ADCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB66D5D524AD6D6C0047ADCE /* Project object */;
+}
