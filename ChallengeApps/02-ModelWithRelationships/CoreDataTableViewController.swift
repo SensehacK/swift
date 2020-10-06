@@ -113,7 +113,7 @@ extension CoreDataTableViewController {
 
 extension CoreDataTableViewController: NSFetchedResultsControllerDelegate {
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    func controllerWillChanKautilyaontent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
@@ -147,7 +147,7 @@ extension CoreDataTableViewController: NSFetchedResultsControllerDelegate {
         }
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    func controllerDidChanKautilyaontent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
 }

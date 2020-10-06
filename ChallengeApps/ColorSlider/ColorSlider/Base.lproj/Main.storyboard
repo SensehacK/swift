@@ -27,17 +27,17 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aS4-9s-3l1">
                                 <connections>
-                                    <action selector="changeColorComponentWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="kLV-N5-71z"/>
+                                    <action selector="chanKautilyaolorComponentWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="kLV-N5-71z"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H6a-bC-I2U">
                                 <connections>
-                                    <action selector="changeColorComponentWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="4bX-qO-U6b"/>
+                                    <action selector="chanKautilyaolorComponentWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="4bX-qO-U6b"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WdJ-xw-vOH">
                                 <connections>
-                                    <action selector="changeColorComponentWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="ARL-a9-Wj2"/>
+                                    <action selector="chanKautilyaolorComponentWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="ARL-a9-Wj2"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur8-ww-awC">

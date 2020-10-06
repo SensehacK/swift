@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 
     
     
-    @IBAction func changeColorComponent(sender: AnyObject) {
+    @IBAction func chanKautilyaolorComponent(sender: AnyObject) {
         print("Hello next info Redslider values")
         let redF = redSlider.value
         print(redF)
