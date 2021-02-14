@@ -150,12 +150,12 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ImageViewerController {
             destination.response = response
-            destination.imgArray = resultsTable.indexPathForSelectedRow?.row ?? 0
-            let input = response?.manifest[resultsTable.indexPathForSelectedRow?.row ?? 0]
-            guard let imageValue = input?.first else { return }
-            retrieveImage(value: imageValue) { (response) in
-                destination.imgResponse = response
-            }
+            destination.selectedImageCollection = resultsTable.indexPathForSelectedRow?.row ?? 0
+//            let input = response?.manifest[resultsTable.indexPathForSelectedRow?.row ?? 0]
+//            guard let imageValue = input?.first else { return }
+//            retrieveImage(value: imageValue) { (response) in
+//                destination.imgResponse = response
+//            }
 //            destination.imgResponse = retrieveImage(value: (input?[0])!)
         }
     }
