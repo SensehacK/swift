@@ -79,7 +79,7 @@ class ImageViewerController: UIViewController {
         
         let currentImage = imgObjArray[0]
         self.imageLabel.text = currentImage.name
-        self.imageView.downloaded(from: currentImage.url, contentMode: .scaleToFill)
+//        self.imageView.downloaded(from: currentImage.url, contentMode: .scaleToFill)
     }
     
     private func retrieveImage(value: String, completionHandler: @escaping (ImageResponse) -> Void){
