@@ -95,9 +95,10 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uc7-fG-nnj" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="346"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="uc7-fG-nnj" firstAttribute="centerX" secondItem="fGd-MP-Kgo" secondAttribute="centerX" id="6C7-u2-7iW"/>
                                     <constraint firstAttribute="bottom" secondItem="uc7-fG-nnj" secondAttribute="bottom" id="CIh-gx-uXI"/>

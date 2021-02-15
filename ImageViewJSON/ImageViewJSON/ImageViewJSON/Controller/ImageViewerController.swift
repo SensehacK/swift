@@ -64,14 +64,25 @@ class ImageViewerController: UIViewController {
         let imagesCount = imgObjArray.count
         scrollView.contentSize = CGSize(width: view.frame.size.width * CGFloat(imagesCount) , height: scrollView.frame.size.height)
         scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
         pageControl.numberOfPages = imagesCount
         let colors: [UIColor] = [.red, .blue, .green]
         
         for i in 0..<imagesCount {
-            let UIImagePage = UIView(frame: CGRect(x: CGFloat(i) * view.frame.size.width, y: 0, width: view.frame.size.width, height: scrollView.frame.size.height))
+//            let UIImagePage = UIView(frame: CGRect(x: CGFloat(i) * view.frame.size.width, y: 0, width: view.frame.size.width, height: scrollView.frame.size.height))
+//
+//            UIImagePage.backgroundColor = colors[i]
+//            let imageData = data
+            print("view.frame.size.width: \(view.frame.size.width)")
+            print("X calculations:  \((CGFloat(i) * view.frame.size.width) + 20)")
+            let imageView = UIImageView(frame: CGRect(x: (CGFloat(i) * view.frame.size.width) + 20, y: 50, width: 160, height: 90))
+            print("Images Count: \(i)")
+            print("Image URL: \(imgObjArray[i])")
+            imageView.downloaded(from: imgObjArray[i].url, contentMode: .scaleToFill)
+            scrollView.addSubview(imageView)
             
-            UIImagePage.backgroundColor = colors[i]
-            scrollView.addSubview(UIImagePage)
+//            scrollView.addSubview(UIImagePage)
+//            UIImagePage.addSubview(imageView)
             
         }
         
