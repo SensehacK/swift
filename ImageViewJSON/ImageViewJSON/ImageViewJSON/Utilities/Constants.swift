@@ -23,6 +23,12 @@ enum HTTPStatusCode: Int {
     case statusUnauthorized = 401
 }
 
+enum Sizes: Int {
+    case imageViewWidth = 300
+    case imageViewHeight = 169
+    case imageViewSpacer = 20
+    case imageViewYCoordinate = 50
+}
 
 enum Connection: String {
     case errorConnecting = "Error connecting the network"

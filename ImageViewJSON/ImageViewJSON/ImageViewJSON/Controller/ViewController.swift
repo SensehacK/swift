@@ -11,10 +11,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var resultsTable: UITableView!
     @IBOutlet weak var statusLabel: UILabel!
-    
-    
+
     var response: Response?
-    var count = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.statusLabel.isHidden = true
@@ -22,18 +21,17 @@ class ViewController: UIViewController {
         resultsTable.dataSource = self
     }
     
-    
-    @IBAction func connectBtnPressed(_ sender: Any) {
-        print("Hello Sensehack!")
-        retrieveData {
-            self.resultsTable.reloadData()
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.resultsTable.deselectSelectedRow(animated: true)
     }
-    
-    
-    
+
+    @IBAction func connectBtnPressed(_ sender: Any) {
+        retrieveData { self.resultsTable.reloadData() }
+    }
+
+    // Connecting with API, making a network request and populating the object to variable response.
     private func retrieveData(completed: @escaping () -> ()) {
-        
         guard let url = URL(string: Constants.baseURL.rawValue + Constants.manifest.rawValue) else { return }
         // Creating URL Request
         var request = URLRequest(url: url)
@@ -44,8 +42,7 @@ class ViewController: UIViewController {
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { return }
-            
-            
+
             guard let httpResponse = (response as? HTTPURLResponse)?.statusCode, httpResponse == HTTPStatusCode.statusSuccess.rawValue else {
                 let httpCode = (response as? HTTPURLResponse )?.statusCode
                 print("Error in retrieving data from API", +httpCode!)
@@ -59,26 +56,14 @@ class ViewController: UIViewController {
                 }
                 return
             }
-            
-            
+
             guard let data = data else { return }
             do {
                 self.response = try JSONDecoder().decode(Response.self, from: data)
-//                print(json.response)
-//                self.response = json
-//                print(json.response.count)
-//                print(self.response.count)
-                guard let response = self.response else {
-                    return
-                }
-                print(response.manifest.count)
-                print(response.manifest[0])
-//                print(self.manifest[0])
+                guard self.response != nil else { return }
+
                 DispatchQueue.main.async {
                     completed()
-//                    self.programmerAuthor.isHidden = false
-//                    self.programmerQuote.text = json.en!
-//                    self.programmerAuthor.text = "-\(json.author!)"
                 }
             } catch let error {
                 print("Error in retrieving data" + error.localizedDescription)
@@ -88,75 +73,12 @@ class ViewController: UIViewController {
         // Resume Asynchronous network call
         task.resume()
     }
-    
-    
-    private func retrieveImage(value: String, completionHandler: @escaping (ImageResponse) -> Void){
-        var imgResponse: ImageResponse?
-        
-        guard let url = URL(string: Constants.baseURL.rawValue + Constants.image.rawValue + value) else { return  }
-        
-        // ImageResponse(name: "Billy", url: "https://i.redd.it/vxyig96zgfh61.png", type: "png", width: 400, height: 400)
-        // Creating URL Request
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        // Setting API Key
-        request.setValue(Constants.apiKey.rawValue, forHTTPHeaderField: Constants.apiHeader.rawValue)
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error == nil else { return }
-            
-            
-            guard let httpResponse = (response as? HTTPURLResponse)?.statusCode, httpResponse == HTTPStatusCode.statusSuccess.rawValue else {
-                let httpCode = (response as? HTTPURLResponse )?.statusCode
-                print("Error in retrieving data from API", +httpCode!)
-                if httpCode == HTTPStatusCode.statusUnauthorized.rawValue {
-                    print(Connection.statusUnauthorized.rawValue)
-                }
-                DispatchQueue.main.async {
-                    self.statusLabel.text = Connection.errorConnecting.rawValue
-                    self.statusLabel.isHidden = false
-                    // TODO: Create a small popup alert stating error in retrieving data so the user is informed with the process.
-                }
-                return
-            }
-            
-            
-            guard let data = data else { return }
-            do {
-                imgResponse = try JSONDecoder().decode(ImageResponse.self, from: data)
-                guard let imgResponse = imgResponse else {
-                    return
-                }
-                print(imgResponse.name)
-                print(imgResponse.url)
-//                return imgResponse
-                DispatchQueue.main.async {
-                    completionHandler(imgResponse)
-//                    return imgResponse
-                }
-            } catch let error {
-                print("Error in retrieving data" + error.localizedDescription)
-            }
-            
-            
-        }
 
-        // Resume Asynchronous network call
-        task.resume()
-        
-//        return imgResponse!
-    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ImageViewerController {
             destination.response = response
             destination.selectedImageCollection = resultsTable.indexPathForSelectedRow?.row ?? 0
-//            let input = response?.manifest[resultsTable.indexPathForSelectedRow?.row ?? 0]
-//            guard let imageValue = input?.first else { return }
-//            retrieveImage(value: imageValue) { (response) in
-//                destination.imgResponse = response
-//            }
-//            destination.imgResponse = retrieveImage(value: (input?[0])!)
         }
     }
 

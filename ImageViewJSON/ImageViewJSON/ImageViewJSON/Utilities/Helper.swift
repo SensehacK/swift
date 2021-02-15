@@ -38,3 +38,15 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
+
+/// Stack Overflow solution: https://stackoverflow.com/questions/3968037/how-to-deselect-a-selected-uitableview-cell
+extension UITableView {
+
+    func deselectSelectedRow(animated: Bool)
+    {
+        if let indexPathForSelectedRow = self.indexPathForSelectedRow {
+            self.deselectRow(at: indexPathForSelectedRow, animated: animated)
+        }
+    }
+
+}
