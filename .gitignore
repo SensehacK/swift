@@ -237,6 +237,11 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
+## Secret Keys
+# ImageViewJSON/**/Keys.plist
+# ImageViewJSON/ImageViewJSON/ImageViewJSON/Utilities/
+ImageViewJSON/ImageViewJSON/ImageViewJSON/Utilities/Keys.plist
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa

@@ -151,7 +151,7 @@ class ImageViewerController: UIViewController {
     private func retrieveImage(value: String, completionHandler: @escaping (ImageResponse) -> Void){
         var imgResponse: ImageResponse?
         
-        guard let url = URL(string: Constants.baseURL.rawValue + Constants.image.rawValue + value) else { return  }
+        guard let url = URL(string: AppConstants.baseURL + Constants.image.rawValue + value) else { return  }
         print("URL Retrieving image: \(url)")
         // ImageResponse(name: "Billy", url: "https://i.redd.it/vxyig96zgfh61.png", type: "png", width: 400, height: 400)
         // Creating URL Request
@@ -159,7 +159,7 @@ class ImageViewerController: UIViewController {
         request.httpMethod = "GET"
         
         // Setting API Key
-        request.setValue(Constants.apiKey.rawValue, forHTTPHeaderField: Constants.apiHeader.rawValue)
+        request.setValue(AppConstants.apiKey, forHTTPHeaderField: AppConstants.apiHeader)
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { return }

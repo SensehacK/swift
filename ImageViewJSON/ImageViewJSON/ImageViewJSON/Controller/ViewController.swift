@@ -32,13 +32,13 @@ class ViewController: UIViewController {
 
     // Connecting with API, making a network request and populating the object to variable response.
     private func retrieveData(completed: @escaping () -> ()) {
-        guard let url = URL(string: Constants.baseURL.rawValue + Constants.manifest.rawValue) else { return }
+        guard let url = URL(string: AppConstants.baseURL + Constants.manifest.rawValue) else { return }
         // Creating URL Request
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
         // Setting API Key
-        request.setValue(Constants.apiKey.rawValue, forHTTPHeaderField: Constants.apiHeader.rawValue)
+        request.setValue(AppConstants.apiKey, forHTTPHeaderField: AppConstants.apiHeader)
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { return }

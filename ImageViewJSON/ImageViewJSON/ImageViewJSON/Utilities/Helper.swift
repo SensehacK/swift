@@ -17,7 +17,7 @@ extension UIImageView {
         request.httpMethod = "GET"
         
         // Setting API Key
-        request.setValue(Constants.apiKey.rawValue, forHTTPHeaderField: Constants.apiHeader.rawValue)
+        request.setValue(AppConstants.apiKey, forHTTPHeaderField: AppConstants.apiHeader)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard
