@@ -32,10 +32,10 @@ class Network {
 //        "
     
     // func for network call and parsing profile data.
-    func getWashingtonData(completionHandler: @escaping (Washington?, Error?) -> Void) {
+    func getWashingtonData(apiMethod: MountainPassName , completionHandler: @escaping (Washington?, Error?) -> Void) {
         
         
-        let endpoint = generateEndpointNetwork(repoName: AppConstants.baseURL.rawValue, path: AppConstants.pathName.rawValue, methodName: AppConstants.methodName.rawValue, passId: .stevensPass)
+        let endpoint = generateEndpointNetwork(repoName: AppConstants.baseURL.rawValue, path: AppConstants.pathName.rawValue, methodName: AppConstants.methodName.rawValue, passId: apiMethod)
         
         guard let url = URL(string: endpoint) else  {
             print("Error parsing URL")
@@ -81,7 +81,7 @@ struct WashingtonFetcher {
         case missingData
     }
     
-    func generateEndpointNetwork(repoName: String, path: String, methodName: String,passId: MountainPassName) -> String {
+    static func generateEndpointNetwork(repoName: String, path: String, methodName: String,passId: MountainPassName) -> String {
         //        "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
         //
         
@@ -90,11 +90,11 @@ struct WashingtonFetcher {
 //        return urlCreated
     }
     
-    static func fetchWashington(completion: @escaping (Result<Washington, Error>) -> Void) {
+    static func fetchWashington(apiMethod: MountainPassName, completion: @escaping (Result<Washington, Error>) -> Void) {
         
         
-        let endpoint = "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
-        
+//        let endpoint = "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
+        let endpoint = generateEndpointNetwork(repoName: AppConstants.baseURL.rawValue, path: AppConstants.pathName.rawValue, methodName: AppConstants.methodName.rawValue, passId: apiMethod)
         
         // Create URL
         guard let url = URL(string: endpoint ) else {
