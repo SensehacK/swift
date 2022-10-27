@@ -27,49 +27,6 @@ class Network {
         return urlCreated
     }
     
-    
-//    let urlCreated = "\(AppConstants.baseURL)\(AppConstants.methodName) ?\(AppConstants.accessCodeString)\(AppConstants.accessCode)&\(AppConstants.passConditionString)=\(passId)
-//        "
-    
-    // func for network call and parsing profile data.
-    func getWashingtonData(apiMethod: MountainPassName , completionHandler: @escaping (Washington?, Error?) -> Void) {
-        
-        
-        let endpoint = generateEndpointNetwork(repoName: AppConstants.baseURL.rawValue, path: AppConstants.pathName.rawValue, methodName: AppConstants.methodName.rawValue, passId: apiMethod)
-        
-        guard let url = URL(string: endpoint) else  {
-            print("Error parsing URL")
-            return
-        }
-        
-        
-        let urlRequest = URLRequest(url: url)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            
-            guard error == nil else {
-                print("Error in making URL request", error.debugDescription)
-                completionHandler(nil, error)
-                return
-            }
-            
-            guard let responseData = data else {
-                print("Error in fetching data")
-                return
-            }
-            
-            // Parsing
-            if let washingtonJSON = try? JSONDecoder().decode(Washington.self, from: responseData) {
-                print("$$$$")
-                print(washingtonJSON.mountainPassName)
-                self.washingtonAPI =  washingtonJSON
-                completionHandler(self.washingtonAPI, nil)
-            }
-        }
-        
-        task.resume()
-    }
-    
 }
 
 
@@ -82,12 +39,10 @@ struct WashingtonFetcher {
     }
     
     static func generateEndpointNetwork(repoName: String, path: String, methodName: String,passId: MountainPassName) -> String {
-        //        "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
-        //
         
         let urlCreated = "\(repoName)\(path)?\(AppConstants.accessCodeString.rawValue)\(AppConstants.accessCode.rawValue)&\(methodName)=\(passId)"
-        return "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
-//        return urlCreated
+//        return "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
+        return urlCreated
     }
     
     static func fetchWashington(apiMethod: MountainPassName, completion: @escaping (Result<Washington, Error>) -> Void) {
