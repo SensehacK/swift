@@ -11,6 +11,7 @@ import Foundation
 // MARK: Constants
 enum AppConstants: String {
     // App Links strings
+    case mainURL = "https://costco.com"
     case baseURL = "http://wsdot.wa.gov/Traffic/api/"
     case pathName = "/MountainPassConditions/MountainPassConditionsREST.svc/"
     case methodName = "GetMountainPassConditionAsJon"

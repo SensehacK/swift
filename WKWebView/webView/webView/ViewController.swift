@@ -8,25 +8,38 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
 
-    let webView = WKWebView()
+// Controller
+
+class ViewController: UIViewController {
+    // UI view file
     
+    let webView = WKWebView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(webView)
-        
-        guard let url = URL(string: "https://costco.com") else { return }
+        setupUI()
+        loadWebView()
+    }
+    
+    func loadWebView() {
+        guard let url = URL(string: AppConstants.mainURL.rawValue) else { return }
         webView.navigationDelegate = self
         webView.load(URLRequest(url: url))
+    }
+    
+    func setupUI() {
+        view.addSubview(webView)
+        webView.frame = view.bounds
+    }
+    
+    func setupConstraints() {
         
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        webView.frame = view.bounds
     }
 
 

@@ -24,7 +24,6 @@ struct WashingtonFetcher {
     static func generateEndpointNetwork(repoName: String, path: String, methodName: String,passId: MountainPassName) -> String {
         
         let urlCreated = "\(repoName)\(path)\(methodName)?\(AppConstants.accessCodeString.rawValue)\(AppConstants.accessCode.rawValue)&\(AppConstants.passConditionString.rawValue)=\(passId.rawValue)"
-        print("####")
         print(urlCreated)
         return urlCreated
     }
