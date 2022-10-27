@@ -67,18 +67,6 @@ extension ViewController: WKNavigationDelegate {
             })
         }
         
-        
-//        if let host = navigationAction.request.url?.host {
-//            print("Hosts \(host)")
-//
-//
-//            if host.contains("AccountHomeView") {
-//                print("Contains Account view")
-//            } else if host.contains("warehouse-locations") {
-//                print("Contains warehouse view")
-//            }
-//        }
-        
         decisionHandler(.allow)
     }
     

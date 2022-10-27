@@ -14,23 +14,6 @@ enum RequestError: Error {
     case dataDecodingError
 }
 
-class Network {
-    
-    var washingtonAPI: Washington?
-
-    func generateEndpointNetwork(repoName: String, path: String, methodName: String,passId: MountainPassName) -> String {
-//        "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
-//
-        
-        let urlCreated = "\(repoName)\(path)?\(AppConstants.accessCodeString.rawValue)\(AppConstants.accessCode.rawValue)&\(methodName)=\(passId)"
-        
-        return urlCreated
-    }
-    
-}
-
-
-
 struct WashingtonFetcher {
     
     enum WashingtonFetcherError: Error {
@@ -40,15 +23,15 @@ struct WashingtonFetcher {
     
     static func generateEndpointNetwork(repoName: String, path: String, methodName: String,passId: MountainPassName) -> String {
         
-        let urlCreated = "\(repoName)\(path)?\(AppConstants.accessCodeString.rawValue)\(AppConstants.accessCode.rawValue)&\(methodName)=\(passId)"
-//        return "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
+        let urlCreated = "\(repoName)\(path)\(methodName)?\(AppConstants.accessCodeString.rawValue)\(AppConstants.accessCode.rawValue)&\(AppConstants.passConditionString.rawValue)=\(passId.rawValue)"
+        print("####")
+        print(urlCreated)
         return urlCreated
     }
     
-    static func fetchWashington(apiMethod: MountainPassName, completion: @escaping (Result<Washington, Error>) -> Void) {
+    static func fetchWashington(apiMethod: MountainPassName,
+                                completion: @escaping (Result<Washington, Error>) -> Void) {
         
-        
-//        let endpoint = "http://wsdot.wa.gov/Traffic/api/MountainPassConditions/MountainPassConditionsREST.svc/GetMountainPassConditionAsJon?AccessCode=d6701759-bf55-49e3-a2a7-dac879575026&PassConditionID=10"
         let endpoint = generateEndpointNetwork(repoName: AppConstants.baseURL.rawValue, path: AppConstants.pathName.rawValue, methodName: AppConstants.methodName.rawValue, passId: apiMethod)
         
         // Create URL
