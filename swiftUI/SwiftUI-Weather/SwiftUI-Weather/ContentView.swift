@@ -7,38 +7,27 @@
 
 import SwiftUI
 
-
-
-
-//struct WeatherInfo: Identifiable {
-//
-//    var id: Int
-//    let day: day
-//    let weatherIcon: String
-//    let temp: Int
-//}
+struct WeatherInfo: Identifiable {
+    var id: Int
+    let day: day
+    let weatherIcon: String
+    let temp: Int
+}
 
 
 struct ContentView: View {
     
-
-    
-//    let weeklyWeather: [WeatherInfo] = [
-//        WeatherInfo(id: 1, day: .Mon, weatherIcon: "cloud.sun.rain", temp: 35),
-//        WeatherInfo(id: 2, day: .Tue, weatherIcon: "cloud.sun.rain.fill", temp: 46),
-//        WeatherInfo(id: 3, day: .Wed, weatherIcon: "cloud.sun.fill", temp: 74),
-//        WeatherInfo(id: 4, day: .Thu, weatherIcon: "sun.dust.fill", temp: 65),
-//        WeatherInfo(id: 5, day: .Fri, weatherIcon: "moon.fill", temp: 55),
-//    ]
-    
-    
     @State private var isNight = false
     
+    let weeklyWeather: [WeatherInfo] = [
+        WeatherInfo(id: 1, day: .Mon, weatherIcon: "cloud.sun.rain", temp: 35),
+        WeatherInfo(id: 2, day: .Tue, weatherIcon: "cloud.sun.rain.fill", temp: 46),
+        WeatherInfo(id: 3, day: .Wed, weatherIcon: "cloud.sun.fill", temp: 74),
+        WeatherInfo(id: 4, day: .Thu, weatherIcon: "sun.dust.fill", temp: 65),
+        WeatherInfo(id: 5, day: .Fri, weatherIcon: "moon.fill", temp: 55),
+    ]
+    
     var body: some View {
-
-        
-        
-        
         VStack {
             ZStack {
                 BackgroundView(isNight: $isNight)
@@ -49,19 +38,16 @@ struct ContentView: View {
                     HeroWeatherView(imageName: isNight ? "moon.stars.fill" :
                                         "cloud.sun.fill",
                                     temp: 67)
-
-
-                    HStack(spacing: 20) {
-                        WeatherDayView(day: .Mon, weatherIcon: "cloud.sun.dust.fill", temp: 35)
-                        WeatherDayView(day: .Tue, weatherIcon: "cloud.sun.rain.fill", temp: 46)
-                        WeatherDayView(day: .Wed, weatherIcon: "cloud.sun.min.fill", temp: 74)
-                        WeatherDayView(day: .Thu, weatherIcon: "cloud.sun.hazy.fill", temp: 65)
-                        WeatherDayView(day: .Fri, weatherIcon: "cloud.sun.smoke.fill", temp: 55)
-
-                    }
+                    
+                    HStack(spacing: 15) {
+                           ForEach(weeklyWeather) { weather in
+                               WeatherDayView(day: weather.day, weatherIcon: weather.weatherIcon, temp: weather.temp)
+                               
+                           }
+                       }
 
                     Spacer()
-
+                    
                     Button {
                         isNight.toggle()
                     } label: {
@@ -71,16 +57,10 @@ struct ContentView: View {
 
                     }
 
-
                     Spacer()
-
-
                 }
-
             }
-
         }
-
     }
 }
 
@@ -114,13 +94,13 @@ struct WeatherDayView: View {
                 .font(.system(size: 16, weight: .medium, design: .default))
                 .foregroundColor(.white)
             
-            Image(systemName: "cloud.sun.fill")
+            Image(systemName: weatherIcon)
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
             
-            Text("68")
+            Text(String(temp))
                 .font(.system(size: 28, weight: .medium))
                 .foregroundColor(.white)
         }
