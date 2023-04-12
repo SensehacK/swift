@@ -7,31 +7,16 @@
 
 import SwiftUI
 
-enum day: String {
-    case Mon
-    case Tue
-    case Wed
-    case Thu
-    case Fri
-    case Sat
-    
-//    var rawValue: String {
-//        self.uppercased()
-//    }
-    
-    var value: String {
-        self.rawValue.uppercased()
-    }
-}
 
 
-struct WeatherInfo: Identifiable {
-    
-    var id: ObjectIdentifier
-    let day: day
-    let weatherIcon: String
-    let temp: Int
-}
+
+//struct WeatherInfo: Identifiable {
+//
+//    var id: Int
+//    let day: day
+//    let weatherIcon: String
+//    let temp: Int
+//}
 
 
 struct ContentView: View {
@@ -39,78 +24,63 @@ struct ContentView: View {
 
     
 //    let weeklyWeather: [WeatherInfo] = [
-//        WeatherInfo(id: 1, day: .Mon, weatherIcon: "cloud.sun.dust.fill", temp: 35),
+//        WeatherInfo(id: 1, day: .Mon, weatherIcon: "cloud.sun.rain", temp: 35),
 //        WeatherInfo(id: 2, day: .Tue, weatherIcon: "cloud.sun.rain.fill", temp: 46),
-//        WeatherInfo(id: 3, day: .Wed, weatherIcon: "cloud.sun.min.fill", temp: 74),
-//        WeatherInfo(id: 4, day: .Thu, weatherIcon: "cloud.sun.hazy.fill", temp: 65),
-//        WeatherInfo(id: 5, day: .Fri, weatherIcon: "cloud.sun.smoke.fill", temp: 55),
+//        WeatherInfo(id: 3, day: .Wed, weatherIcon: "cloud.sun.fill", temp: 74),
+//        WeatherInfo(id: 4, day: .Thu, weatherIcon: "sun.dust.fill", temp: 65),
+//        WeatherInfo(id: 5, day: .Fri, weatherIcon: "moon.fill", temp: 55),
 //    ]
     
+    
+    @State private var isNight = false
+    
     var body: some View {
+
+        
+        
+        
         VStack {
             ZStack {
-                BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
-                
+                BackgroundView(isNight: $isNight)
+
                 VStack {
                     CityTextView(name: "Denver, CO")
-                    
-                    HeroWeatherView(imageName: "cloud.sun.fill",
+
+                    HeroWeatherView(imageName: isNight ? "moon.stars.fill" :
+                                        "cloud.sun.fill",
                                     temp: 67)
-                    
-                    
+
+
                     HStack(spacing: 20) {
                         WeatherDayView(day: .Mon, weatherIcon: "cloud.sun.dust.fill", temp: 35)
                         WeatherDayView(day: .Tue, weatherIcon: "cloud.sun.rain.fill", temp: 46)
                         WeatherDayView(day: .Wed, weatherIcon: "cloud.sun.min.fill", temp: 74)
                         WeatherDayView(day: .Thu, weatherIcon: "cloud.sun.hazy.fill", temp: 65)
                         WeatherDayView(day: .Fri, weatherIcon: "cloud.sun.smoke.fill", temp: 55)
-                        
+
                     }
 
-                    
-                    
-//                    ForEach(weeklyWeather) { weather in
-//
-//                        VStack {
-//                            Text(weather.day.rawValue)
-//
-//
-//                            Image(systemName: weather.weatherIcon)
-//
-////                            Text(String(from: weather.temp))
-////                            Text(weather.temp)
-//
-//                        }
-//
-//                    }
-                    
-//                    weeklyWeather.forEach { weather in
-//
-//
-//
-//                    }
- 
-                    
                     Spacer()
-                    
-                    
-                    WeatherButton(text: "Change DayTime",
-                                  backgroundColor: .white,
-                                  textColor: .blue)
+
+                    Button {
+                        isNight.toggle()
+                    } label: {
+                        WeatherButton(text: "Change DayTime",
+                                      backgroundColor: .white,
+                                      textColor: .blue)
+
+                    }
+
 
                     Spacer()
 
 
                 }
-                
+
             }
-            
-            
-            
+
         }
-        
-        
-        
+
     }
 }
 
@@ -120,7 +90,18 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+enum day: String {
+    case Mon
+    case Tue
+    case Wed
+    case Thu
+    case Fri
+    case Sat
 
+    var value: String {
+        self.rawValue.uppercased()
+    }
+}
 struct WeatherDayView: View {
     
     let day: day
@@ -147,12 +128,13 @@ struct WeatherDayView: View {
 }
 
 struct BackgroundView: View {
-    var topColor: Color
-    var bottomColor: Color
+
+    @Binding var isNight: Bool
     
     var body: some View {
         
-        LinearGradient(gradient: Gradient(colors: [topColor, bottomColor]),
+        LinearGradient(gradient: Gradient(colors: [isNight ? .black: .blue,
+                                                   isNight ? .gray : Color("lightBlue") ]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
@@ -189,23 +171,4 @@ struct HeroWeatherView: View {
     }
 }
 
-struct WeatherButton: View {
-    var text: String
-    var backgroundColor: Color
-    var textColor: Color
-    
-    var body: some View {
-        Button {
-            print("Tapped")
-        } label: {
-            Text(text)
-                .frame(width: 280, height: 50)
-                .background(backgroundColor)
-                .foregroundColor(textColor)
-                .font(.system(size: 20, weight: .bold, design: .default))
-                .cornerRadius(10)
-            
-            
-        }
-    }
-}
+
