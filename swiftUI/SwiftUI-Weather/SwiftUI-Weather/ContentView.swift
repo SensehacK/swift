@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct WeatherInfo: Identifiable {
-    var id: Int
-    let day: day
-    let weatherIcon: String
-    let temp: Int
-}
-
-
 struct ContentView: View {
     
     @State private var isNight = false
@@ -50,6 +42,7 @@ struct ContentView: View {
                     
                     Button {
                         isNight.toggle()
+                        print("Hello Kautilya Save")
                     } label: {
                         WeatherButton(text: "Change DayTime",
                                       backgroundColor: .white,
@@ -70,42 +63,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-enum day: String {
-    case Mon
-    case Tue
-    case Wed
-    case Thu
-    case Fri
-    case Sat
 
-    var value: String {
-        self.rawValue.uppercased()
-    }
-}
-struct WeatherDayView: View {
-    
-    let day: day
-    let weatherIcon: String
-    let temp: Int
-    
-    var body: some View {
-        VStack {
-            Text(day.value)
-                .font(.system(size: 16, weight: .medium, design: .default))
-                .foregroundColor(.white)
-            
-            Image(systemName: weatherIcon)
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 60, height: 60)
-            
-            Text(String(temp))
-                .font(.system(size: 28, weight: .medium))
-                .foregroundColor(.white)
-        }
-    }
-}
 
 struct BackgroundView: View {
 
@@ -118,36 +76,6 @@ struct BackgroundView: View {
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct CityTextView: View {
-    var name: String
-    
-    var body: some View {
-        Text(name)
-            .font(.system(size: 32, weight: .medium, design: .default))
-            .foregroundColor(.white)
-            .padding()
-    }
-}
-
-struct HeroWeatherView: View {
-    var imageName: String
-    var temp: Int
-    var body: some View {
-        VStack(spacing: 10) {
-            Image(systemName: imageName)
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 180, height: 180)
-            
-            Text(String(temp))
-                .font(.system(size: 70, weight: .medium))
-                .foregroundColor(.yellow)
-        }
-        .padding(.bottom, 40)
     }
 }
 

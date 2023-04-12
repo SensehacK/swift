@@ -15,6 +15,8 @@
 		437B060C29E7112600DF53C6 /* SwiftUI_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B060B29E7112600DF53C6 /* SwiftUI_WeatherUITests.swift */; };
 		437B060E29E7112600DF53C6 /* SwiftUI_WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B060D29E7112600DF53C6 /* SwiftUI_WeatherUITestsLaunchTests.swift */; };
 		4385BC5829E745BE00EE7EC7 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385BC5729E745BE00EE7EC7 /* WeatherButton.swift */; };
+		4385BC5A29E750ED00EE7EC7 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385BC5929E750ED00EE7EC7 /* WeatherInfo.swift */; };
+		4385BC5C29E7513200EE7EC7 /* WeatherDayViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385BC5B29E7513200EE7EC7 /* WeatherDayViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		437B060B29E7112600DF53C6 /* SwiftUI_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherUITests.swift; sourceTree = "<group>"; };
 		437B060D29E7112600DF53C6 /* SwiftUI_WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4385BC5729E745BE00EE7EC7 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
+		4385BC5929E750ED00EE7EC7 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		4385BC5B29E7513200EE7EC7 /* WeatherDayViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				437B05F329E7112600DF53C6 /* Assets.xcassets */,
 				437B05F529E7112600DF53C6 /* SwiftUI_Weather.entitlements */,
 				437B05F629E7112600DF53C6 /* Preview Content */,
+				4385BC5929E750ED00EE7EC7 /* WeatherInfo.swift */,
+				4385BC5B29E7513200EE7EC7 /* WeatherDayViewComponent.swift */,
 			);
 			path = "SwiftUI-Weather";
 			sourceTree = "<group>";
@@ -262,9 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4385BC5A29E750ED00EE7EC7 /* WeatherInfo.swift in Sources */,
 				437B05F229E7112400DF53C6 /* ContentView.swift in Sources */,
 				437B05F029E7112400DF53C6 /* SwiftUI_WeatherApp.swift in Sources */,
 				4385BC5829E745BE00EE7EC7 /* WeatherButton.swift in Sources */,
+				4385BC5C29E7513200EE7EC7 /* WeatherDayViewComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
