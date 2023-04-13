@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43888A1929E8CC420018AF49 /* HeroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43888A1829E8CC420018AF49 /* HeroButton.swift */; };
+		43888A1B29E8CC5A0018AF49 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43888A1A29E8CC5A0018AF49 /* DetailView.swift */; };
+		43888A1D29E8CC9B0018AF49 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43888A1C29E8CC9B0018AF49 /* VideoCell.swift */; };
 		EDBC4AA226334A5900D3EE9D /* SwiftUI_List_StarterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC4AA126334A5900D3EE9D /* SwiftUI_List_StarterApp.swift */; };
 		EDBC4AA426334A5900D3EE9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC4AA326334A5900D3EE9D /* ContentView.swift */; };
 		EDBC4AA626334A5A00D3EE9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDBC4AA526334A5A00D3EE9D /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43888A1829E8CC420018AF49 /* HeroButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroButton.swift; sourceTree = "<group>"; };
+		43888A1A29E8CC5A0018AF49 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		43888A1C29E8CC9B0018AF49 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		EDBC4A9E26334A5900D3EE9D /* SwiftUI-List-Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-List-Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBC4AA126334A5900D3EE9D /* SwiftUI_List_StarterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_List_StarterApp.swift; sourceTree = "<group>"; };
 		EDBC4AA326334A5900D3EE9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 				EDBC4AA526334A5A00D3EE9D /* Assets.xcassets */,
 				EDBC4AAA26334A5A00D3EE9D /* Info.plist */,
 				EDBC4AA726334A5A00D3EE9D /* Preview Content */,
+				43888A1829E8CC420018AF49 /* HeroButton.swift */,
+				43888A1A29E8CC5A0018AF49 /* DetailView.swift */,
+				43888A1C29E8CC9B0018AF49 /* VideoCell.swift */,
 			);
 			path = "SwiftUI-List-Starter";
 			sourceTree = "<group>";
@@ -142,8 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDBC4AA426334A5900D3EE9D /* ContentView.swift in Sources */,
+				43888A1929E8CC420018AF49 /* HeroButton.swift in Sources */,
 				EDBC4AB226334A7100D3EE9D /* Video.swift in Sources */,
+				43888A1B29E8CC5A0018AF49 /* DetailView.swift in Sources */,
 				EDBC4AA226334A5900D3EE9D /* SwiftUI_List_StarterApp.swift in Sources */,
+				43888A1D29E8CC9B0018AF49 /* VideoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
