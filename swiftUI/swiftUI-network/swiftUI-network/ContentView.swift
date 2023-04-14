@@ -17,15 +17,13 @@ struct TODO: Codable, Identifiable {
 
 
 struct ContentView: View {
-    
-    
+    // State
     @State var todoList: [TODO] = []
     @State private var presentAlert = false
     @State private var alertMessage = ""
     
+    // View
     var body: some View {
-        
-        
         NavigationView {
             VStack {
                 List(todoList) { todo in
@@ -42,7 +40,7 @@ struct ContentView: View {
                     do {
                         return try JSONDecoder().decode([TODO].self, from: data)
                     } catch {
-                        alertMessage = "Error while decoding network response. Change in network endpoint contract!"
+                        alertMessage = Constants.errorBadDecodingMessage
                         presentAlert.toggle()
                         return nil
                     }
@@ -54,12 +52,11 @@ struct ContentView: View {
                             self.todoList = todosU
                         }
                     case .failure(let error):
-//                        print("Error \(error)")
                         switch error {
                         case .requestBad:
-                            alertMessage = "Bad network endpoint. Error while reaching network url!"
-                        case .requestDecodingFailed:
-                            alertMessage = "Error while decoding network response."
+                            alertMessage = Constants.errorRequestBadMessage
+                        case .requestDataFailed:
+                            alertMessage = Constants.errorRequestDecodingFailedMessage
                         }
                         presentAlert.toggle()
                     }
@@ -85,5 +82,9 @@ struct ContentView_Previews: PreviewProvider {
 
 struct Constants {
     static let factsURL: String = "https://jsonplaceholder.typicode.com/todos"
-    static let title = "TODO list API"
+    static let title = "API TODO list "
+    static let errorRequestDecodingFailedMessage = "Error while decoding network response."
+    static let errorRequestBadMessage = "Bad network endpoint. Error while reaching network url!"
+    static let errorBadDecodingMessage = "Error while decoding network response. Change in network endpoint contract!"
+    
 }
