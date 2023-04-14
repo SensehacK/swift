@@ -353,8 +353,9 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SensehacK/swift-sense";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = versionRange;
+				maximumVersion = 2.9.0;
+				minimumVersion = 0.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
