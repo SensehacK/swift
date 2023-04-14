@@ -8,21 +8,17 @@
 import SwiftUI
 
 
-struct Todo: Identifiable {
-    let id = UUID()
-    let title: String
-    let image: String
-}
+
 
 struct ListView: View {
     
     @State var listData: [Todo] = [
-        Todo(title: "First", image: "soccerball.circle"),
-        Todo(title: "2", image: "circle.dotted"),
-        Todo(title: "Fi2rst", image: "cloud"),
-        Todo(title: "First", image: "circle")
+        Todo(title: "First", isCompleted: false),
+        Todo(title: "2", isCompleted: true),
+        Todo(title: "Fi2rst", isCompleted: false),
+        Todo(title: "First", isCompleted: false)
     ]
-    
+        
     var body: some View {
         List {
             ForEach(listData, id: \.id) { todo in
