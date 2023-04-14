@@ -14,6 +14,7 @@
 		4356596429E9FC1E0019681C /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356596329E9FC1E0019681C /* ListRowView.swift */; };
 		4356596629E9FF0F0019681C /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356596529E9FF0F0019681C /* AddView.swift */; };
 		4356596929EA01E90019681C /* TodoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356596829EA01E90019681C /* TodoItemModel.swift */; };
+		4356596C29EA069F0019681C /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356596B29EA069F0019681C /* TodoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4356596329E9FC1E0019681C /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		4356596529E9FF0F0019681C /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4356596829EA01E90019681C /* TodoItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemModel.swift; sourceTree = "<group>"; };
+		4356596B29EA069F0019681C /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				4356595129E9CF9F0019681C /* SwiftUIBetterTodoApp.swift */,
 				4356596729EA01D50019681C /* Model */,
+				4356596A29EA06810019681C /* ViewModel */,
 				4356596029E9FAA70019681C /* Views */,
 				4356595529E9CFA10019681C /* Assets.xcassets */,
 				4356595729E9CFA10019681C /* SwiftUIBetterTodo.entitlements */,
@@ -92,6 +95,14 @@
 				4356596829EA01E90019681C /* TodoItemModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4356596A29EA06810019681C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4356596B29EA069F0019681C /* TodoListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				4356596229E9FAB90019681C /* ListView.swift in Sources */,
 				4356595229E9CF9F0019681C /* SwiftUIBetterTodoApp.swift in Sources */,
 				4356596429E9FC1E0019681C /* ListRowView.swift in Sources */,
+				4356596C29EA069F0019681C /* TodoListViewModel.swift in Sources */,
 				4356596929EA01E90019681C /* TodoItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

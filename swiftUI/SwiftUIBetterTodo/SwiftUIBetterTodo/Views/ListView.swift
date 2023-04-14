@@ -8,22 +8,22 @@
 import SwiftUI
 
 
-
-
 struct ListView: View {
-    
-    @State var listData: [Todo] = [
-        Todo(title: "First", isCompleted: false),
-        Todo(title: "2", isCompleted: true),
-        Todo(title: "Fi2rst", isCompleted: false),
-        Todo(title: "First", isCompleted: false)
-    ]
-        
+    @EnvironmentObject var listVM: TodoListViewModel
+
     var body: some View {
         List {
-            ForEach(listData, id: \.id) { todo in
+            ForEach(listVM.items, id: \.id) { todo in
                 ListRowView(todo: todo)
+                    .onTapGesture {
+                        withAnimation {
+                            listVM.completeItem(todo: todo)
+                        }
+                    }
             }
+            .onDelete(perform: listVM.deleteItem)
+            .onMove(perform: listVM.moveItem)
+            
         }
         .navigationTitle("TODO")
         .navigationBarItems(
@@ -38,6 +38,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(TodoListViewModel())
         
     }
 }
