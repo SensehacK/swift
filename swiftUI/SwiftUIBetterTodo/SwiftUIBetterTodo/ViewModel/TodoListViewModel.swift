@@ -9,14 +9,31 @@ import Foundation
 // CRUD
 class TodoListViewModel: ObservableObject {
     
-    @Published var items: [Todo] = []
+    @Published var items: [Todo] = [] {
+        didSet {
+            saveItems()
+        }
+    }
     
+    let itemKey = "items_key"
     
     init() {
         getItems()
     }
     
     func getItems() {
+        guard let data = UserDefaults.standard.data(forKey: itemKey) else {
+            return getDummyData()
+        }
+        
+        guard let decodedData = try? JSONDecoder().decode([Todo].self, from: data) else {
+            return getDummyData()
+        }
+        
+        items.append(contentsOf: decodedData)
+    }
+    
+    func getDummyData() {
         let listData: [Todo] = [
             Todo(title: "First", isCompleted: false),
             Todo(title: "2", isCompleted: true),
@@ -45,4 +62,15 @@ class TodoListViewModel: ObservableObject {
         items.remove(atOffsets: indexSet)
     }
     
+    
+    func saveItems() {
+        // Convert Struct to JSON
+        // Store in UserDefaults in JSON
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: itemKey)
+        }
+        
+        
+
+    }
 }
