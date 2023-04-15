@@ -24,7 +24,7 @@ class TodoListViewModel: ObservableObject {
     func getItems() {
         guard let data = UserDefaults.standard.data(forKey: itemKey),
               let decodedData = try? JSONDecoder().decode([Todo].self, from: data) else {
-            return getDummyData()
+            return
         }
         
         items.append(contentsOf: decodedData)

@@ -40,7 +40,7 @@ struct EmptyListView: View {
                         .cornerRadius(15)
                 }
                 .padding(animate ? 30 : 50)
-                .scaleEffect(animate ? 1.5 : 1.0)
+                .scaleEffect(animate ? 1.1 : 1.0)
                 .shadow(color: animate ? secondaryAccentColor.opacity(0.8) :
                             Color.accentColor.opacity(0.7),
                         radius: animate ? 30 : 10,
@@ -48,6 +48,7 @@ struct EmptyListView: View {
                         y: animate ? 50: 30)
 
             }
+            .frame(maxWidth: 400)
             .multilineTextAlignment(.center)
             .padding(40)
             .onAppear(perform: addAnimation)

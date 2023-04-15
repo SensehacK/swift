@@ -28,9 +28,7 @@ struct ListView: View {
                     }
                     .onDelete(perform: listVM.deleteItem)
                     .onMove(perform: listVM.moveItem)
-                    
                 }
-                
             }
         }
         .navigationTitle("TODO")
@@ -49,6 +47,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .navigationViewStyle(.stack)
         .environmentObject(TodoListViewModel())
         
     }

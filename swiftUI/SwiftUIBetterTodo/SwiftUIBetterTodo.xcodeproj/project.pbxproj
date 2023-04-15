@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4328193F29EB46900029BBFA /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4328193E29EB46900029BBFA /* EmptyListView.swift */; };
+		4328194229EB56810029BBFA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4328194129EB56810029BBFA /* Launch Screen.storyboard */; };
 		4356595229E9CF9F0019681C /* SwiftUIBetterTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356595129E9CF9F0019681C /* SwiftUIBetterTodoApp.swift */; };
 		4356595629E9CFA10019681C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4356595529E9CFA10019681C /* Assets.xcassets */; };
 		4356595A29E9CFA10019681C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4356595929E9CFA10019681C /* Preview Assets.xcassets */; };
@@ -20,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		4328193E29EB46900029BBFA /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		4328194029EB56650029BBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4328194129EB56810029BBFA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4356594E29E9CF9F0019681C /* SwiftUIBetterTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBetterTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4356595129E9CF9F0019681C /* SwiftUIBetterTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBetterTodoApp.swift; sourceTree = "<group>"; };
 		4356595529E9CFA10019681C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,12 +65,14 @@
 		4356595029E9CF9F0019681C /* SwiftUIBetterTodo */ = {
 			isa = PBXGroup;
 			children = (
+				4328194029EB56650029BBFA /* Info.plist */,
 				4356595129E9CF9F0019681C /* SwiftUIBetterTodoApp.swift */,
 				4356596729EA01D50019681C /* Model */,
 				4356596A29EA06810019681C /* ViewModel */,
 				4356596029E9FAA70019681C /* Views */,
 				4356595529E9CFA10019681C /* Assets.xcassets */,
 				4356595729E9CFA10019681C /* SwiftUIBetterTodo.entitlements */,
+				4328194129EB56810029BBFA /* Launch Screen.storyboard */,
 				4356595829E9CFA10019681C /* Preview Content */,
 			);
 			path = SwiftUIBetterTodo;
@@ -166,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4328194229EB56810029BBFA /* Launch Screen.storyboard in Resources */,
 				4356595A29E9CFA10019681C /* Preview Assets.xcassets in Resources */,
 				4356595629E9CFA10019681C /* Assets.xcassets in Resources */,
 			);
@@ -313,12 +319,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIBetterTodo/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -351,12 +359,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIBetterTodo/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
