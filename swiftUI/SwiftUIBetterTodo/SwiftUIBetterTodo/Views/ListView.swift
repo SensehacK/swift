@@ -10,26 +10,37 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var listVM: TodoListViewModel
-
+    
     var body: some View {
-        List {
-            ForEach(listVM.items, id: \.id) { todo in
-                ListRowView(todo: todo)
-                    .onTapGesture {
-                        withAnimation {
-                            listVM.completeItem(todo: todo)
-                        }
+        ZStack {
+            if listVM.items.isEmpty {
+                EmptyListView()
+                    .transition(AnyTransition.opacity.animation(.easeIn))
+            } else {
+                List {
+                    ForEach(listVM.items, id: \.id) { todo in
+                        ListRowView(todo: todo)
+                            .onTapGesture {
+                                withAnimation {
+                                    listVM.completeItem(todo: todo)
+                                }
+                            }
                     }
+                    .onDelete(perform: listVM.deleteItem)
+                    .onMove(perform: listVM.moveItem)
+                    
+                }
+                
             }
-            .onDelete(perform: listVM.deleteItem)
-            .onMove(perform: listVM.moveItem)
-            
         }
         .navigationTitle("TODO")
-        .navigationBarItems(
-            leading: EditButton(),
-            trailing: NavigationLink("Add", destination: AddView())
-        )
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: NavigationLink("Add", destination: AddView())
+            )
+        
+        
+        
     }
 }
 

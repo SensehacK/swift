@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4328193F29EB46900029BBFA /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4328193E29EB46900029BBFA /* EmptyListView.swift */; };
 		4356595229E9CF9F0019681C /* SwiftUIBetterTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356595129E9CF9F0019681C /* SwiftUIBetterTodoApp.swift */; };
 		4356595629E9CFA10019681C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4356595529E9CFA10019681C /* Assets.xcassets */; };
 		4356595A29E9CFA10019681C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4356595929E9CFA10019681C /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4328193E29EB46900029BBFA /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		4356594E29E9CF9F0019681C /* SwiftUIBetterTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBetterTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4356595129E9CF9F0019681C /* SwiftUIBetterTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBetterTodoApp.swift; sourceTree = "<group>"; };
 		4356595529E9CFA10019681C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				4356596129E9FAB90019681C /* ListView.swift */,
 				4356596329E9FC1E0019681C /* ListRowView.swift */,
 				4356596529E9FF0F0019681C /* AddView.swift */,
+				4328193E29EB46900029BBFA /* EmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			files = (
 				4356596629E9FF0F0019681C /* AddView.swift in Sources */,
 				4356596229E9FAB90019681C /* ListView.swift in Sources */,
+				4328193F29EB46900029BBFA /* EmptyListView.swift in Sources */,
 				4356595229E9CF9F0019681C /* SwiftUIBetterTodoApp.swift in Sources */,
 				4356596429E9FC1E0019681C /* ListRowView.swift in Sources */,
 				4356596C29EA069F0019681C /* TodoListViewModel.swift in Sources */,
