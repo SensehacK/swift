@@ -24,44 +24,14 @@ struct ContentView: View {
     
     // View
     var body: some View {
-        NavigationView {
+        return NavigationView {
             VStack {
                 List(todoList) { todo in
                     Text(todo.title)
                 }
             }
             .navigationTitle(Constants.title)
-            .onAppear {
-                guard let url = URL(string: Constants.factsURL) else {
-                    print("Not able to create URL!")
-                    return
-                }
-                Webservice().fetch(url: url) { data -> [TODO]? in
-                    do {
-                        return try JSONDecoder().decode([TODO].self, from: data)
-                    } catch {
-                        alertMessage = Constants.errorBadDecodingMessage
-                        presentAlert.toggle()
-                        return nil
-                    }
-                } completion: { result in
-                    switch result {
-                    case .success(let todos):
-                        guard let todosU = todos else { return }
-                        DispatchQueue.main.async {
-                            self.todoList = todosU
-                        }
-                    case .failure(let error):
-                        switch error {
-                        case .requestBad:
-                            alertMessage = Constants.errorRequestBadMessage
-                        case .requestDataFailed:
-                            alertMessage = Constants.errorRequestDecodingFailedMessage
-                        }
-                        presentAlert.toggle()
-                    }
-                }
-            }
+            .onAppear(perform: makeNetworkRequest)
             .alert("Title", isPresented: $presentAlert, actions: {
                 Button("Cancel", role: .cancel, action: {})
             }, message: {
@@ -69,8 +39,41 @@ struct ContentView: View {
             })
         }
         
+        func makeNetworkRequest() {
+            guard let url = URL(string: Constants.factsURL) else {
+                print("Not able to create URL!")
+                return
+            }
+            Webservice().fetch(url: url) { data -> [TODO]? in
+                do {
+                    return try JSONDecoder().decode([TODO].self, from: data)
+                } catch {
+                    alertMessage = Constants.errorBadDecodingMessage
+                    presentAlert.toggle()
+                    return nil
+                }
+            } completion: { result in
+                switch result {
+                case .success(let todos):
+                    guard let todosU = todos else { return }
+                    DispatchQueue.main.async {
+                        self.todoList = todosU
+                    }
+                case .failure(let error):
+                    switch error {
+                    case .requestBad:
+                        alertMessage = Constants.errorRequestBadMessage
+                    case .requestDataFailed:
+                        alertMessage = Constants.errorRequestDecodingFailedMessage
+                    }
+                    presentAlert.toggle()
+                }
+                
+            }
+        }
+        
+        
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
