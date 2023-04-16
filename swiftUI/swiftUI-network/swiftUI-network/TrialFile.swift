@@ -67,13 +67,14 @@ public class AsyncNetwork {
      }
     ```
     */
-    public func getData<T: Decodable>(url: String, id: Int? = nil, type: T.Type) -> Future<[T], Error> {
-        return Future<[T], Error> { [weak self] promise in
+    public func getData<T: Decodable>(url: String, id: Int? = nil, type: T.Type) -> Future<T, Error> {
+        return Future<T, Error> { [weak self] promise in
             
             guard let self = self,
                   let url = URL(string: url) else {
                 return promise(.failure(NetworkError.invalidURL))
             }
+            print("Hello!!!!")
             
             URLSession.shared.dataTaskPublisher(for: url)
                 .tryMap { data, response -> Data in
@@ -83,21 +84,29 @@ public class AsyncNetwork {
                     }
                     return data
                 }
-                .decode(type: [T].self, decoder: JSONDecoder())
+                .decode(type: T.self, decoder: JSONDecoder())
                 .receive(on: RunLoop.main)
                 .sink { completion in
                     if case let .failure(error) = completion {
+                        print("Error")
                         switch error {
+                            
                         case let decodingError as DecodingError:
+                            print("Decoding")
+                            print(decodingError)
                             promise(.failure(decodingError))
                         case let apiError as NetworkError:
+                            print("API")
                             promise(.failure(apiError))
                         default:
+                            print(":Unkonw")
                             promise(.failure(NetworkError.unknown))
                         }
                     }
-                } receiveValue: {
-                    promise(.success($0))
+                } receiveValue: { value in
+                    print("Success")
+                    print(value)
+                    promise(.success(value))
                 }
                 .store(in: &self.disposeBag)
         }
