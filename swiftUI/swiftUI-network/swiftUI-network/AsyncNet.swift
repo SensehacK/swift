@@ -17,7 +17,7 @@ class QuotesVM: ObservableObject {
     @Published var quotes = [Quote]()
     
     
-    func getHomeData() {
+    func getQuotesData() {
         
         AsyncNetwork.shared.getData(url: "https://dummyjson.com/quotes", type: Quotes.self)
             .sink { completion in

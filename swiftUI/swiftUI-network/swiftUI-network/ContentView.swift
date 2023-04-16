@@ -16,20 +16,6 @@ struct TODO: Codable, Identifiable {
     let completed: Bool
 }
 
-
-struct Quotes: Decodable {
-    let quotes: [Quote]
-    let total: Int
-}
-
-
-struct Quote: Identifiable, Decodable, Hashable {
-    let id: Int
-    let quote: String
-    let author: String
-}
-
-
 struct ContentView: View {
     // State
     @State var todoList: [TODO] = []
@@ -56,8 +42,6 @@ struct ContentView: View {
         }
         
         func makeNetworkRequest() {
-            
-            makeAsyncRequest()
             
             guard let url = URL(string: Constants.factsURL) else {
                 print("Not able to create URL!")
@@ -91,72 +75,12 @@ struct ContentView: View {
             }
         }
         
-        
-        
-        func makeAsyncRequest() {
-            var cancellables = Set<AnyCancellable>()
-
-            AsyncNetwork.shared.getData(url: "https://dummyjson.com/quotes", type: Quotes.self)
-                .sink { completion in
-                    print("Error failure")
-                    switch completion {
-                    case .failure(let error):
-                        print(error)
-                    case .finished:
-                        print("Finish")
-                    }
-                }
-                receiveValue: { quotesData in
-                    print("Got the data!")
-        //            print(quotesData.)
-                    print(quotesData)
-                    
-                }
-                .store(in: &cancellables)
-            }
-        
     }
 }
-
-
-struct QuotesView: View {
-    
-    @ObservedObject var viewModel = QuotesVM()
-    
-    var body: some View {
-        NavigationView {
-            ZStack {
-                ScrollView {
-                    LazyVStack {
-                        ForEach(viewModel.quotes, id: \.self) { value in
-                            Text(value.quote)
-                                .padding()
-                            
-                            VStack(alignment: .trailing) {
-                                Text("-\(value.author)")
-                                    
-                            }
-                            .padding(.horizontal, 36)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                                .background(Color.yellow)
-                        }
-                    }
-                }
-                .navigationTitle("Quotes")
-            }
-            
-        }.onAppear {
-            viewModel.getHomeData()
-        }
-    }
-    
-}
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//        ContentView()
-        QuotesView()
+        ContentView()
     }
 }
 
