@@ -9,10 +9,8 @@ import SwiftUI
 import Combine
 
 struct QuotesView: View {
-    @State var textField = "Hello User"
     @ObservedObject var viewModel = QuotesViewModel()
-    @State private var cancellables = Set<AnyCancellable>()
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -20,8 +18,6 @@ struct QuotesView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                     .padding()
-                Text(textField)
-                
                 VStack {
                     Button {
                         viewModel.getRandomQuote()

@@ -26,23 +26,10 @@ class QuotesViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     @Published var quotes = [Quote]()
     @Published var randomQuote: String = ""
-    
-    // No need to do this way in Swift UI -> Just use `@Published` and SwiftUI is smart enough to figure out the subscriber / publisher model.
-    private let quotePub = PassthroughSubject<String, Never>()
-    var quoteAnyP: AnyPublisher<String, Never> {
-        quotePub.eraseToAnyPublisher()
-    }
-    
-    init() {
-        quotePub.send("")
-    }
-    
-    
-    
+
     func getQuote() {
         AsyncNetwork.shared.fetchData(url: Constants.quotesAPIURL, type: Quotes.self)
             .sink { completion in
-                print("Error failure")
                 switch completion {
                 case .failure(let error):
                     print(error)
@@ -50,11 +37,10 @@ class QuotesViewModel: ObservableObject {
                     print("Finish")
                 }
             }
-            receiveValue: { quotesData in
-                let oneQuote = quotesData.quotes.randomElement()?.quote
-                self.randomQuote = oneQuote ?? "No Quote available"
-                self.quotePub.send(oneQuote ?? "Hello No Quote for the day!")
-                self.quotes = quotesData.quotes
+            receiveValue: { [weak self] quotesData in
+                let quotes = quotesData.quotes
+                self?.quotes = quotes
+                self?.getRandomQuote()
             }
             .store(in: &cancellables)
         }
