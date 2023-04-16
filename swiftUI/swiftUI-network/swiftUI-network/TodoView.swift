@@ -19,7 +19,6 @@ struct TODO: Codable, Identifiable {
 struct ContentView: View {
     // State
     @State var todoList: [TODO] = []
-    @State var quotesList: [Quote] = []
     
     @State private var presentAlert = false
     @State private var alertMessage = ""

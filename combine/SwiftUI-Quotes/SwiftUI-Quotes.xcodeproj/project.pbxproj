@@ -7,64 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4353EFA429E9A8B70015DD62 /* swift-sense in Frameworks */ = {isa = PBXBuildFile; productRef = 4353EFA329E9A8B70015DD62 /* swift-sense */; };
-		4366B27029E9A1E5000A3F24 /* swiftUI_networkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366B26F29E9A1E5000A3F24 /* swiftUI_networkApp.swift */; };
-		4366B27229E9A1E5000A3F24 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366B27129E9A1E5000A3F24 /* TodoView.swift */; };
-		4366B27429E9A1E6000A3F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4366B27329E9A1E6000A3F24 /* Assets.xcassets */; };
-		4366B27729E9A1E6000A3F24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4366B27629E9A1E6000A3F24 /* Preview Assets.xcassets */; };
+		43823DCC29EBA963000C1BAF /* SwiftUI_QuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43823DCB29EBA963000C1BAF /* SwiftUI_QuotesApp.swift */; };
+		43823DCE29EBA963000C1BAF /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43823DCD29EBA963000C1BAF /* QuotesView.swift */; };
+		43823DD029EBA964000C1BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43823DCF29EBA964000C1BAF /* Assets.xcassets */; };
+		43823DD329EBA964000C1BAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43823DD229EBA964000C1BAF /* Preview Assets.xcassets */; };
+		43823DDA29EBA991000C1BAF /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43823DD929EBA991000C1BAF /* QuotesViewModel.swift */; };
+		43823DDD29EBAA08000C1BAF /* swift-sense in Frameworks */ = {isa = PBXBuildFile; productRef = 43823DDC29EBAA08000C1BAF /* swift-sense */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4366B26C29E9A1E5000A3F24 /* swiftUI-network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftUI-network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4366B26F29E9A1E5000A3F24 /* swiftUI_networkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUI_networkApp.swift; sourceTree = "<group>"; };
-		4366B27129E9A1E5000A3F24 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
-		4366B27329E9A1E6000A3F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4366B27629E9A1E6000A3F24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43823DC829EBA963000C1BAF /* SwiftUI-Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43823DCB29EBA963000C1BAF /* SwiftUI_QuotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_QuotesApp.swift; sourceTree = "<group>"; };
+		43823DCD29EBA963000C1BAF /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		43823DCF29EBA964000C1BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43823DD229EBA964000C1BAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43823DD929EBA991000C1BAF /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4366B26929E9A1E5000A3F24 /* Frameworks */ = {
+		43823DC529EBA963000C1BAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4353EFA429E9A8B70015DD62 /* swift-sense in Frameworks */,
+				43823DDD29EBAA08000C1BAF /* swift-sense in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4366B26329E9A1E5000A3F24 = {
+		43823DBF29EBA963000C1BAF = {
 			isa = PBXGroup;
 			children = (
-				4366B26E29E9A1E5000A3F24 /* swiftUI-network */,
-				4366B26D29E9A1E5000A3F24 /* Products */,
+				43823DCA29EBA963000C1BAF /* SwiftUI-Quotes */,
+				43823DC929EBA963000C1BAF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4366B26D29E9A1E5000A3F24 /* Products */ = {
+		43823DC929EBA963000C1BAF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4366B26C29E9A1E5000A3F24 /* swiftUI-network.app */,
+				43823DC829EBA963000C1BAF /* SwiftUI-Quotes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4366B26E29E9A1E5000A3F24 /* swiftUI-network */ = {
+		43823DCA29EBA963000C1BAF /* SwiftUI-Quotes */ = {
 			isa = PBXGroup;
 			children = (
-				4366B26F29E9A1E5000A3F24 /* swiftUI_networkApp.swift */,
-				4366B27129E9A1E5000A3F24 /* TodoView.swift */,
-				4366B27329E9A1E6000A3F24 /* Assets.xcassets */,
-				4366B27529E9A1E6000A3F24 /* Preview Content */,
+				43823DCB29EBA963000C1BAF /* SwiftUI_QuotesApp.swift */,
+				43823DD929EBA991000C1BAF /* QuotesViewModel.swift */,
+				43823DCD29EBA963000C1BAF /* QuotesView.swift */,
+				43823DCF29EBA964000C1BAF /* Assets.xcassets */,
+				43823DD129EBA964000C1BAF /* Preview Content */,
 			);
-			path = "swiftUI-network";
+			path = "SwiftUI-Quotes";
 			sourceTree = "<group>";
 		};
-		4366B27529E9A1E6000A3F24 /* Preview Content */ = {
+		43823DD129EBA964000C1BAF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				4366B27629E9A1E6000A3F24 /* Preview Assets.xcassets */,
+				43823DD229EBA964000C1BAF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,42 +75,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4366B26B29E9A1E5000A3F24 /* swiftUI-network */ = {
+		43823DC729EBA963000C1BAF /* SwiftUI-Quotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4366B27A29E9A1E6000A3F24 /* Build configuration list for PBXNativeTarget "swiftUI-network" */;
+			buildConfigurationList = 43823DD629EBA964000C1BAF /* Build configuration list for PBXNativeTarget "SwiftUI-Quotes" */;
 			buildPhases = (
-				4366B26829E9A1E5000A3F24 /* Sources */,
-				4366B26929E9A1E5000A3F24 /* Frameworks */,
-				4366B26A29E9A1E5000A3F24 /* Resources */,
+				43823DC429EBA963000C1BAF /* Sources */,
+				43823DC529EBA963000C1BAF /* Frameworks */,
+				43823DC629EBA963000C1BAF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "swiftUI-network";
+			name = "SwiftUI-Quotes";
 			packageProductDependencies = (
-				4353EFA329E9A8B70015DD62 /* swift-sense */,
+				43823DDC29EBAA08000C1BAF /* swift-sense */,
 			);
-			productName = "swiftUI-network";
-			productReference = 4366B26C29E9A1E5000A3F24 /* swiftUI-network.app */;
+			productName = "SwiftUI-Quotes";
+			productReference = 43823DC829EBA963000C1BAF /* SwiftUI-Quotes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4366B26429E9A1E5000A3F24 /* Project object */ = {
+		43823DC029EBA963000C1BAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					4366B26B29E9A1E5000A3F24 = {
+					43823DC729EBA963000C1BAF = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
-			buildConfigurationList = 4366B26729E9A1E5000A3F24 /* Build configuration list for PBXProject "swiftUI-network" */;
+			buildConfigurationList = 43823DC329EBA963000C1BAF /* Build configuration list for PBXProject "SwiftUI-Quotes" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,45 +118,46 @@
 				en,
 				Base,
 			);
-			mainGroup = 4366B26329E9A1E5000A3F24;
+			mainGroup = 43823DBF29EBA963000C1BAF;
 			packageReferences = (
-				4353EFA229E9A8B70015DD62 /* XCRemoteSwiftPackageReference "swift-sense" */,
+				43823DDB29EBAA08000C1BAF /* XCRemoteSwiftPackageReference "swift-sense" */,
 			);
-			productRefGroup = 4366B26D29E9A1E5000A3F24 /* Products */;
+			productRefGroup = 43823DC929EBA963000C1BAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4366B26B29E9A1E5000A3F24 /* swiftUI-network */,
+				43823DC729EBA963000C1BAF /* SwiftUI-Quotes */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4366B26A29E9A1E5000A3F24 /* Resources */ = {
+		43823DC629EBA963000C1BAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4366B27729E9A1E6000A3F24 /* Preview Assets.xcassets in Resources */,
-				4366B27429E9A1E6000A3F24 /* Assets.xcassets in Resources */,
+				43823DD329EBA964000C1BAF /* Preview Assets.xcassets in Resources */,
+				43823DD029EBA964000C1BAF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4366B26829E9A1E5000A3F24 /* Sources */ = {
+		43823DC429EBA963000C1BAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4366B27229E9A1E5000A3F24 /* TodoView.swift in Sources */,
-				4366B27029E9A1E5000A3F24 /* swiftUI_networkApp.swift in Sources */,
+				43823DCE29EBA963000C1BAF /* QuotesView.swift in Sources */,
+				43823DDA29EBA991000C1BAF /* QuotesViewModel.swift in Sources */,
+				43823DCC29EBA963000C1BAF /* SwiftUI_QuotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4366B27829E9A1E6000A3F24 /* Debug */ = {
+		43823DD429EBA964000C1BAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -213,7 +217,7 @@
 			};
 			name = Debug;
 		};
-		4366B27929E9A1E6000A3F24 /* Release */ = {
+		43823DD529EBA964000C1BAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -267,14 +271,14 @@
 			};
 			name = Release;
 		};
-		4366B27B29E9A1E6000A3F24 /* Debug */ = {
+		43823DD729EBA964000C1BAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swiftUI-network/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Quotes/Preview Content\"";
 				DEVELOPMENT_TEAM = LGQH99U6M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -288,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sensehack.swiftUI-network";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sensehack.SwiftUI-Quotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -296,14 +300,14 @@
 			};
 			name = Debug;
 		};
-		4366B27C29E9A1E6000A3F24 /* Release */ = {
+		43823DD829EBA964000C1BAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swiftUI-network/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Quotes/Preview Content\"";
 				DEVELOPMENT_TEAM = LGQH99U6M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -317,7 +321,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sensehack.swiftUI-network";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sensehack.SwiftUI-Quotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,20 +332,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4366B26729E9A1E5000A3F24 /* Build configuration list for PBXProject "swiftUI-network" */ = {
+		43823DC329EBA963000C1BAF /* Build configuration list for PBXProject "SwiftUI-Quotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4366B27829E9A1E6000A3F24 /* Debug */,
-				4366B27929E9A1E6000A3F24 /* Release */,
+				43823DD429EBA964000C1BAF /* Debug */,
+				43823DD529EBA964000C1BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4366B27A29E9A1E6000A3F24 /* Build configuration list for PBXNativeTarget "swiftUI-network" */ = {
+		43823DD629EBA964000C1BAF /* Build configuration list for PBXNativeTarget "SwiftUI-Quotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4366B27B29E9A1E6000A3F24 /* Debug */,
-				4366B27C29E9A1E6000A3F24 /* Release */,
+				43823DD729EBA964000C1BAF /* Debug */,
+				43823DD829EBA964000C1BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -349,24 +353,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4353EFA229E9A8B70015DD62 /* XCRemoteSwiftPackageReference "swift-sense" */ = {
+		43823DDB29EBAA08000C1BAF /* XCRemoteSwiftPackageReference "swift-sense" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SensehacK/swift-sense";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 2.9.0;
-				minimumVersion = 0.1.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4353EFA329E9A8B70015DD62 /* swift-sense */ = {
+		43823DDC29EBAA08000C1BAF /* swift-sense */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4353EFA229E9A8B70015DD62 /* XCRemoteSwiftPackageReference "swift-sense" */;
+			package = 43823DDB29EBAA08000C1BAF /* XCRemoteSwiftPackageReference "swift-sense" */;
 			productName = "swift-sense";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 4366B26429E9A1E5000A3F24 /* Project object */;
+	rootObject = 43823DC029EBA963000C1BAF /* Project object */;
 }
