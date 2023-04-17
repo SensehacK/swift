@@ -20,7 +20,7 @@ struct MealRecipeCellView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100)
-                    .cornerRadius(16)
+                    .cornerRadius(Constants.UI.cornerRadius)
             } placeholder: {
                 ProgressView()
             }

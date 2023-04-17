@@ -54,6 +54,3 @@ struct MealViewModel: Identifiable {
         URL(string:meal.strMealThumb)
     }
 }
-
-
-

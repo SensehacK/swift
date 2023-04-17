@@ -56,19 +56,7 @@ struct RecipeViewModel: Identifiable {
     init(detail: [String: String?]) {
         self.detail = detail
     }
-    
-//    var id: String {
-//        meal.idMeal
-//    }
-//
-//    var title: String {
-//        meal.strMeal
-//    }
-//
-//    var image: URL? {
-//        URL(string:meal.strMealThumb)
-//    }
-    
+
     var tags: [String] {
         let noTags = ["No Tags"]
         

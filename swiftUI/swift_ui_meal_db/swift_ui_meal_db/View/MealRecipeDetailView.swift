@@ -22,7 +22,7 @@ struct MealRecipeDetailView: View {
                 VStack(spacing: 20) {
                     
                     // Recipe Title & Info View
-                    ExtractedView(model: model, recipe: recipe)
+                    RecipeTitleView(model: model, recipe: recipe)
 
                     // Video + Description View
                     VideoDescriptionView(recipe: recipe)
@@ -52,6 +52,37 @@ struct MealRecipeDetailView_Previews: PreviewProvider {
         MealRecipeDetailView(recipeMealID: Constants.DummyRecipeID.success.rawValue) // Success screen
         // MealRecipeDetailView(recipeMealID: Constants.DummyRecipeID.failure.rawValue) // Error Screen
         
+    }
+}
+
+
+// MARK: - Extracted Views
+
+struct RecipeTitleView: View {
+    let model: MealRecipeDetailViewModel
+    let recipe: [String: String?]
+    
+    var body: some View {
+        VStack (spacing: 12) {
+            Text((recipe[MealDetailKey.strMeal.rawValue] ?? "") ?? "")
+                .font(.title)
+            
+            HStack {
+                Text((recipe[MealDetailKey.strCategory.rawValue] ?? "") ?? "")
+                    .font(.subheadline)
+                Text("|")
+                Text((recipe[MealDetailKey.strArea.rawValue] ?? "") ?? "")
+                    .font(.subheadline)
+            }
+            
+            if model.recipeMeal.tags.isNotEmpty {
+                HStack {
+                    ForEach(model.recipeMeal.tags.prefix(3), id: \.self) { tag in
+                        Label(tag, systemImage: Constants.tagImage)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -88,7 +119,7 @@ struct VideoDescriptionView: View {
                     image
                         .resizable()
                         .frame(width: 200, height: 200)
-                        .cornerRadius(12)
+                        .cornerRadius(Constants.UI.cornerRadius)
                     
                 } placeholder: {
                     ProgressView()
@@ -96,37 +127,10 @@ struct VideoDescriptionView: View {
             }
             
             Text((recipe[MealDetailKey.strInstructions.rawValue] ?? "") ?? "")
-                .lineLimit(4)
+                .lineLimit(Constants.UI.lineLimit)
             
             Text((recipe[MealDetailKey.strDrinkAlternate.rawValue] ?? "") ?? "")
         }
     }
 }
 
-struct ExtractedView: View {
-    let model: MealRecipeDetailViewModel
-    let recipe: [String: String?]
-    
-    var body: some View {
-        VStack (spacing: 12) {
-            Text((recipe[MealDetailKey.strMeal.rawValue] ?? "") ?? "")
-                .font(.title)
-            
-            HStack {
-                Text((recipe[MealDetailKey.strCategory.rawValue] ?? "") ?? "")
-                    .font(.subheadline)
-                Text("|")
-                Text((recipe[MealDetailKey.strArea.rawValue] ?? "") ?? "")
-                    .font(.subheadline)
-            }
-            
-            if model.recipeMeal.tags.isNotEmpty {
-                HStack {
-                    ForEach(model.recipeMeal.tags.prefix(3), id: \.self) { tag in
-                        Label(tag, systemImage: Constants.tagImage)
-                    }
-                }
-            }
-        }
-    }
-}

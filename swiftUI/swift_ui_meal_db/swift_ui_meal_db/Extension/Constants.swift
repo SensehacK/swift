@@ -15,17 +15,30 @@ struct Constants {
         static let recipeURL: String = "https://themealdb.com/api/json/v1/1/lookup.php?i="
     }
     
-    
     static let tagImage: String = "tag.fill"
     static let videoRecipeButtonText: String = "Watch it on YouTube!"
     static let readRecipeButtonText: String = "Read the full recipe!"
     static let noDataDisplayText: String = "Nothing to display, Please Try again later!"
+
+    struct FakeData {
+        static let dummyRecipes: [MealViewModel] = [
+            MealViewModel(meal: Meal(strMeal: "Apam balik", strMealThumb: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", idMeal: "53049")),
+            MealViewModel(meal: Meal(strMeal: "Apple & Blackberry Crumble", strMealThumb: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg", idMeal: "52768")),
+            MealViewModel(meal: Meal(strMeal: "Bakewell tart", strMealThumb: "https://www.themealdb.com/images/media/meals/wyrqqq1468233628.jpg", idMeal: "52767")),
+        ]
+    }
     
+    struct UI {
+        static let cornerRadius: CGFloat = 12
+        static let lineLimit: Int = 12
+        
+    }
     
     enum DummyRecipeID: String {
         case success = "52858"
         case failure = "2312"
     }
+    
 }
 
 

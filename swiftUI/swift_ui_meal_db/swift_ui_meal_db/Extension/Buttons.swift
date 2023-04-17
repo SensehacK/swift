@@ -23,7 +23,7 @@ struct HeroButton: View {
                 .frame(width: 350, height: 50)
                 .background(color)
                 .foregroundColor(textColor)
-                .cornerRadius(12)
+                .cornerRadius(Constants.UI.cornerRadius)
         }
     }
 }

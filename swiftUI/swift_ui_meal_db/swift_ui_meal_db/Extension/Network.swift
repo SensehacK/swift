@@ -25,10 +25,7 @@ public extension HTTPURLResponse {
 
 
 public class AsyncNetwork {
-    
-    
-    // Private properties
-//    private var disposeBag = Set<AnyCancellable>()
+
     private init() { }
     
     /// Singleton

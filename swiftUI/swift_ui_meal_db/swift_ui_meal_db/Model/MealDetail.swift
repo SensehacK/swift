@@ -7,16 +7,12 @@
 
 import Foundation
 
+// MARK: - Meal Detail
 struct MealDetail: Decodable {
     let meals: [[String: String?]]
 }
 
-
-struct MealDetailDict: Decodable  {
-    let detail: [String: String?]
-}
-
-
+// MARK: - Dictionary Keys
 enum MealDetailKey: String, Decodable {
     case idMeal
     case strMeal

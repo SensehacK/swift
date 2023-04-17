@@ -12,8 +12,6 @@ struct swift_ui_meal_dbApp: App {
     var body: some Scene {
         WindowGroup {
             MealParentView()
-//            MealRecipeListView()
-//            MealRecipeDetailView(recipeMealID: "52858")
          }
     }
 }
