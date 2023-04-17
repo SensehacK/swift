@@ -68,8 +68,17 @@ struct RecipeViewModel: Identifiable {
         }
     }
     
-    
-    
+    var ingredients: [String] {
+        var ingredients: [String] = []
+        
+        for no in 1...12 {
+            let keyIngr = MealDetailKey.strIngredient.rawValue + "\(no)"
+            let ingrValue = (detail[keyIngr] ?? "") ?? ""
+            ingredients.append(ingrValue)
+        }
+        return ingredients
+    }
+
 }
 
 

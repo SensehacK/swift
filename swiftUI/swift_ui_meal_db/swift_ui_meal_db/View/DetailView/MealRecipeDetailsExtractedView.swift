@@ -1,60 +1,11 @@
 //
-//  MealRecipeDetailView.swift
+//  MealRecipeDetailsExtractedView.swift
 //  swift_ui_meal_db
 //
 //  Created by Kautilya Save on 4/17/23.
 //
 
-import Foundation
 import SwiftUI
-
-struct MealRecipeDetailView: View {
-    
-    let recipeMealID: String
-    
-    @StateObject var model: MealRecipeDetailViewModel = MealRecipeDetailViewModel()
-    
-    var body: some View {
-        
-        VStack {
-            if model.firstMeal.isNotEmpty {
-                let recipe = model.firstMeal
-                VStack(spacing: 20) {
-                    
-                    // Recipe Title & Info View
-                    RecipeTitleView(model: model, recipe: recipe)
-
-                    // Video + Description View
-                    VideoDescriptionView(recipe: recipe)
-                    
-                    // External Links
-                    ExternalLinks(recipe: recipe)
-                }
-                .padding(20)
-                
-            } else {
-                Text(Constants.noDataDisplayText)
-                    .font(.title)
-            }
-        }
-        .task {
-            await model.fetchRecipe(id: recipeMealID)
-        }
-    }
-    
-}
-
-
-
-struct MealRecipeDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        MealRecipeDetailView(recipeMealID: Constants.DummyRecipeID.success.rawValue) // Success screen
-        // MealRecipeDetailView(recipeMealID: Constants.DummyRecipeID.failure.rawValue) // Error Screen
-        
-    }
-}
-
 
 // MARK: - Extracted Views
 
@@ -78,7 +29,7 @@ struct RecipeTitleView: View {
             if model.recipeMeal.tags.isNotEmpty {
                 HStack {
                     ForEach(model.recipeMeal.tags.prefix(3), id: \.self) { tag in
-                        Label(tag, systemImage: Constants.tagImage)
+                        Label(tag, systemImage: Constants.UI.tagImage)
                     }
                 }
             }
@@ -134,3 +85,26 @@ struct VideoDescriptionView: View {
     }
 }
 
+
+struct IngredientsView: View {
+    let model: MealRecipeDetailViewModel
+    let gridItems = [
+        GridItem(.adaptive(minimum: 60))
+    ]
+    
+    var body: some View {
+        VStack {
+            
+            Text(Constants.ingredients)
+                .font(.headline)
+            
+            
+            LazyVGrid(columns: gridItems, alignment: .center) {
+                ForEach(model.recipeMeal.ingredients, id: \.self) { tag in
+                    Text(tag)
+                    
+                }
+            }
+        }
+    }
+}

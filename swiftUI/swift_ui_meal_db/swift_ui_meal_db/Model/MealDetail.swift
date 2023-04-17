@@ -23,6 +23,7 @@ enum MealDetailKey: String, Decodable {
     case strMealThumb
     case strTags
     case strYoutube
+    case strIngredient
     case strIngredient1
     case strIngredient2
     case strIngredient3

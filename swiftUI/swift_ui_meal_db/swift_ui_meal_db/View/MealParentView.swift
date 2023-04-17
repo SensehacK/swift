@@ -18,7 +18,7 @@ struct MealParentView: View {
                 .task {
                     await model.fetchRecipes()
                 }
-                .navigationTitle("Dessert 🍩")
+                .navigationTitle(Constants.title)
         }
         
     }

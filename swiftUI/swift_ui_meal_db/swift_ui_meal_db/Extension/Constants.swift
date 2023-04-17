@@ -15,7 +15,8 @@ struct Constants {
         static let recipeURL: String = "https://themealdb.com/api/json/v1/1/lookup.php?i="
     }
     
-    static let tagImage: String = "tag.fill"
+    static let title: String = "Dessert 🍩"
+    static let ingredients: String = "Ingredients"
     static let videoRecipeButtonText: String = "Watch it on YouTube!"
     static let readRecipeButtonText: String = "Read the full recipe!"
     static let noDataDisplayText: String = "Nothing to display, Please Try again later!"
@@ -30,8 +31,8 @@ struct Constants {
     
     struct UI {
         static let cornerRadius: CGFloat = 12
-        static let lineLimit: Int = 12
-        
+        static let lineLimit: Int = 4
+        static let tagImage: String = "tag.fill"
     }
     
     enum DummyRecipeID: String {
