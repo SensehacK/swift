@@ -74,7 +74,9 @@ struct RecipeViewModel: Identifiable {
         for no in 1...12 {
             let keyIngr = MealDetailKey.strIngredient.rawValue + "\(no)"
             let ingrValue = (detail[keyIngr] ?? "") ?? ""
-            ingredients.append(ingrValue)
+            if ingrValue.count > 0 {
+                ingredients.append(ingrValue)
+            }
         }
         return ingredients
     }

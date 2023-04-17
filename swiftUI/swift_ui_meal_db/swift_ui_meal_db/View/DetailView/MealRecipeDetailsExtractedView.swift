@@ -98,11 +98,9 @@ struct IngredientsView: View {
             Text(Constants.ingredients)
                 .font(.headline)
             
-            
             LazyVGrid(columns: gridItems, alignment: .center) {
                 ForEach(model.recipeMeal.ingredients, id: \.self) { tag in
-                    Text(tag)
-                    
+                    Text(tag).id(UUID().uuidString)
                 }
             }
         }
