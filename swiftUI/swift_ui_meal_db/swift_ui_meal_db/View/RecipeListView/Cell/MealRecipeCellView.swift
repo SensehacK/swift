@@ -39,8 +39,7 @@ struct MealRecipeCellView: View {
 
 struct MealRecipeCellView_Previews: PreviewProvider {
     static var previews: some View {
-        let meal = Meal(strMeal: "Apam balik", strMealThumb: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", idMeal: "53049")
-        let mealData = MealViewModel(meal: meal)
+        let mealData = MealViewModel(meal: Constants.FakeData.dummyMeal)
         MealRecipeCellView(meal: mealData)
     }
 }
