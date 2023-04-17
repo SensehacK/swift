@@ -11,9 +11,9 @@ import SwiftUI
 struct swift_ui_meal_dbApp: App {
     var body: some Scene {
         WindowGroup {
-//            MealParentView()
-            
-            MealRecipeDetailView(recipeMealID: 52858)
+            MealParentView()
+//            MealRecipeListView()
+//            MealRecipeDetailView(recipeMealID: "52858")
          }
     }
 }

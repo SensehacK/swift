@@ -18,7 +18,7 @@ class MealRecipeViewModel: ObservableObject {
     func fetchRecipes() async {
         
         do {
-            let recipes = try await AsyncNetwork.shared.fetchData(url: Constants.mealAPIURL, type: MealModel.self)
+            let recipes = try await AsyncNetwork.shared.fetchData(url: Constants.API.mealURL, type: MealModel.self)
             
             meals = recipes
                 .meals

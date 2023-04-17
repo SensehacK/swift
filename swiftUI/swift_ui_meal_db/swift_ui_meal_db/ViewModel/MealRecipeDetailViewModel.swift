@@ -16,16 +16,25 @@ class MealRecipeDetailViewModel: ObservableObject {
     
     var firstMeal: [String: String?] {
         guard let detailedMeal = meals.first?.detail else {
-            return ["": ""]
+            return ["":""]
         }
         return detailedMeal
     }
     
+    var recipeMeal: RecipeViewModel {
+        guard let detailedMeal = meals.first else {
+            return RecipeViewModel(detail: ["":""])
+        }
+        return detailedMeal
+    }
+    
+    
     /// Fetches the recipes from `mealDB` API creating consumable [RecipeViewModel] data
-    func fetchRecipe(id: Int) async {
+    func fetchRecipe(id: String) async {
         
         do {
-            let mealDetail = try await AsyncNetwork.shared.fetchData(url: Constants.recipeAPIURL, id: id, type: MealDetail.self)
+            guard let idInt = Int(id) else { return }
+            let mealDetail = try await AsyncNetwork.shared.fetchData(url: Constants.API.recipeURL, id: idInt, type: MealDetail.self)
             
             meals = mealDetail
                 .meals
@@ -59,6 +68,20 @@ struct RecipeViewModel: Identifiable {
 //    var image: URL? {
 //        URL(string:meal.strMealThumb)
 //    }
+    
+    var tags: [String] {
+        let noTags = ["No Tags"]
+        
+        if let tagStr = detail[MealDetailKey.strTags.rawValue] {
+            let tags = tagStr?.components(separatedBy: ",").shuffled() ?? noTags
+            return tags
+        } else {
+            return noTags
+        }
+    }
+    
+    
+    
 }
 
 
