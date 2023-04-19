@@ -14,6 +14,7 @@
 		439CE50F29EF5D52001F4EAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439CE50D29EF5D52001F4EAA /* LaunchScreen.storyboard */; };
 		439CE51829EF5D6C001F4EAA /* swift-sense in Frameworks */ = {isa = PBXBuildFile; productRef = 439CE51729EF5D6C001F4EAA /* swift-sense */; };
 		439CE51A29EF6514001F4EAA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439CE51929EF6514001F4EAA /* Users.swift */; };
+		43C1BA2829EF6B450043FB71 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1BA2729EF6B450043FB71 /* MyCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		439CE50E29EF5D52001F4EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		439CE51029EF5D52001F4EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439CE51929EF6514001F4EAA /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		43C1BA2729EF6B450043FB71 /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				439CE50D29EF5D52001F4EAA /* LaunchScreen.storyboard */,
 				439CE51029EF5D52001F4EAA /* Info.plist */,
 				439CE51929EF6514001F4EAA /* Users.swift */,
+				43C1BA2729EF6B450043FB71 /* MyCustomCell.swift */,
 			);
 			path = "combine-uikit-programmatic";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				439CE51A29EF6514001F4EAA /* Users.swift in Sources */,
+				43C1BA2829EF6B450043FB71 /* MyCustomCell.swift in Sources */,
 				439CE50729EF5D50001F4EAA /* ViewController.swift in Sources */,
 				439CE50329EF5D50001F4EAA /* AppDelegate.swift in Sources */,
 				439CE50529EF5D50001F4EAA /* SceneDelegate.swift in Sources */,
