@@ -14,14 +14,31 @@ struct UserCellView: View {
     
     var body: some View {
         VStack {
-            
             if let url = URL(string: user.image) {
                 HStack(alignment: .center) {
                     
                     VStack {
-                        AsyncImage(url: url)
-                            .frame(height: 90)
-                            .clipShape(Circle())
+                        // without caching
+//                        AsyncImage(url: url)
+//                            .frame(height: 90)
+//                            .clipShape(Circle())
+                        
+                        // with in-memory caching
+                        AsyncImageCache(url: url) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .frame(height: 90)
+                                    .clipShape(Circle())
+                            case .empty:
+                                Text("Image resource empty")
+                            case .failure(let error):
+                                Text("Error fetching Image: \(error.localizedDescription)")
+                            default:
+                                Text("No Image downloaded")
+                            }
+                        }
+                        
                         HStack {
                             Text(user.firstName)
                             Text(user.lastName)
@@ -34,16 +51,12 @@ struct UserCellView: View {
                         Text("W: \(String(format:"%.2f", user.weight))")
                         Text(user.gender.rawValue.capitalized)
                     }
-                    
-                    
-                    
+
                 }
                 
             } else {
                 Text("Hello, world!")
             }
-            
-            
         }
         .padding()
     }
@@ -51,17 +64,12 @@ struct UserCellView: View {
 
 struct UserCellView_Previews: PreviewProvider {
     static var previews: some View {
-        
-//        let userData = User
-//        User
         switch User.from(localJSON: "user") {
         case .success(let value):
             UserCellView(user: value)
         case .failure(_):
             Text("No Data loaded")
-//            print("Failure")
+
         }
-        
-//        UserCellView()
     }
 }

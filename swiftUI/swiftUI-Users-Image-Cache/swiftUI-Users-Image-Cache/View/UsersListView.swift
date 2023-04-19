@@ -6,21 +6,28 @@
 //
 
 import SwiftUI
+import swift_sense
 
 struct UsersListView: View {
+    
+    let users: UsersAPI
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List(users.users, id: \.id) { user in
+            UserCellView(user: user)
         }
-        .padding()
+        
     }
 }
 
 struct UsersListView_Previews: PreviewProvider {
     static var previews: some View {
-        UsersListView()
+        switch UsersAPI.from(localJSON: "users") {
+        case .success(let value):
+            UsersListView(users: value)
+        case .failure(_):
+            Text("No Data loaded")
+
+        }
     }
 }
