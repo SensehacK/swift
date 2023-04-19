@@ -27,28 +27,32 @@ struct ContentView: View {
             //
             //            }
             VStack {
-                
-                AsyncImageCache(url: "https://robohash.org/hicveldicta.png") { phase in
-                    switch phase {
-                    case .success(let image):
-                        HStack {
-                            image
+                if let url = URL(string: "https://robohash.org/hicveldicta.png") {
+                    AsyncImageCache(url: url) { phase in
+                        switch phase {
+                        case .success(let image):
+                            HStack {
+                                image
+                            }
+                        default:
+                            Text("No Image")
                         }
-                    default:
-                        Text("No Image")
                     }
                 }
                 
-                AsyncImageCache(url: "https://i.dummyjson.com/data/products/1/1.jpg") { phase in
-                    switch phase {
-                    case .success(let image):
-                        HStack {
-                            image
-                        }
-                    default:
-                        Text("No Image")
-                    }
-                }
+                
+                
+                
+//                AsyncImageCache(url: "https://i.dummyjson.com/data/products/1/1.jpg") { phase in
+//                    switch phase {
+//                    case .success(let image):
+//                        HStack {
+//                            image
+//                        }
+//                    default:
+//                        Text("No Image")
+//                    }
+//                }
             }
             
         }
