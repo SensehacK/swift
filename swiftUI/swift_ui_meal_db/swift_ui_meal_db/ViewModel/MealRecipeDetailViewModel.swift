@@ -13,54 +13,24 @@ class MealRecipeDetailViewModel: ObservableObject {
     
     /// Contains all the meal recipes
     @Published var meals: [RecipeViewModel] = []
-    @Published var meals2: [RecipeViewModel2] = []
-    var firstMeal: [String: String?] {
-        guard let detailedMeal = meals.first?.detail else {
-            return ["":""]
-        }
-        return detailedMeal
-    }
     
-    var recipeMeal: RecipeViewModel {
+    var recipeMeal: RecipeViewModel? {
         guard let detailedMeal = meals.first else {
-            return RecipeViewModel(detail: ["":""])
-        }
-        return detailedMeal
-    }
-    
-    var recipeMeal2: RecipeViewModel2? {
-        guard let detailedMeal = meals2.first else {
             return nil
         }
         return detailedMeal
     }
-    
-    
+
     /// Fetches the recipes from `mealDB` API creating consumable [RecipeViewModel] data
     func fetchRecipe(id: String) async {
         
         do {
             guard let idInt = Int(id) else { return }
-//            let mealDetail = try await AsyncNetwork.shared.fetchData(url: Constants.API.recipeURL, id: idInt, type: MealDetail.self)
-            //            meals = mealDetail
-            //                .meals
-            //                .map { RecipeViewModel(detail: $0) }
-            
-            
-            
-            let mealDetail2 = try await AsyncNetwork.shared.fetchData(url: Constants.API.recipeURL, id: idInt, type: MealDetail2.self)
-            
+            let mealDetail = try await AsyncNetwork.shared.fetchData(url: Constants.API.recipeURL, id: idInt, type: MealDetail.self)
 
-            
-            
-            meals2 = mealDetail2
+            meals = mealDetail
                 .meals
-                .map({ data in
-//                    print(data.strCategory)
-                    let returnedData = RecipeViewModel2(detail: data)
-                    return returnedData
-                })
-            
+                .map{ RecipeViewModel(detail: $0) }
             
         } catch {
             print(error)
@@ -70,51 +40,12 @@ class MealRecipeDetailViewModel: ObservableObject {
 
 }
 
-
 /// Consumable ViewModel
 struct RecipeViewModel: Identifiable {
     let id = UUID().uuidString
-    let detail: [String: String?]
+    let detail: MealDetailKey
     
-    init(detail: [String: String?]) {
-        self.detail = detail
-    }
-
-    var tags: [String] {
-        let noTags = ["No Tags"]
-        
-        if let tagStr = detail[MealDetailKey.strTags.rawValue] {
-            let tags = tagStr?.components(separatedBy: ",").shuffled() ?? noTags
-            return tags
-        } else {
-            return noTags
-        }
-    }
-    
-    var ingredients: [String] {
-        var ingredients: [String] = []
-        
-        for no in 1...12 {
-            let keyIngr = MealDetailKey.strIngredient.rawValue + "\(no)"
-            let ingrValue = (detail[keyIngr] ?? "") ?? ""
-            if ingrValue.count > 0 {
-                ingredients.append(ingrValue)
-            }
-        }
-        return ingredients
-    }
-
-}
-
-
-
-
-
-struct RecipeViewModel2: Identifiable {
-    let id = UUID().uuidString
-    let detail: MealDetail2Key
-    
-    init(detail: MealDetail2Key) {
+    init(detail: MealDetailKey) {
         self.detail = detail
     }
     
@@ -310,7 +241,5 @@ struct RecipeViewModel2: Identifiable {
     var dateModified: String {
         return detail.dateModified ?? ""
     }
-    
-    
 
 }
