@@ -15,15 +15,20 @@ struct MealRecipeCellView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
             
-            AsyncImage(url: meal.image) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(Constants.cornerRadius)
-            } placeholder: {
-                ProgressView()
+            VStack {
+                AsyncImage(url: meal.image) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(Constants.cornerRadius)
+                } placeholder: {
+                    ProgressView()
+                }
             }
+            .frame(width: 100, height: 100)
+            
+            
+            
             
             Text(meal.title)
                 .font(.headline)
