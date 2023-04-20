@@ -50,7 +50,7 @@ struct RecipeViewModel: Identifiable {
     }
     
     var strIngredient: String {
-        detail.strIngredient1 ?? "nil"
+        detail.strIngredient1
     }
     
     var ingredients: [String] {
@@ -79,158 +79,158 @@ struct RecipeViewModel: Identifiable {
     }
     
     var tags: [String] {
-        return detail.strTags?.components(separatedBy: ",").shuffled() ?? [""]
+        return detail.strTags.components(separatedBy: ",").shuffled()
     }
 
     var idMeal: String {
-        return detail.idMeal ?? ""
+        return detail.idMeal
     }
     var strMeal: String {
-        return detail.strMeal ?? ""
+        return detail.strMeal
     }
     var strDrinkAlternate: String {
         return detail.strDrinkAlternate ?? ""
     }
     var strCategory: String {
-        return detail.strCategory ?? ""
+        return detail.strCategory
     }
     var strArea: String {
-        return detail.strArea ?? ""
+        return detail.strArea
     }
     var strInstructions: String {
-        return detail.strInstructions ?? ""
+        return detail.strInstructions
     }
     var strMealThumb: String {
-        return detail.strMealThumb ?? ""
+        return detail.strMealThumb
     }
     var strTags: String {
-        return detail.strTags ?? ""
+        return detail.strTags
     }
     var strYoutube: String {
-        return detail.strYoutube ?? ""
+        return detail.strYoutube
     }
     var strIngredient1: String {
-        return detail.strIngredient1 ?? ""
+        return detail.strIngredient1
     }
     var strIngredient2: String {
-        return detail.strIngredient2 ?? ""
+        return detail.strIngredient2
     }
     var strIngredient3: String {
-        return detail.strIngredient3 ?? ""
+        return detail.strIngredient3
     }
     var strIngredient4: String {
-        return detail.strIngredient4 ?? ""
+        return detail.strIngredient4
     }
     var strIngredient5: String {
-        return detail.strIngredient5 ?? ""
+        return detail.strIngredient5
     }
     var strIngredient6: String {
-        return detail.strIngredient6 ?? ""
+        return detail.strIngredient6
     }
     var strIngredient7: String {
-        return detail.strIngredient7 ?? ""
+        return detail.strIngredient7
     }
     var strIngredient8: String {
-        return detail.strIngredient8 ?? ""
+        return detail.strIngredient8
     }
     var strIngredient9: String {
-        return detail.strIngredient9 ?? ""
+        return detail.strIngredient9
     }
     var strIngredient10: String {
-        return detail.strIngredient10 ?? ""
+        return detail.strIngredient10
     }
     var strIngredient11: String {
-        return detail.strIngredient11 ?? ""
+        return detail.strIngredient11
     }
     var strIngredient12: String {
-        return detail.strIngredient12 ?? ""
+        return detail.strIngredient12
     }
     var strIngredient13: String {
-        return detail.strIngredient13 ?? ""
+        return detail.strIngredient13
     }
     var strIngredient14: String {
-        return detail.strIngredient14 ?? ""
+        return detail.strIngredient14
     }
     var strIngredient15: String {
-        return detail.strIngredient15 ?? ""
+        return detail.strIngredient15
     }
     var strIngredient16: String {
-        return detail.strIngredient16 ?? ""
+        return detail.strIngredient16
     }
     var strIngredient17: String {
-        return detail.strIngredient17 ?? ""
+        return detail.strIngredient17
     }
     var strIngredient18: String {
-        return detail.strIngredient18 ?? ""
+        return detail.strIngredient18
     }
     var strIngredient19: String {
-        return detail.strIngredient19 ?? ""
+        return detail.strIngredient19
     }
     var strIngredient20: String {
-        return detail.strIngredient20 ?? ""
+        return detail.strIngredient20
     }
     var strMeasure1: String {
-        return detail.strMeasure1 ?? ""
+        return detail.strMeasure1
     }
     var strMeasure2: String {
-        return detail.strMeasure2 ?? ""
+        return detail.strMeasure2
     }
     var strMeasure3: String {
-        return detail.strMeasure3 ?? ""
+        return detail.strMeasure3
     }
     var strMeasure4: String {
-        return detail.strMeasure4 ?? ""
+        return detail.strMeasure4
     }
     var strMeasure5: String {
-        return detail.strMeasure5 ?? ""
+        return detail.strMeasure5
     }
     var strMeasure6: String {
-        return detail.strMeasure6 ?? ""
+        return detail.strMeasure6
     }
     var strMeasure7: String {
-        return detail.strMeasure7 ?? ""
+        return detail.strMeasure7
     }
     var strMeasure8: String {
-        return detail.strMeasure8 ?? ""
+        return detail.strMeasure8
     }
     var strMeasure9: String {
-        return detail.strMeasure9 ?? ""
+        return detail.strMeasure9
     }
     var strMeasure10: String {
-        return detail.strMeasure10 ?? ""
+        return detail.strMeasure10
     }
     var strMeasure11: String {
-        return detail.strMeasure11 ?? ""
+        return detail.strMeasure11
     }
     var strMeasure12: String {
-        return detail.strMeasure12 ?? ""
+        return detail.strMeasure12
     }
     var strMeasure13: String {
-        return detail.strMeasure13 ?? ""
+        return detail.strMeasure13
     }
     var strMeasure14: String {
-        return detail.strMeasure14 ?? ""
+        return detail.strMeasure14
     }
     var strMeasure15: String {
-        return detail.strMeasure15 ?? ""
+        return detail.strMeasure15
     }
     var strMeasure16: String {
-        return detail.strMeasure16 ?? ""
+        return detail.strMeasure16
     }
     var strMeasure17: String {
-        return detail.strMeasure17 ?? ""
+        return detail.strMeasure17
     }
     var strMeasure18: String {
-        return detail.strMeasure18 ?? ""
+        return detail.strMeasure18
     }
     var strMeasure19: String {
-        return detail.strMeasure19 ?? ""
+        return detail.strMeasure19
     }
     var strMeasure20: String {
-        return detail.strMeasure20 ?? ""
+        return detail.strMeasure20
     }
     var strSource: String {
-        return detail.strSource ?? ""
+        return detail.strSource
     }
     var strImageSource: String {
         return detail.strImageSource ?? ""

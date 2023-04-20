@@ -25,6 +25,6 @@ struct MealRecipeListView: View {
 
 struct MealRecipeListView_Previews: PreviewProvider {
     static var previews: some View {
-        MealRecipeListView(recipes: Constants.FakeData.dummyRecipes)
+        MealRecipeListView(recipes: Constants.dummyRecipes)
     }
 }

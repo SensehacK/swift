@@ -15,33 +15,36 @@ struct MealRecipeDetailView: View {
     @StateObject var model: MealRecipeDetailViewModel = MealRecipeDetailViewModel()
     
     var body: some View {
+        ScrollView {
+            VStack {
+                if let recipe = model.recipeMeal {
 
-        VStack {
-            if let recipe = model.recipeMeal {
+                    VStack {
+                        // Recipe Title & Info View
+                        RecipeTitleView(recipe: recipe)
 
-                VStack {
-                    // Recipe Title & Info View
-                    RecipeTitleView(recipe: recipe)
-
-                    // Video + Description View
-                    VideoDescriptionView(recipe: recipe)
+                        // Video + Description View
+                        VideoDescriptionView(recipe: recipe)
+                        
+                        // Ingredients View
+                        IngredientsView(recipe: recipe)
+                        
+                        // External Links
+                        ExternalLinks(recipe: recipe)
+                    }
+                    .padding(20)
                     
-                    // Ingredients View
-                    IngredientsView(recipe: recipe)
-                    
-                    // External Links
-                    ExternalLinks(recipe: recipe)
+                } else {
+                    Text(MealDetailsConstants.noDataDisplayText)
+                        .font(.title)
                 }
-                .padding(20)
-                
-            } else {
-                Text(Constants.noDataDisplayText)
-                    .font(.title)
+            }
+            .task {
+                await model.fetchRecipe(id: recipeMealID)
             }
         }
-        .task {
-            await model.fetchRecipe(id: recipeMealID)
-        }
+        
+        
         
         
     }
@@ -53,8 +56,8 @@ struct MealRecipeDetailView: View {
 struct MealRecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         
-        MealRecipeDetailView(recipeMealID: Constants.DummyRecipeID.success.rawValue) // Success screen
-        // MealRecipeDetailView(recipeMealID: Constants.DummyRecipeID.failure.rawValue) // Error Screen
+        MealRecipeDetailView(recipeMealID: "52787") // Success screen
+        // MealRecipeDetailView(recipeMealID: "2312") // Error Screen
         
     }
 }
