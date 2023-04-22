@@ -16,16 +16,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-//            VideoView()
-            
-            VideoView(video: vm.videoURL)
-            
-            Text("Hello Kautilya")
-//            Image(systemName: "checkmark")
-//                .resizable()
-//                .frame(width: .infinity, height: 350)
-            
-            
+            VideoView(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", autoPlay: true)
+            VideoView(url: vm.videoURL, autoPlay: true)
+
         }
         .padding()
     }

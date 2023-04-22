@@ -25,25 +25,40 @@ public protocol VideoPlayerProtocol {
 
 
 public struct VideoView: View {
-    public var video: String
+    public var url: String
+    public var width: CGFloat
+    public var height: CGFloat
+    
+    public var autoPlay: Bool
+    
     @State private var player = AVPlayer()
     
-    public init(video: String) {
-        print(video)
-        self.video = video
+    public init(url: String,
+                width: CGFloat = .infinity,
+                height: CGFloat = .infinity,
+                autoPlay: Bool = false) {
+        print(url)
+        self.url = url
+        self.width = width
+        self.height = height
+        self.autoPlay = autoPlay
     }
     
     public var body: some View {
         VideoPlayer(player: player)
-            .edgesIgnoringSafeArea(.all)
+            .frame(width: width, height: height)
+//            .edgesIgnoringSafeArea(.all)
             .onAppear {
                 // Unwrapping optional
-                if let link = URL(string: video) {
+                if let link = URL(string: url) {
                     // Setting the URL of the video file
                     player = AVPlayer(url: link)
                     
-                    // Play the video
-                    player.play()
+                    if autoPlay {
+                        // Play the video
+                        player.play()
+                    }
+                    
                 }
             }
     }

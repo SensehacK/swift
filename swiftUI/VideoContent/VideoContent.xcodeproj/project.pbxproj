@@ -74,6 +74,8 @@
 		43A2E93929F46981002983B0 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		43A2E93B29F4699B002983B0 /* ViewContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContentViewModel.swift; sourceTree = "<group>"; };
 		43A2E93D29F469E0002983B0 /* VideoPlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerProtocol.swift; sourceTree = "<group>"; };
+		43A2E93F29F478FA002983B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		43A2E94029F47986002983B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		43A2E90729F46785002983B0 /* VideoContent */ = {
 			isa = PBXGroup;
 			children = (
+				43A2E94029F47986002983B0 /* Info.plist */,
 				43A2E90829F46785002983B0 /* VideoContentApp.swift */,
 				43A2E90A29F46785002983B0 /* ContentView.swift */,
 				43A2E93B29F4699B002983B0 /* ViewContentViewModel.swift */,
@@ -157,6 +160,7 @@
 		43A2E92A29F467F2002983B0 /* VideoStreamingKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				43A2E93F29F478FA002983B0 /* Info.plist */,
 				43A2E92B29F467F2002983B0 /* VideoStreamingKitTests.swift */,
 			);
 			path = VideoStreamingKitTests;
@@ -476,6 +480,7 @@
 				DEVELOPMENT_TEAM = LGQH99U6M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VideoContent/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -506,6 +511,7 @@
 				DEVELOPMENT_TEAM = LGQH99U6M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VideoContent/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -598,6 +604,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LGQH99U6M2;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VideoStreamingKitTests/Info.plist;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sensehack.VideoStreamingKitTests;
@@ -617,6 +624,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LGQH99U6M2;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VideoStreamingKitTests/Info.plist;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sensehack.VideoStreamingKitTests;
