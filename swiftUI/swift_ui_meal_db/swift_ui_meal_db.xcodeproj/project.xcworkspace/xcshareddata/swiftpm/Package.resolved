@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SensehacK/swift-sense",
       "state" : {
-        "revision" : "2c7599835efbc22418e0057f530d28c9cc73c18a",
-        "version" : "0.1.3"
+        "revision" : "c7560430e443b5f9ad567b95e9e32f4595bc08c9",
+        "version" : "0.1.8"
       }
     }
   ],
