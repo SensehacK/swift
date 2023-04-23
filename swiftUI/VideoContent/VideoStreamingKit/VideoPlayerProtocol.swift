@@ -6,10 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
-import AVFoundation
-import _AVKit_SwiftUI
-
 
 public protocol VideoPlayerProtocol {
     
@@ -24,42 +20,27 @@ public protocol VideoPlayerProtocol {
 }
 
 
-public struct VideoView: View {
-    public var url: String
-    public var width: CGFloat
-    public var height: CGFloat
+public enum PlayerState: Int {
+    case isLoading = 0
+    case isPlaying = 1
+    case isPaused = 2
+    case isStopped = 3
     
-    public var autoPlay: Bool
-    
-    @State private var player = AVPlayer()
-    
-    public init(url: String,
-                width: CGFloat = .infinity,
-                height: CGFloat = .infinity,
-                autoPlay: Bool = false) {
-        print(url)
-        self.url = url
-        self.width = width
-        self.height = height
-        self.autoPlay = autoPlay
-    }
-    
-    public var body: some View {
-        VideoPlayer(player: player)
-            .frame(width: width, height: height)
-//            .edgesIgnoringSafeArea(.all)
-            .onAppear {
-                // Unwrapping optional
-                if let link = URL(string: url) {
-                    // Setting the URL of the video file
-                    player = AVPlayer(url: link)
-                    
-                    if autoPlay {
-                        // Play the video
-                        player.play()
-                    }
-                    
-                }
-            }
+    public func description() -> String {
+        var result = ""
+        switch self {
+        case .isLoading:
+            result = "isLoading"
+        case .isPlaying:
+            result = "isPlaying"
+        case .isPaused:
+            result = "isPaused"
+        case .isStopped:
+            result = "isStopped"
+        }
+        return result
     }
 }
+
+
+

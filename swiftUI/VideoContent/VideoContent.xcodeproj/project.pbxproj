@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434FC01529F5A13000DCCC2A /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434FC01429F5A13000DCCC2A /* AVPlayerExtension.swift */; };
 		43A2E90929F46785002983B0 /* VideoContentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E90829F46785002983B0 /* VideoContentApp.swift */; };
 		43A2E90B29F46785002983B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E90A29F46785002983B0 /* ContentView.swift */; };
 		43A2E90D29F46786002983B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A2E90C29F46786002983B0 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		43A2E93A29F46981002983B0 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E93929F46981002983B0 /* CustomVideoPlayer.swift */; };
 		43A2E93C29F4699B002983B0 /* ViewContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E93B29F4699B002983B0 /* ViewContentViewModel.swift */; };
 		43A2E93E29F469E0002983B0 /* VideoPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E93D29F469E0002983B0 /* VideoPlayerProtocol.swift */; };
+		43A2E94229F47BF5002983B0 /* SwiftUIVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E94129F47BF5002983B0 /* SwiftUIVideoPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		434FC01429F5A13000DCCC2A /* AVPlayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerExtension.swift; sourceTree = "<group>"; };
 		43A2E90529F46785002983B0 /* VideoContent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoContent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A2E90829F46785002983B0 /* VideoContentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentApp.swift; sourceTree = "<group>"; };
 		43A2E90A29F46785002983B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		43A2E93D29F469E0002983B0 /* VideoPlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerProtocol.swift; sourceTree = "<group>"; };
 		43A2E93F29F478FA002983B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		43A2E94029F47986002983B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		43A2E94129F47BF5002983B0 /* SwiftUIVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 				43A2E91E29F467F2002983B0 /* VideoStreamingKit.docc */,
 				43A2E93929F46981002983B0 /* CustomVideoPlayer.swift */,
 				43A2E93D29F469E0002983B0 /* VideoPlayerProtocol.swift */,
+				43A2E94129F47BF5002983B0 /* SwiftUIVideoPlayer.swift */,
+				434FC01429F5A13000DCCC2A /* AVPlayerExtension.swift */,
 			);
 			path = VideoStreamingKit;
 			sourceTree = "<group>";
@@ -320,7 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A2E93E29F469E0002983B0 /* VideoPlayerProtocol.swift in Sources */,
+				434FC01529F5A13000DCCC2A /* AVPlayerExtension.swift in Sources */,
 				43A2E93A29F46981002983B0 /* CustomVideoPlayer.swift in Sources */,
+				43A2E94229F47BF5002983B0 /* SwiftUIVideoPlayer.swift in Sources */,
 				43A2E91F29F467F2002983B0 /* VideoStreamingKit.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

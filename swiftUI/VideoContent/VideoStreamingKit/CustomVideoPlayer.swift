@@ -8,10 +8,6 @@
 import AVFoundation
 import AVKit
 
-
-
-
-
 public class CustomVideoPlayer: VideoPlayerProtocol {
 
     
