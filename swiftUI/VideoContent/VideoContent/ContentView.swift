@@ -27,24 +27,26 @@ struct ContentView: View {
                 Button {
                     play.toggle()
                 } label: {
-                    Text("Playing: \(play.description)")
+                    Text(play ? "Pause" : "Play")
                 }
                 
                 Button {
                     start.toggle()
                 } label: {
-                    Text("start: \(start.description)")
+                    Text(start ? "Unload" : "Load")
                 }
                 
                 Button {
                     stop.toggle()
                 } label: {
-                    Text("Stop:  \(stop.description)")
+                    Text(stop ? "Start" : "Stop")
                 }
             }
 
 //            VideoView(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", autoPlay: true, statPlay: $playerState)
             VideoView(url: vm.videoURL, autoPlay: false, statPlay: $playerState, isPlaying: $play, start: $start, stop: $stop)
+            VideoView(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                      autoPlay: false, statPlay: $playerState, isPlaying: $play, start: $start, stop: $stop)
 
         }
         .padding()

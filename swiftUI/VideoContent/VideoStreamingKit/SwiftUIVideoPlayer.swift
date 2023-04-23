@@ -14,33 +14,16 @@ public struct VideoView: View {
     public var height: CGFloat
     public var autoPlay: Bool
     
-//    @Binding public var value: PlayerState
-    
     @State private var player = AVPlayer()
-//    @State var playerState: PlayerState = .isLoading
     @Binding public var statplay: Int
     @Binding var isPlaying: Bool
     @Binding var start: Bool
     @Binding var stop: Bool
     
-//    @State var playerState: PlayerState = .isLoading
-//
-//    var playerStateProxy: Binding<Int> {
-//            Binding<Int>(
-//                get: {
-//                    playerState.rawValue
-//                },
-//                set: {
-//                    playerState = PlayerState(rawValue: $0) ?? PlayerState.isStopped
-//                }
-//            )
-//        }
-    
     public init(url: String,
                 width: CGFloat = .infinity,
                 height: CGFloat = .infinity,
                 autoPlay: Bool = false,
-//                value: PlayerState = .isLoading,
                 statPlay: Binding<Int>,
                 isPlaying: Binding<Bool>,
                 start: Binding<Bool>,
@@ -50,24 +33,22 @@ public struct VideoView: View {
         self.width = width
         self.height = height
         self.autoPlay = autoPlay
-//        self.value = PlayerState.isLoading
-//        self.statplay = 0
         self._statplay = statPlay
         self._isPlaying = isPlaying
         self._start = start
         self._stop = stop
-//        self._value = $playerState
-//        self.playerState = .isLoading
+
     }
     
     public var body: some View {
         VideoPlayer(player: player)
-            .frame(width: .infinity, height: .infinity)
-//            .edgesIgnoringSafeArea(.all)
+//            .frame(width: .infinity, height: .infinity)
+            .edgesIgnoringSafeArea(.all)
             .onAppear {
-//                initPlayer()
-                isPlaying ? startPlaying() : pausePlaying()
-//                startPlaying()
+                if autoPlay {
+                    initPlayer()
+                    startPlaying()
+                }
             }
             .onDisappear {
                 pausePlaying()
@@ -78,40 +59,38 @@ public struct VideoView: View {
                 
             }
             .onChange(of: start) { _ in
-                print("Start")
+                print("Start \(start)")
                 start ? initPlayer() : deinitPlayer()
-                
             }
             .onChange(of: stop) { _ in
                 print("stop")
-                if stop {
-                    stopPlayback()
-                    deinitPlayer()
-                }
-                
+                stop ? stopPlayback() : startPlaying()
             }
             .task {
-                isPlaying ? startPlaying() : pausePlaying()
+                statplay = PlayerState.isNotLoading.rawValue
             }
 
     }
     
     
     func initPlayer() {
-        print("Start Playing!")
-        // Unwrapping optional
+        print("Init Player()")
+        statplay = PlayerState.isLoading.rawValue
         if let link = URL(string: url) {
-            print("Link")
-            // Setting the URL of the video file
+            statplay = PlayerState.isVideoAvailable.rawValue
             player = AVPlayer(url: link)
+        } else {
+            statplay = PlayerState.isVideoUnAvailable.rawValue
         }
     }
     
     func startPlaying() {
+        print("Start playing")
         // Play the video
         player.play()
         statplay = PlayerState.isPlaying.rawValue
         isPlaying = true
+        stop = false
     }
     
     func pausePlaying() {
@@ -122,11 +101,16 @@ public struct VideoView: View {
     }
     
     func stopPlayback() {
+        print("Stopping Playback")
+        statplay = PlayerState.isStopped.rawValue
+        isPlaying = false
         player.stop()
     }
     
     
     func deinitPlayer() {
+        print("Deinit Player")
+        statplay = PlayerState.isNotLoading.rawValue
         player.replaceCurrentItem(with: nil)
     }
 }
