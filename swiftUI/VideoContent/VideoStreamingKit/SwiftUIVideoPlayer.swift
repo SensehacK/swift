@@ -19,6 +19,7 @@ public struct VideoView: View {
     @Binding var isPlaying: Bool
     @Binding var start: Bool
     @Binding var stop: Bool
+    @Binding var explicitURL: String
     
     public init(url: String,
                 width: CGFloat = .infinity,
@@ -27,8 +28,9 @@ public struct VideoView: View {
                 statPlay: Binding<Int>,
                 isPlaying: Binding<Bool>,
                 start: Binding<Bool>,
-                stop: Binding<Bool>) {
-        print(url)
+                stop: Binding<Bool>,
+                explicitURL: Binding<String>) {
+//        print(url)
         self.url = url
         self.width = width
         self.height = height
@@ -37,16 +39,15 @@ public struct VideoView: View {
         self._isPlaying = isPlaying
         self._start = start
         self._stop = stop
-
+        self._explicitURL = explicitURL
     }
     
     public var body: some View {
         VideoPlayer(player: player)
-//            .frame(width: .infinity, height: .infinity)
             .edgesIgnoringSafeArea(.all)
             .onAppear {
                 if autoPlay {
-                    initPlayer()
+                    initPlayer(url: url)
                     startPlaying()
                 }
             }
@@ -60,7 +61,8 @@ public struct VideoView: View {
             }
             .onChange(of: start) { _ in
                 print("Start \(start)")
-                start ? initPlayer() : deinitPlayer()
+                let chooseURL: String = explicitURL.count > 0 ? explicitURL : url
+                start ? initPlayer(url: chooseURL) : deinitPlayer()
             }
             .onChange(of: stop) { _ in
                 print("stop")
@@ -73,9 +75,14 @@ public struct VideoView: View {
     }
     
     
-    func initPlayer() {
+    func initPlayer(url: String) {
         print("Init Player()")
         statplay = PlayerState.isLoading.rawValue
+        print("$$$$$$$$$$$$$")
+        print(url)
+        
+//        let httpsurl = url.replacingOccurrences(of: "http", with: "https")
+//        print(httpsurl)
         if let link = URL(string: url) {
             statplay = PlayerState.isVideoAvailable.rawValue
             player = AVPlayer(url: link)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		434FC01529F5A13000DCCC2A /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434FC01429F5A13000DCCC2A /* AVPlayerExtension.swift */; };
+		434FC01729F5B6F900DCCC2A /* AnotherStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434FC01629F5B6F900DCCC2A /* AnotherStream.swift */; };
 		43A2E90929F46785002983B0 /* VideoContentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E90829F46785002983B0 /* VideoContentApp.swift */; };
 		43A2E90B29F46785002983B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E90A29F46785002983B0 /* ContentView.swift */; };
 		43A2E90D29F46786002983B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A2E90C29F46786002983B0 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		434FC01429F5A13000DCCC2A /* AVPlayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerExtension.swift; sourceTree = "<group>"; };
+		434FC01629F5B6F900DCCC2A /* AnotherStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherStream.swift; sourceTree = "<group>"; };
 		43A2E90529F46785002983B0 /* VideoContent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoContent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A2E90829F46785002983B0 /* VideoContentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentApp.swift; sourceTree = "<group>"; };
 		43A2E90A29F46785002983B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				43A2E93B29F4699B002983B0 /* ViewContentViewModel.swift */,
 				43A2E90C29F46786002983B0 /* Assets.xcassets */,
 				43A2E90E29F46786002983B0 /* Preview Content */,
+				434FC01629F5B6F900DCCC2A /* AnotherStream.swift */,
 			);
 			path = VideoContent;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				43A2E90B29F46785002983B0 /* ContentView.swift in Sources */,
 				43A2E90929F46785002983B0 /* VideoContentApp.swift in Sources */,
 				43A2E93C29F4699B002983B0 /* ViewContentViewModel.swift in Sources */,
+				434FC01729F5B6F900DCCC2A /* AnotherStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -466,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -12,6 +12,7 @@ struct VideoContentApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            AnotherStream()
         }
     }
 }
