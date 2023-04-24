@@ -8,43 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    let imagesArr: [String] = [
-    "https://picsum.photos/600",
-    "https://picsum.photos/500",
-    "https://picsum.photos/530",
-    "https://picsum.photos/400",
-    "https://picsum.photos/690",
-    "https://picsum.photos/800",
-    "https://picsum.photos/840",
-    "https://picsum.photos/240"
-    ]
-    
-    
+
     @StateObject var vm: ImageNetwork = ImageNetwork()
+    
+    @State var loadImagesAsync = true
     
     var body: some View {
         VStack {
 
             ScrollView {
                 
-//                ForEach(imagesArr, id: \.self) { imageURL in
-//                    if let images = URL(string:imageURL) {
-//                        AsyncImage(url: images)
-//                    }
-//                }
-                
-                ForEach(vm.images, id: \.self) { image in
-                    Image(uiImage: image)
-                        .resizable()
-                        .frame(height: 60)
-                }
-                .onAppear {
-                    Task {
-                        try? await vm.fetchImages()
+                if loadImagesAsync {
+                    VStack {
+                        Text("Async")
+                        ForEach(vm.imagesAsync, id: \.self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(height: 500)
+                        }
                     }
-                   
+                    .task {
+                        print("Async Image")
+                        await vm.fetchImagesAsync()
+                    }
+                } else {
+                    VStack {
+                        Text("Sync")
+                        ForEach(vm.images, id: \.self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(height: 10)
+                        }
+                    }
+                    .task {
+                        print("Fetch Image")
+                        await vm.fetchImages()
+                    }
                 }
+                
+                
                 
             }
             
