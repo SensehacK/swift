@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-sense",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SensehacK/swift-sense",
+      "state" : {
+        "revision" : "cb5205fb3bdb0a2853e8bf05d0b70c7424ef655d",
+        "version" : "0.1.9"
+      }
+    }
+  ],
+  "version" : 2
+}
