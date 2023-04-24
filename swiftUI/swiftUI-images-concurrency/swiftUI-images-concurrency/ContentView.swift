@@ -11,46 +11,11 @@ struct ContentView: View {
 
     @StateObject var vm: ImageNetwork = ImageNetwork()
     
-    @State var loadImagesAsync = true
+    @State var loadImagesAsync = false
     
     var body: some View {
         VStack {
-
-            ScrollView {
-                
-                if loadImagesAsync {
-                    VStack {
-                        Text("Async")
-                        ForEach(vm.imagesAsync, id: \.self) { image in
-                            Image(uiImage: image)
-                                .resizable()
-                                .frame(height: 500)
-                        }
-                    }
-                    .task {
-                        print("Async Image")
-                        await vm.fetchImagesAsync()
-                    }
-                } else {
-                    VStack {
-                        Text("Sync")
-                        ForEach(vm.images, id: \.self) { image in
-                            Image(uiImage: image)
-                                .resizable()
-                                .frame(height: 10)
-                        }
-                    }
-                    .task {
-                        print("Fetch Image")
-                        await vm.fetchImages()
-                    }
-                }
-                
-                
-                
-            }
-            
-            
+            AsyncCustomView(vm: vm, loadImagesAsync: loadImagesAsync)
         }
         .padding()
     }
@@ -59,5 +24,48 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct AsyncCustomView: View {
+    
+    // Utilize @ObservedObject for passing ViewModel ref in extracted views.
+    @ObservedObject var vm: ImageNetwork
+    let loadImagesAsync: Bool
+    
+    var body: some View {
+        ScrollView {
+            
+            if loadImagesAsync {
+                VStack {
+                    Text("Async")
+                    ForEach(vm.imagesAsync, id: \.self) { image in
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
+                }
+                .task {
+                    print("Async Image")
+                    await vm.fetchImagesAsyncLet()
+                }
+            } else {
+                VStack {
+                    Text("Sync")
+                    ForEach(vm.images, id: \.self) { image in
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
+                }
+                .task {
+                    print("Fetch Image")
+                    await vm.fetchImages()
+                }
+            }
+            
+            
+            
+        }
     }
 }

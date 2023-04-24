@@ -49,7 +49,35 @@ class ImageNetwork: ObservableObject {
     }
     
     
-    func fetchImagesAsync() async {
+    func fetchImagesAsyncLet() async {
+        
+        print("Fetching async Images ? ")
+        do {
+            async let (imageData0, _) = try URLSession.shared.data(from: URL(string: imagesArr[0])!)
+            async let (imageData1, _) = try URLSession.shared.data(from: URL(string: imagesArr[1])!)
+            async let (imageData2, _) = try URLSession.shared.data(from: URL(string: imagesArr[2])!)
+            async let (imageData3, _) = try URLSession.shared.data(from: URL(string: imagesArr[3])!)
+            async let (imageData4, _) = try URLSession.shared.data(from: URL(string: imagesArr[4])!)
+            async let (imageData5, _) = try URLSession.shared.data(from: URL(string: imagesArr[5])!)
+            async let (imageData6, _) = try URLSession.shared.data(from: URL(string: imagesArr[6])!)
+            async let (imageData7, _) = try URLSession.shared.data(from: URL(string: imagesArr[7])!)
+            async let (imageData8, _) = try URLSession.shared.data(from: URL(string: imagesArr[8])!)
+            
+            imagesAsyncData.append(contentsOf: try await [imageData0, imageData1,imageData2,
+                                           imageData3,imageData4, imageData5,
+                                           imageData6, imageData7, imageData8])
+            
+            for imageData in imagesAsyncData {
+                guard let image = UIImage(data: imageData) else { continue }
+                imagesAsync.append(image)
+            }
+        } catch {
+            print("Error getting data")
+        }
+    }
+    
+    
+    func fetchImagesAsyncTaskGroup() async {
         
         print("Fetching async Images ? ")
         do {
