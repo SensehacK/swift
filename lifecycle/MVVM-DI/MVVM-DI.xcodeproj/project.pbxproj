@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		43344B492A08392F00FAF3C1 /* MVVM_DIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B482A08392F00FAF3C1 /* MVVM_DIApp.swift */; };
-		43344B4B2A08392F00FAF3C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B4A2A08392F00FAF3C1 /* ContentView.swift */; };
+		43344B4B2A08392F00FAF3C1 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B4A2A08392F00FAF3C1 /* UsersView.swift */; };
 		43344B4D2A08392F00FAF3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43344B4C2A08392F00FAF3C1 /* Assets.xcassets */; };
 		43344B502A08392F00FAF3C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43344B4F2A08392F00FAF3C1 /* Preview Assets.xcassets */; };
+		43344B5D2A083A3100FAF3C1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B5C2A083A3100FAF3C1 /* Users.swift */; };
+		43344B612A083AB500FAF3C1 /* SwiftSense in Frameworks */ = {isa = PBXBuildFile; productRef = 43344B602A083AB500FAF3C1 /* SwiftSense */; };
+		43344B632A083AC900FAF3C1 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B622A083AC900FAF3C1 /* UsersViewModel.swift */; };
+		43344B652A083B2C00FAF3C1 /* UsersConsumableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43344B452A08392F00FAF3C1 /* MVVM-DI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-DI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43344B482A08392F00FAF3C1 /* MVVM_DIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_DIApp.swift; sourceTree = "<group>"; };
-		43344B4A2A08392F00FAF3C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		43344B4A2A08392F00FAF3C1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		43344B4C2A08392F00FAF3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43344B4F2A08392F00FAF3C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43344B5C2A083A3100FAF3C1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		43344B622A083AC900FAF3C1 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersConsumableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43344B612A083AB500FAF3C1 /* SwiftSense in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +59,13 @@
 		43344B472A08392F00FAF3C1 /* MVVM-DI */ = {
 			isa = PBXGroup;
 			children = (
+				43344B562A0839BF00FAF3C1 /* Model */,
+				43344B572A0839C300FAF3C1 /* View */,
+				43344B582A0839C700FAF3C1 /* ViewModel */,
+				43344B5B2A0839D800FAF3C1 /* Services */,
+				43344B5A2A0839D000FAF3C1 /* Manager */,
+				43344B592A0839CB00FAF3C1 /* Protocols */,
 				43344B482A08392F00FAF3C1 /* MVVM_DIApp.swift */,
-				43344B4A2A08392F00FAF3C1 /* ContentView.swift */,
 				43344B4C2A08392F00FAF3C1 /* Assets.xcassets */,
 				43344B4E2A08392F00FAF3C1 /* Preview Content */,
 			);
@@ -65,6 +78,52 @@
 				43344B4F2A08392F00FAF3C1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		43344B562A0839BF00FAF3C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43344B5C2A083A3100FAF3C1 /* Users.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43344B572A0839C300FAF3C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43344B4A2A08392F00FAF3C1 /* UsersView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43344B582A0839C700FAF3C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43344B622A083AC900FAF3C1 /* UsersViewModel.swift */,
+				43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		43344B592A0839CB00FAF3C1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		43344B5A2A0839D000FAF3C1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		43344B5B2A0839D800FAF3C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +142,9 @@
 			dependencies = (
 			);
 			name = "MVVM-DI";
+			packageProductDependencies = (
+				43344B602A083AB500FAF3C1 /* SwiftSense */,
+			);
 			productName = "MVVM-DI";
 			productReference = 43344B452A08392F00FAF3C1 /* MVVM-DI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 43344B3C2A08392F00FAF3C1;
+			packageReferences = (
+				43344B5F2A083AB500FAF3C1 /* XCRemoteSwiftPackageReference "swift-sense" */,
+			);
 			productRefGroup = 43344B462A08392F00FAF3C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +202,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43344B4B2A08392F00FAF3C1 /* ContentView.swift in Sources */,
+				43344B652A083B2C00FAF3C1 /* UsersConsumableViewModel.swift in Sources */,
+				43344B4B2A08392F00FAF3C1 /* UsersView.swift in Sources */,
+				43344B632A083AC900FAF3C1 /* UsersViewModel.swift in Sources */,
+				43344B5D2A083A3100FAF3C1 /* Users.swift in Sources */,
 				43344B492A08392F00FAF3C1 /* MVVM_DIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43344B5F2A083AB500FAF3C1 /* XCRemoteSwiftPackageReference "swift-sense" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SensehacK/swift-sense";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43344B602A083AB500FAF3C1 /* SwiftSense */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43344B5F2A083AB500FAF3C1 /* XCRemoteSwiftPackageReference "swift-sense" */;
+			productName = SwiftSense;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43344B3D2A08392F00FAF3C1 /* Project object */;
 }
