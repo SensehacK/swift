@@ -16,25 +16,43 @@ class UsersViewModel: ObservableObject {
     
     // Private
     var anyCancellables = Set<AnyCancellable>()
+    let networkManager = NetworkManager()
     
     
     func fetchUsers() {
-        let url: String = "https://dummyjson.com/users"
+        networkManager.getDataUsingCombineLibSubscription()
+//        networkManager.getDataUsingAsyncAwait()
         
-        CombineNetwork
-            .shared
-            .fetchData(url: url, type: UsersAPI.self)
+        networkManager
+            .$userData
             .sink { completion in
                 print("Completion")
             } receiveValue: { [weak self] data in
-                let userArray = data.users.map { UserConsumableViewModel(userData: $0) }
-                
-                self?.users = UsersConsumableViewModel(usersData: userArray)
+                print("Got userData ???")
+                DispatchQueue.main.async {
+                    self?.users = data
+                }
+
+
             }
             .store(in: &anyCancellables)
     }
     
-    
+    func fetchUsers3() {
+        print("Getting data3")
+        networkManager.getData2()
+        networkManager
+            .users
+            .sink { completion in
+                print("Completion")
+            } receiveValue: { [weak self] data in
+                print("Got users Data???")
+                self?.users = data
+            }
+            .store(in: &anyCancellables)
+        
+    }
+
 }
 
 

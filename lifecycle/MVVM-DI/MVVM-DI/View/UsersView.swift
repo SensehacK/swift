@@ -22,7 +22,7 @@ struct UsersView: View {
         }
         .padding()
         .onAppear {
-            viewModel.fetchUsers()
+            viewModel.fetchUsers3()
         }
     }
 }

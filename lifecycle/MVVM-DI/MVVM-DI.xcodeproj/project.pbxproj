@@ -15,6 +15,7 @@
 		43344B612A083AB500FAF3C1 /* SwiftSense in Frameworks */ = {isa = PBXBuildFile; productRef = 43344B602A083AB500FAF3C1 /* SwiftSense */; };
 		43344B632A083AC900FAF3C1 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B622A083AC900FAF3C1 /* UsersViewModel.swift */; };
 		43344B652A083B2C00FAF3C1 /* UsersConsumableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */; };
+		43344B672A08410200FAF3C1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B662A08410200FAF3C1 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		43344B5C2A083A3100FAF3C1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		43344B622A083AC900FAF3C1 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersConsumableViewModel.swift; sourceTree = "<group>"; };
+		43344B662A08410200FAF3C1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		43344B5A2A0839D000FAF3C1 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				43344B662A08410200FAF3C1 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				43344B4B2A08392F00FAF3C1 /* UsersView.swift in Sources */,
 				43344B632A083AC900FAF3C1 /* UsersViewModel.swift in Sources */,
 				43344B5D2A083A3100FAF3C1 /* Users.swift in Sources */,
+				43344B672A08410200FAF3C1 /* NetworkManager.swift in Sources */,
 				43344B492A08392F00FAF3C1 /* MVVM_DIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
