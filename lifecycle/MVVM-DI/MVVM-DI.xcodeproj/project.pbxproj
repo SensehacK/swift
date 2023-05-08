@@ -15,7 +15,10 @@
 		43344B612A083AB500FAF3C1 /* SwiftSense in Frameworks */ = {isa = PBXBuildFile; productRef = 43344B602A083AB500FAF3C1 /* SwiftSense */; };
 		43344B632A083AC900FAF3C1 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B622A083AC900FAF3C1 /* UsersViewModel.swift */; };
 		43344B652A083B2C00FAF3C1 /* UsersConsumableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */; };
-		43344B672A08410200FAF3C1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B662A08410200FAF3C1 /* NetworkManager.swift */; };
+		43344B672A08410200FAF3C1 /* JSONPlaceholderUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43344B662A08410200FAF3C1 /* JSONPlaceholderUserService.swift */; };
+		438328442A093D5B00B48205 /* NetworkManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438328432A093D5B00B48205 /* NetworkManagerDelegate.swift */; };
+		438328462A093F4000B48205 /* DummyJsonUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438328452A093F4000B48205 /* DummyJsonUserService.swift */; };
+		438328482A093FDE00B48205 /* JsonPlaceholderUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438328472A093FDE00B48205 /* JsonPlaceholderUsers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +30,10 @@
 		43344B5C2A083A3100FAF3C1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		43344B622A083AC900FAF3C1 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		43344B642A083B2C00FAF3C1 /* UsersConsumableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersConsumableViewModel.swift; sourceTree = "<group>"; };
-		43344B662A08410200FAF3C1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		43344B662A08410200FAF3C1 /* JSONPlaceholderUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceholderUserService.swift; sourceTree = "<group>"; };
+		438328432A093D5B00B48205 /* NetworkManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDelegate.swift; sourceTree = "<group>"; };
+		438328452A093F4000B48205 /* DummyJsonUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyJsonUserService.swift; sourceTree = "<group>"; };
+		438328472A093FDE00B48205 /* JsonPlaceholderUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPlaceholderUsers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				43344B5C2A083A3100FAF3C1 /* Users.swift */,
+				438328472A093FDE00B48205 /* JsonPlaceholderUsers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		43344B592A0839CB00FAF3C1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				438328432A093D5B00B48205 /* NetworkManagerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -117,7 +125,8 @@
 		43344B5A2A0839D000FAF3C1 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				43344B662A08410200FAF3C1 /* NetworkManager.swift */,
+				43344B662A08410200FAF3C1 /* JSONPlaceholderUserService.swift */,
+				438328452A093F4000B48205 /* DummyJsonUserService.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -205,11 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438328442A093D5B00B48205 /* NetworkManagerDelegate.swift in Sources */,
 				43344B652A083B2C00FAF3C1 /* UsersConsumableViewModel.swift in Sources */,
 				43344B4B2A08392F00FAF3C1 /* UsersView.swift in Sources */,
+				438328462A093F4000B48205 /* DummyJsonUserService.swift in Sources */,
 				43344B632A083AC900FAF3C1 /* UsersViewModel.swift in Sources */,
+				438328482A093FDE00B48205 /* JsonPlaceholderUsers.swift in Sources */,
 				43344B5D2A083A3100FAF3C1 /* Users.swift in Sources */,
-				43344B672A08410200FAF3C1 /* NetworkManager.swift in Sources */,
+				43344B672A08410200FAF3C1 /* JSONPlaceholderUserService.swift in Sources */,
 				43344B492A08392F00FAF3C1 /* MVVM_DIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

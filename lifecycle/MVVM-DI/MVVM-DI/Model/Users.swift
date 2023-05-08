@@ -7,8 +7,9 @@
 
 import Foundation
 
+// Dummy JSON https://dummyjson.com/users
 // MARK: - UsersAPI
-struct UsersAPI: Codable {
+struct DUsersAPI: Codable {
     let users: [User]
     let total, skip, limit: Int
 }

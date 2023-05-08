@@ -16,41 +16,105 @@ class UsersViewModel: ObservableObject {
     
     // Private
     var anyCancellables = Set<AnyCancellable>()
-    let networkManager = NetworkManager()
+    let networkService: NetworkManagerDelegate
     
     
-    func fetchUsers() {
-        networkManager.getDataUsingCombineLibSubscription()
-//        networkManager.getDataUsingAsyncAwait()
-        
-        networkManager
-            .$userData
-            .sink { completion in
-                print("Completion")
-            } receiveValue: { [weak self] data in
-                print("Got userData ???")
-                DispatchQueue.main.async {
-                    self?.users = data
-                }
-
-
-            }
-            .store(in: &anyCancellables)
+    init(networkService: NetworkManagerDelegate = Bool.random() ? DummyJsonUserService() : JSONPlaceholderUserService()) {
+        self.networkService = networkService
     }
     
-    func fetchUsers3() {
-        print("Getting data3")
-        networkManager.getData2()
-        networkManager
-            .users
-            .sink { completion in
-                print("Completion")
-            } receiveValue: { [weak self] data in
-                print("Got users Data???")
-                self?.users = data
-            }
-            .store(in: &anyCancellables)
+    func fetchData() {
+        fetchRandomUsers()
+//        if Bool.random() {
+//            fetchDummyUsers()
+//        } else {
+//            fetchJSONPUsers()
+//        }
+    }
+    
+    func fetchUsers() {
+//        networkManager.getDataUsingCombineLibWithPublisherSubscription()
+//        networkManager.getDataUsingAsyncAwait()
         
+//        networkManager
+//            .$userData
+//            .sink { completion in
+//                print("Completion")
+//            } receiveValue: { [weak self] data in
+//                print("Got userData ???")
+//                DispatchQueue.main.async {
+//                    self?.users = data
+//                }
+//
+//
+//            }
+//            .store(in: &anyCancellables)
+    }
+    
+    func fetchUsersUsingSubjectPublisher() {
+        print("Getting data3")
+//        networkManager.getDataUsingCombineWithSubjectPublisher()
+//        networkManager
+//            .users
+//            .sink { completion in
+//                print("Completion")
+//            } receiveValue: { [weak self] data in
+//                print("Got users Data???")
+//                self?.users = data
+//            }
+//            .store(in: &anyCancellables)
+        
+    }
+    
+    func fetchUsersCallbacks() {
+//        print("Getting data3")
+//        networkManager.getData { [weak self] result in
+//            switch result {
+//            case .success(let model):
+//                self?.users = model
+//            case .failure(let error):
+//                print("Error occured !!! : \(error.localizedDescription)")
+//            }
+//        }
+
+    }
+    
+    func fetchRandomUsers() {
+        
+        networkService.getData { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.users = model
+            case .failure(let error):
+                print("Error occured !!! : \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    func fetchDummyUsers() {
+        
+        networkService.getData { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.users = model
+            case .failure(let error):
+                print("Error occured !!! : \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    func fetchJSONPUsers() {
+        
+        networkService.getData { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.users = model
+            case .failure(let error):
+                print("Error occured !!! : \(error.localizedDescription)")
+            }
+        }
     }
 
 }

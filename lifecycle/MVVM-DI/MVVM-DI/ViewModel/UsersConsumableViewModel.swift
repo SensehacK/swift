@@ -26,18 +26,53 @@ struct UsersConsumableViewModel {
 }
 
 
-struct UserConsumableViewModel: Identifiable {
-    private let userData: User
+struct JsonPlaceholderUserConsumableViewModel: Identifiable {
+    private let userData: UsersAPIElement
     let id: Int
     
-    init(userData: User) {
+    init(userData: UsersAPIElement) {
         self.userData = userData
         self.id = userData.id
     }
 
     
     var name: String {
-        userData.firstName + "-" + userData.lastName
+        userData.name
     }
+    
+}
+
+
+struct DUserConsumableViewModel: Identifiable {
+    private let user: User
+    let id: Int
+    
+    init(user: User) {
+        self.user = user
+        self.id = user.id
+    }
+
+    
+    var name: String {
+        user.firstName + "-" + user.lastName
+    }
+    
+}
+
+
+struct UserConsumableViewModel: Identifiable {
+//    private let userData: User
+    let id: Int
+    let name: String
+    
+    init(name: String, id: Int) {
+        self.name = name
+        self.id = id
+    }
+
+    
+//    var name: String {
+//        userData.firstName + "-" + userData.lastName
+//    }
     
 }
