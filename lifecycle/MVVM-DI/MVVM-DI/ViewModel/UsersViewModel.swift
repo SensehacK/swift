@@ -79,9 +79,10 @@ class UsersViewModel: ObservableObject {
 
     }
     
-    func fetchRandomUsers() {
+    @MainActor func fetchRandomUsers() {
         
-        networkService.getData { [weak self] result in
+        networkService
+            .getData { [weak self] result in
             switch result {
             case .success(let model):
                 self?.users = model
@@ -93,7 +94,6 @@ class UsersViewModel: ObservableObject {
     
     
     func fetchDummyUsers() {
-        
         networkService.getData { [weak self] result in
             switch result {
             case .success(let model):
@@ -105,7 +105,7 @@ class UsersViewModel: ObservableObject {
     }
     
     
-    func fetchJSONPUsers() {
+    @MainActor func fetchJSONPUsers() {
         
         networkService.getData { [weak self] result in
             switch result {

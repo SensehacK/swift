@@ -17,7 +17,6 @@ struct MealRecipeListView: View {
             NavigationLink(destination: MealRecipeDetailView(recipeMealID: recipe.id)) {
                 MealRecipeCellView(meal: recipe)
             }
-           
         }
     }
 

@@ -22,7 +22,8 @@ class JSONPlaceholderUserService: NetworkManagerDelegate {
     
     func getData(completion: @escaping(Result<UsersConsumableViewModel, Error>) -> Void) {
         let url: String = "https://jsonplaceholder.typicode.com/users"
-        print("Hello")
+
+        print("Hello https://jsonplaceholder.typicode.com/users")
 //        var users: [UsersAPIElement] = []
         CombineNetwork
             .shared
@@ -30,7 +31,7 @@ class JSONPlaceholderUserService: NetworkManagerDelegate {
             .sink { completion in
                 print("Completion")
             } receiveValue: { result in
-                print(result)
+//                print(result)
                 let returnedUsers = result
                 
                 let userArray = returnedUsers.map { JsonPlaceholderUserConsumableViewModel(userData: $0) }

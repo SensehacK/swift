@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// Actual Consumable UI Model
 struct UsersConsumableViewModel {
     
     private let usersData: [UserConsumableViewModel]
@@ -25,7 +25,17 @@ struct UsersConsumableViewModel {
     }
 }
 
+struct UserConsumableViewModel: Identifiable {
+    let id: Int
+    let name: String
+    
+    init(name: String, id: Int) {
+        self.name = name
+        self.id = id
+    }
+}
 
+// JSON Placeholder API
 struct JsonPlaceholderUserConsumableViewModel: Identifiable {
     private let userData: UsersAPIElement
     let id: Int
@@ -42,7 +52,7 @@ struct JsonPlaceholderUserConsumableViewModel: Identifiable {
     
 }
 
-
+// Dummy JSON API
 struct DUserConsumableViewModel: Identifiable {
     private let user: User
     let id: Int
@@ -60,19 +70,4 @@ struct DUserConsumableViewModel: Identifiable {
 }
 
 
-struct UserConsumableViewModel: Identifiable {
-//    private let userData: User
-    let id: Int
-    let name: String
-    
-    init(name: String, id: Int) {
-        self.name = name
-        self.id = id
-    }
 
-    
-//    var name: String {
-//        userData.firstName + "-" + userData.lastName
-//    }
-    
-}

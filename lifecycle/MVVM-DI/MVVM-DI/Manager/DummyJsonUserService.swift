@@ -24,8 +24,9 @@ class DummyJsonUserService: NetworkManagerDelegate {
                 let userConsumableViewModel = userArray.map { UserConsumableViewModel(name: $0.name, id: $0.id) }
                 let resultData = UsersConsumableViewModel(usersData: userConsumableViewModel)
                 
-                
-                completion(.success(resultData))
+                await MainActor.run {
+                    completion(.success(resultData))
+                }
             } catch {
                 print("error")
             }

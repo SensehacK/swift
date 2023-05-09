@@ -23,11 +23,6 @@ struct UsersView: View {
         .padding()
         .onAppear {
             viewModel.fetchData()
-//            viewModel.fetchUsers()
-//            viewModel.fetchDummyUsers()
-//            viewModel.fetchJSONPUsers()
-//            viewModel.fetchUsersCallbacks()
-//            viewModel.fetchUsersUsingSubjectPublisher()
         }
     }
 }
