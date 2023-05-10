@@ -13,8 +13,7 @@ class NetworkManager {
     static let shared: NetworkManager = NetworkManager()
     
     private init() { }
-    
-    
+
     func fetchData<T:Codable>(url: String) async throws -> T {
         
         guard let url = URL(string: url) else {
@@ -31,8 +30,6 @@ class NetworkManager {
             print("Error in Response Code")
             throw URLError(.badURL)
         }
-        
-        
         let decodedData = try JSONDecoder().decode(T.self, from: data)
         
         return decodedData

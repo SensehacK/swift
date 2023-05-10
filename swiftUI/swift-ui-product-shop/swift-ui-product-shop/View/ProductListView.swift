@@ -16,11 +16,23 @@ struct ProductListView: View {
             
             NavigationView {
                 List(vm.products, id: \.id) { product in
-                    
                     NavigationLink {
                         ProductDetailView(product: product)
                     } label: {
-                        Text(product.name)
+                        HStack {
+                            VStack {
+                                AsyncImage(url: product.thumbnail) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                            }
+                            .frame(width: 60, height: 60)
+                            Text(product.name)
+                        }
                     }
                 }
             }

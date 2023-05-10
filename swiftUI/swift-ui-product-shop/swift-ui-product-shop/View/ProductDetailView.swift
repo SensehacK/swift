@@ -10,16 +10,16 @@ import SwiftUI
 struct ProductDetailView: View {
     
     var product: ProductViewData
+    
+    @State var isExpanded: Bool = false
 
     var body: some View {
         VStack {
-//            AsyncImage(url: product.heroImage) { image in
-//                image.resizable()
-//                    .frame(width: 300, height: 300)
-//            } placeholder: {
-//                ProgressView()
-//            }
+
+            Text(product.name)
+                .font(.title)
             
+            Text(product.rating)
             
             ScrollView(.horizontal) {
                 HStack {
@@ -33,14 +33,22 @@ struct ProductDetailView: View {
                         }
                         
                     }
-                    
-//                    ForEach(product.imagesURL) { image in
-//
-//                    }
                 }
-                
-                
             }
+            
+            VStack {
+                Text(product.description)
+                    .lineLimit(isExpanded ? nil : 1)
+                
+                Button {
+                    isExpanded.toggle()
+                } label: {
+                    Text(isExpanded ? "Show Less" : "Show More")
+                }
+
+            }
+            
+            
             
         }
         .padding()

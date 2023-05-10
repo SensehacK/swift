@@ -47,6 +47,13 @@ struct ProductViewData {
         "\(product.brand) - \(product.title)"
     }
     
+    var thumbnail: URL {
+        guard let url = URL(string: product.thumbnail) else {
+            return URL(string: "https://placehold.co/60.png")!
+        }
+        return url
+    }
+    
     var heroImage: URL {
         guard let imageString = product.images.first,
               let imageURL = URL(string: imageString) else {
@@ -58,13 +65,23 @@ struct ProductViewData {
     }
     
     var imagesURL: [URL] {
-        let imageURLs = product.images.compactMap(URL.init(string:))
+        let nonThumbnailImages = product
+            .images
+            .filter { !$0.contains("thumbnail") }
+        let imageURLs = nonThumbnailImages
+            .compactMap(URL.init(string:))
         return imageURLs
     }
     
     
+    var rating: String {
+        "\(product.rating)/5.0"
+    }
     
-    
+    var description: String {
+        "\(product.description)"
+    }
+
 }
 
 
