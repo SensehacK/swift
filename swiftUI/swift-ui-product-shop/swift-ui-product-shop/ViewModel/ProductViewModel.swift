@@ -47,6 +47,21 @@ struct ProductViewData {
         "\(product.brand) - \(product.title)"
     }
     
+    var heroImage: URL {
+        guard let imageString = product.images.first,
+              let imageURL = URL(string: imageString) else {
+            return URL(string: "https://placehold.co/300.png")!
+        }
+        print("What is it?")
+        print(imageURL)
+        return imageURL
+    }
+    
+    var imagesURL: [URL] {
+        let imageURLs = product.images.compactMap(URL.init(string:))
+        return imageURLs
+    }
+    
     
     
     

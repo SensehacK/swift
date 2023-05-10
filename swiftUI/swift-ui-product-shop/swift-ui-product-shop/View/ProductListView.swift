@@ -7,26 +7,35 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ProductListView: View {
     
     @StateObject var vm: ProductViewModel = ProductViewModel()
-
+    
     var body: some View {
         VStack {
-            List(vm.products, id: \.id) { product in
-                Text(product.name)
-            }
             
+            NavigationView {
+                List(vm.products, id: \.id) { product in
+                    
+                    NavigationLink {
+                        ProductDetailView(product: product)
+                    } label: {
+                        Text(product.name)
+                    }
+                }
+            }
         }
         .padding()
         .task {
             await vm.fetchData()
         }
     }
+    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ProductListView()
     }
 }
