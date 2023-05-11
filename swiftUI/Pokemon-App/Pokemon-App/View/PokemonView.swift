@@ -20,30 +20,25 @@ struct PokemonView: View {
             VStack {
                 
                 List(viewModel.pokemons, id: \.id) { pokemon in
-                    
                     NavigationLink {
-                        
-                        
-                        if let data = viewModel.pokemonDetails {
+                    
+                        if let data = viewModel.pokemonViewDetails {
+                            let pokemon = data[pokemon.id-1]
+                            PokemonDetailView(pokemon: nil, pokemonData: pokemon, pokemonID: nil)
+                        } else if let data = viewModel.pokemonDetails {
                             let pokemon = data[pokemon.id-1]
                             Text("Details \(pokemon.name) \(pokemon.height)")
-                            PokemonDetailView(pokemon: pokemon, pokemonID: nil)
+                            PokemonDetailView(pokemon: pokemon, pokemonData: nil, pokemonID: nil)
                         } else {
                             Text("Wrong if else")
-                            PokemonDetailView(pokemon: nil, pokemonID: 25)
+                            PokemonDetailView(pokemon: nil, pokemonData: nil, pokemonID: 25)
                         }
-                        
-//                        if (viewModel.pokemonDetails != nil) {
-//                            PokemonDetailView(pokemon: viewModel.pokemonDetails[pokemon.id-1] , pokemonID: nil)
-//                        } else {
-//                            PokemonDetailView(pokemon: nil, pokemonID: pokemon.id)
-//                        }
 
                     } label: {
                         Text(pokemon.name)
                     }
-
                 }
+                .listStyle(.plain)
             }
             .task {
                 if !viewDidLoad {

@@ -10,6 +10,7 @@ import SwiftUI
 struct PokemonDetailView: View {
     
     let pokemon: PokemonDetailAPI?
+    let pokemonData: PokemonDetailViewData?
     let pokemonID: Int?
     
     @StateObject var viewModel: PokemonDetailViewModel = PokemonDetailViewModel()
@@ -18,7 +19,9 @@ struct PokemonDetailView: View {
         
         VStack {
             
-            if let pokemon {
+            if let pokemonData {
+                PokemonOfflineView(pokemon: pokemonData)
+            } else if let pokemon {
                 PokemonViewID(pokemon: pokemon)
             } else if let pokemon = viewModel.pokemon {
                 PokemonViewID(pokemon: pokemon)
@@ -26,9 +29,6 @@ struct PokemonDetailView: View {
                 ProgressView()
                 Text("No Data to display")
             }
-           
-             
-            
         }
         .task {
             if let pokemonID {
@@ -37,15 +37,15 @@ struct PokemonDetailView: View {
         }
         
         
-       
+        
         
     }
 }
 
 struct PokemonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-//        PokemonDetailView(pokemonID: 25)
-        PokemonDetailView(pokemon: nil, pokemonID: nil)
+        //        PokemonDetailView(pokemonID: 25)
+        PokemonDetailView(pokemon: nil, pokemonData: nil, pokemonID: nil)
     }
 }
 
@@ -56,25 +56,40 @@ struct PokemonViewID: View {
     var body: some View {
         VStack {
             
-                Text(pokemon.name)
-                Text("Weight")
-                Text("\(pokemon.weight)")
-                if let urlString = pokemon.sprites.other?.officialArtwork.frontDefault {
-
-                    AsyncImage(url: URL(string:  urlString)!) { image in
-                        image.resizable()
-                            .frame(width: 400, height: 400)
-                    } placeholder: {
-                        ProgressView()
-                    }
+            Text(pokemon.name)
+            Text("Weight")
+            Text("\(pokemon.weight)")
+            if let urlString = pokemon.sprites.other?.officialArtwork.frontDefault {
+                
+                AsyncImage(url: URL(string:  urlString)!) { image in
+                    image.resizable()
+                        .frame(width: 400, height: 400)
+                } placeholder: {
+                    ProgressView()
                 }
-                
-                
-
-                
+            }
             
         }
-        
-        
+    }
+}
+
+struct PokemonOfflineView: View {
+    let pokemon: PokemonDetailViewData
+    
+    var body: some View {
+        VStack {
+            Text("Offline Pokemon View")
+            Text(pokemon.name)
+            Text("Weight")
+            Text(pokemon.weight)
+            Image(uiImage: pokemon.heroImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.main.bounds.width)
+//                .frame(width: .infinity)
+            
+            
+        }
+        .padding(20)
     }
 }
