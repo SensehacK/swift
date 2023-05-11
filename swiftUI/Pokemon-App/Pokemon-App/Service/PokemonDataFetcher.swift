@@ -25,17 +25,11 @@ class PokemonDataFetcher: PokemonService {
             let data = try await NetworkManager.shared.fetchData(url: URLConstants.pokemonFirstGen)
             
             let decodedData = try JSONDecoder().decode(PokemonAPI.self, from: data)
-            
-            
             var pokemonViewData: [PokemonViewData] = []
             for (index, pokemon) in decodedData.results.enumerated() {
                 pokemonViewData.append(PokemonViewData(pokemon: pokemon, id: index+1))
             }
-
             return pokemonViewData
-            
-            
-            
         } catch {
             print(error.localizedDescription)
         }

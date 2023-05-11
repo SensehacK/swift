@@ -9,7 +9,9 @@ import SwiftUI
 
 struct PokemonView: View {
     
-    @StateObject var viewModel: PokemonViewModel = PokemonViewModel()
+    @StateObject var viewModel: PokemonViewModel = PokemonViewModel(pokemonsDetails: nil)
+    @State var viewDidLoad: Bool = false
+    
     
     var body: some View {
         
@@ -20,7 +22,23 @@ struct PokemonView: View {
                 List(viewModel.pokemons, id: \.id) { pokemon in
                     
                     NavigationLink {
-                        PokemonDetailView(pokemonID: pokemon.id)
+                        
+                        
+                        if let data = viewModel.pokemonDetails {
+                            let pokemon = data[pokemon.id-1]
+                            Text("Details \(pokemon.name) \(pokemon.height)")
+                            PokemonDetailView(pokemon: pokemon, pokemonID: nil)
+                        } else {
+                            Text("Wrong if else")
+                            PokemonDetailView(pokemon: nil, pokemonID: 25)
+                        }
+                        
+//                        if (viewModel.pokemonDetails != nil) {
+//                            PokemonDetailView(pokemon: viewModel.pokemonDetails[pokemon.id-1] , pokemonID: nil)
+//                        } else {
+//                            PokemonDetailView(pokemon: nil, pokemonID: pokemon.id)
+//                        }
+
                     } label: {
                         Text(pokemon.name)
                     }
@@ -28,7 +46,11 @@ struct PokemonView: View {
                 }
             }
             .task {
-                await viewModel.fetchData()
+                if !viewDidLoad {
+                    await viewModel.fetchData()
+                    viewDidLoad = true
+                }
+                
             }
             .padding()
         }

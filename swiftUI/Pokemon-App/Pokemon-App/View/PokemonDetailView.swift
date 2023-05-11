@@ -9,15 +9,53 @@ import SwiftUI
 
 struct PokemonDetailView: View {
     
-//    let pokemon: PokemonDetailAPI?
-    let pokemonID: Int
+    let pokemon: PokemonDetailAPI?
+    let pokemonID: Int?
     
     @StateObject var viewModel: PokemonDetailViewModel = PokemonDetailViewModel()
     
     var body: some View {
         
         VStack {
-            if let pokemon = viewModel.pokemon {
+            
+            if let pokemon {
+                PokemonViewID(pokemon: pokemon)
+            } else if let pokemon = viewModel.pokemon {
+                PokemonViewID(pokemon: pokemon)
+            } else {
+                ProgressView()
+                Text("No Data to display")
+            }
+           
+             
+            
+        }
+        .task {
+            if let pokemonID {
+                await viewModel.fetchPokemonDetails(id: pokemonID)
+            }
+        }
+        
+        
+       
+        
+    }
+}
+
+struct PokemonDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+//        PokemonDetailView(pokemonID: 25)
+        PokemonDetailView(pokemon: nil, pokemonID: nil)
+    }
+}
+
+
+struct PokemonViewID: View {
+    let pokemon: PokemonDetailAPI
+    
+    var body: some View {
+        VStack {
+            
                 Text(pokemon.name)
                 Text("Weight")
                 Text("\(pokemon.weight)")
@@ -34,21 +72,9 @@ struct PokemonDetailView: View {
                 
 
                 
-            } else {
-                ProgressView()
-                Text("No Data to display")
-            }
+            
         }
-        .task {
-            await viewModel.fetchPokemonDetails(id: pokemonID)
-        }
-       
         
-    }
-}
-
-struct PokemonDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokemonDetailView(pokemonID: 25)
+        
     }
 }

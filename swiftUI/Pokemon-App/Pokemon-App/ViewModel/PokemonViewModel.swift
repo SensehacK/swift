@@ -12,16 +12,48 @@ import Foundation
 class PokemonViewModel: ObservableObject {
     
     @Published var pokemons: [PokemonViewData]
+    @Published var pokemonDetails: [PokemonDetailAPI]?
     
     let serviceFetcher: PokemonService
     
-    init(pokemons: [PokemonViewData] = [], serviceFetcher: PokemonService = PokemonDataFetcher.shared) {
+    init(pokemons: [PokemonViewData] = [],
+         pokemonsDetails: [PokemonDetailAPI]?,
+         serviceFetcher: PokemonService = PokemonDataFetcher.shared) {
         self.pokemons = pokemons
+        self.pokemonDetails = pokemonsDetails
         self.serviceFetcher = serviceFetcher
     }
     
     func fetchData() async {
         pokemons = await serviceFetcher.fetchPokemons()
+        fetchAllPokemons()
+    }
+    
+    
+    func fetchAllPokemons() {
+        
+        
+        Task(priority: .userInitiated) {
+            var pokemons: [PokemonDetailAPI] = []
+            for pokemon in self.pokemons {
+                print("Which ID: \(pokemon.id)")
+                if let pokemonDetail = await serviceFetcher.fetchPokemonDetails(id: pokemon.id) {
+                    pokemons.append(pokemonDetail)
+                }
+            }
+            pokemonDetails = pokemons
+        }
+        
+//        Task {
+//            for pokemon in pokemons {
+//                if let pokemonDetail = await serviceFetcher.fetchPokemonDetails(id: pokemon.id) {
+//                    pokemons.append(pokemonDetail)
+//                }
+//            }
+//        }
+        
+//        pokemonDetails = pokemons
+        
     }
     
 }
