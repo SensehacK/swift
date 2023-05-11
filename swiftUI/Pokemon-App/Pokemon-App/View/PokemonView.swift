@@ -12,15 +12,26 @@ struct PokemonView: View {
     @StateObject var viewModel: PokemonViewModel = PokemonViewModel()
     
     var body: some View {
-        VStack {
-            List(viewModel.pokemons, id: \.id) { pokemon in
-                Text(pokemon.name)
+        
+        NavigationView {
+            
+            VStack {
+                
+                List(viewModel.pokemons, id: \.id) { pokemon in
+                    
+                    NavigationLink {
+                        PokemonDetailView(pokemonID: pokemon.id)
+                    } label: {
+                        Text(pokemon.name)
+                    }
+
+                }
             }
+            .task {
+                await viewModel.fetchData()
+            }
+            .padding()
         }
-        .task {
-            await viewModel.fetchData()
-        }
-        .padding()
     }
 }
 

@@ -8,14 +8,14 @@
 import Foundation
 
 //MARK: - ViewModel
-
+@MainActor
 class PokemonViewModel: ObservableObject {
     
     @Published var pokemons: [PokemonViewData]
     
     let serviceFetcher: PokemonService
     
-    init(pokemons: [PokemonViewData] = [], serviceFetcher: PokemonService = PokemonDataFetcher()) {
+    init(pokemons: [PokemonViewData] = [], serviceFetcher: PokemonService = PokemonDataFetcher.shared) {
         self.pokemons = pokemons
         self.serviceFetcher = serviceFetcher
     }
@@ -23,9 +23,6 @@ class PokemonViewModel: ObservableObject {
     func fetchData() async {
         pokemons = await serviceFetcher.fetchPokemons()
     }
-    
-    
-    
     
 }
 
