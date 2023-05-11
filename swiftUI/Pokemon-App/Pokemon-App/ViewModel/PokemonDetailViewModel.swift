@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 //MARK: - ViewModel
-
+@MainActor
 class PokemonDetailViewModel: ObservableObject {
     
     @Published var pokemon: PokemonDetailAPI?

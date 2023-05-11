@@ -53,6 +53,7 @@ class PokemonDataFetcher: PokemonService {
             let decodedData = try JSONDecoder().decode(PokemonDetailAPI.self, from: data)
             return decodedData
         } catch {
+            print(error)
             print(error.localizedDescription)
         }
 
