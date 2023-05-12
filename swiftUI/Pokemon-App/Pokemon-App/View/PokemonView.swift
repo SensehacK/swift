@@ -22,7 +22,10 @@ struct PokemonView: View {
                 List(viewModel.pokemons, id: \.id) { pokemon in
                     NavigationLink {
                     
-                        if let data = viewModel.pokemonViewDetails {
+                        if let data = viewModel.pokemonViewAsync {
+                            let pokemon = data[pokemon.id-1]
+                            PokemonDetailView(pokemon: nil, pokemonData: pokemon, pokemonID: nil)
+                        } else if let data = viewModel.pokemonViewDetails {
                             let pokemon = data[pokemon.id-1]
                             PokemonDetailView(pokemon: nil, pokemonData: pokemon, pokemonID: nil)
                         } else if let data = viewModel.pokemonDetails {

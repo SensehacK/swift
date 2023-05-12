@@ -19,6 +19,7 @@
 		43A59E242A0D45CB007BFAF7 /* PokemonDetailsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A59E232A0D45CB007BFAF7 /* PokemonDetailsAPI.swift */; };
 		43A59E262A0D484F007BFAF7 /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A59E252A0D484F007BFAF7 /* PokemonDetailView.swift */; };
 		43A59E282A0D490F007BFAF7 /* PokemonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A59E272A0D490F007BFAF7 /* PokemonDetailViewModel.swift */; };
+		43CC76952A0DBDC6005B421A /* PokemonConsumableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC76942A0DBDC6005B421A /* PokemonConsumableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		43A59E232A0D45CB007BFAF7 /* PokemonDetailsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsAPI.swift; sourceTree = "<group>"; };
 		43A59E252A0D484F007BFAF7 /* PokemonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
 		43A59E272A0D490F007BFAF7 /* PokemonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewModel.swift; sourceTree = "<group>"; };
+		43CC76942A0DBDC6005B421A /* PokemonConsumableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonConsumableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				43A59E1A2A0D4042007BFAF7 /* PokemonViewModel.swift */,
 				43A59E272A0D490F007BFAF7 /* PokemonDetailViewModel.swift */,
+				43CC76942A0DBDC6005B421A /* PokemonConsumableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CC76952A0DBDC6005B421A /* PokemonConsumableViewModel.swift in Sources */,
 				43A59E162A0D3FE9007BFAF7 /* URLConstants.swift in Sources */,
 				43A59E202A0D41BF007BFAF7 /* PokemonDataFetcher.swift in Sources */,
 				43A59E262A0D484F007BFAF7 /* PokemonDetailView.swift in Sources */,
