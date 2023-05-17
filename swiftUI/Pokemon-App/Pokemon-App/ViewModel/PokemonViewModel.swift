@@ -31,7 +31,7 @@ class PokemonViewModel: ObservableObject {
         pokemons = await serviceFetcher.fetchPokemons()
 //        fetchAllPokemonsDetailsWithoutImagesSync()
 //        fetchAllPokemonsDetailsWithImagesSync()
-        fetchAllPokemonsDetailsWithImagesAsync()
+//        fetchAllPokemonsDetailsWithImagesAsync()
     }
     
     
