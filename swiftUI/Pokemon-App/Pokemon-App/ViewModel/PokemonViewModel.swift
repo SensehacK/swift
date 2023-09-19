@@ -15,7 +15,7 @@ class PokemonViewModel: ObservableObject {
     @Published var pokemons: [PokemonViewData]
     @Published var pokemonDetails: [PokemonDetailAPI]?
     @Published var pokemonViewDetails: [PokemonDetailViewData]?
-    @Published var pokemonViewAsync: [PokemonDetailViewData]?
+    @Published var pokemonViewAsync: [Int: PokemonDetailViewData]?
     
     let serviceFetcher: PokemonService
     
@@ -31,7 +31,7 @@ class PokemonViewModel: ObservableObject {
         pokemons = await serviceFetcher.fetchPokemons()
 //        fetchAllPokemonsDetailsWithoutImagesSync()
 //        fetchAllPokemonsDetailsWithImagesSync()
-//        fetchAllPokemonsDetailsWithImagesAsync()
+        fetchAllPokemonsDetailsWithImagesAsync()
     }
     
     
@@ -126,10 +126,12 @@ class PokemonViewModel: ObservableObject {
     
     
     // MARK: - Fetching Pokemon Details with Image Concurrently - Async
-    private func fetchPokemonsAsyncTaskGroup(pokemons: [PokemonViewData]) async throws -> [PokemonDetailViewData] {
+    private func fetchPokemonsAsyncTaskGroup(pokemons: [PokemonViewData]) async throws -> [Int: PokemonDetailViewData] {
         return try await withThrowingTaskGroup(of: PokemonDetailViewData?.self) { [weak self] group in
             guard let self = self else { throw URLError(.backgroundSessionInUseByAnotherProcess) }
-            var images: [PokemonDetailViewData] = []
+            var images: [PokemonDetailViewData?] = [PokemonDetailViewData]()
+            var pokemonDict: [Int: PokemonDetailViewData] = [:]
+            
             images.reserveCapacity(151)
             
             for pokemon in pokemons {
@@ -137,12 +139,30 @@ class PokemonViewModel: ObservableObject {
                     try await self.fetchSinglePokemonDetailView(pokeID: pokemon.id)
                 }
             }
-
+            
+            
+            /* // Resolve it using n - sort at the end of Array
+             // Wasnt able to invoke the whole Array empty and then insert at desired position. I would have to make init nil or properties nullable.
+             //  @Published var pokemonViewAsync: [PokemonDetailViewData]?
+             //  private func fetchPokemonsAsyncTaskGroup(pokemons: [PokemonViewData]) async throws -> [PokemonDetailViewData] {
             for try await image in group {
                 if let image = image { images.append(image) }
             }
+            let sortedImages = images.sorted { $0.id < $1.id }
+             */
+
+            
+            // Resolve it using Dictionary Approach
+            for try await image in group {
+                if let image = image {
+                    let index = image.id - 1
+                    print("Inserting at Index: \(index)")
+                    pokemonDict[index] = image
+
+                }
+            }
             print("Done fetching All pokemons Async Concurrently")
-            return images
+            return pokemonDict
         }
     }
 
