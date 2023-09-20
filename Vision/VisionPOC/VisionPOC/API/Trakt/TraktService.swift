@@ -54,8 +54,21 @@ class TraktDataFetcher: TraktService {
     
     func fetchTrakts() async -> TraktViewData? {
         do {
-            let data = try await NetworkManager.shared.fetchData(url: URLConstants.traktMovieTestURL)
-//            let data = try await NetworkManager.shared.fetchData2()
+            
+            guard let url = URL(string: URLConstants.traktMovieTestURL) else {
+                throw URLError(.badURL)
+            }
+            
+            // Manifest the URL Request with appropriate HEaders
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "GET"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.addValue("2" , forHTTPHeaderField: "trakt-api-version")
+            urlRequest.addValue(APIKeys.trakt, forHTTPHeaderField: "trakt-api-key")
+            
+//            let data = try await NetworkManager.shared.fetchData(url: URLConstants.traktMovieTestURL)
+            
+            let data = try await NetworkManager.shared.fetchData(urlRequest: urlRequest)
             
             let decodedData: TraktMovies = try JSONDecoder().decode(TraktMovies.self, from: data)
             
@@ -108,25 +121,16 @@ class NetworkManager {
             throw URLError(.badURL)
         }
         
+        // Manifest the URL Request with appropriate HEaders
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-        urlRequest.setValue("Connection", forHTTPHeaderField: "keep-alive")
-//        
-//        urlRequest.setValue("Content-Type", forHTTPHeaderField: "application/json")
-//        urlRequest.setValue("trakt-api-version", forHTTPHeaderField: "2")
-        
-        
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        urlRequest.addValue("Connection", forHTTPHeaderField: "keep-alive")
         urlRequest.addValue("2" , forHTTPHeaderField: "trakt-api-version")
-        urlRequest.addValue("Your_API_Key", forHTTPHeaderField: "trakt-api-key")
+        urlRequest.addValue(APIKeys.trakt, forHTTPHeaderField: "trakt-api-key")
         
         
 
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-//        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        
         
         guard let response = response as? HTTPURLResponse,
               (200..<300).contains(response.statusCode)
@@ -134,8 +138,21 @@ class NetworkManager {
             print("Error here")
             throw URLError(.badServerResponse)
         }
+
+        return data
+    }
+    
+    
+    func fetchData(urlRequest: URLRequest) async throws -> Data {
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
-        
+        guard let response = response as? HTTPURLResponse,
+              (200..<300).contains(response.statusCode)
+        else {
+            print("Error here")
+            throw URLError(.badServerResponse)
+        }
+
         return data
     }
     

@@ -10,12 +10,21 @@
 		D81539EC2ABA3D6F00FD69CA /* MoviesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539EB2ABA3D6F00FD69CA /* MoviesGrid.swift */; };
 		D81539EE2ABA409E00FD69CA /* TraktMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539ED2ABA409E00FD69CA /* TraktMovies.swift */; };
 		D81539F12ABA414E00FD69CA /* SwiftSense in Frameworks */ = {isa = PBXBuildFile; productRef = D81539F02ABA414E00FD69CA /* SwiftSense */; };
-		D81539F52ABA42C100FD69CA /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F42ABA42C100FD69CA /* URLConstants.swift */; };
+		D81539F52ABA42C100FD69CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F42ABA42C100FD69CA /* Constants.swift */; };
 		D81539F72ABA4DBD00FD69CA /* TraktService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F62ABA4DBD00FD69CA /* TraktService.swift */; };
 		D81539FA2ABA4DFE00FD69CA /* TraktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */; };
+		D81539FD2ABB845600FD69CA /* TraktManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539FC2ABB845600FD69CA /* TraktManager.swift */; };
+		D8153A002ABB856100FD69CA /* SKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539FF2ABB856100FD69CA /* SKeychain.swift */; };
+		D8153A022ABB860C00FD69CA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A012ABB860C00FD69CA /* Enums.swift */; };
+		D8153A052ABB8B9B00FD69CA /* AuthenticationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A042ABB8B9B00FD69CA /* AuthenticationInfo.swift */; };
+		D8153A072ABB8DDE00FD69CA /* TokenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A062ABB8DDE00FD69CA /* TokenCapture.swift */; };
+		D8153A0A2ABB8F8000FD69CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A092ABB8F8000FD69CA /* AppDelegate.swift */; };
+		D8153A0C2ABB906D00FD69CA /* MissionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0B2ABB906D00FD69CA /* MissionControl.swift */; };
+		D8153A0E2ABB935800FD69CA /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0D2ABB935800FD69CA /* SafariWebView.swift */; };
+		D8153A102ABB94DB00FD69CA /* Ext+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */; };
 		D84326E82ABA34BD00D01A63 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D84326E72ABA34BD00D01A63 /* RealityKitContent */; };
 		D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */; };
-		D84326EC2ABA34BD00D01A63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326EB2ABA34BD00D01A63 /* ContentView.swift */; };
+		D84326EC2ABA34BD00D01A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326EB2ABA34BD00D01A63 /* MainView.swift */; };
 		D84326EE2ABA34C000D01A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84326ED2ABA34C000D01A63 /* Assets.xcassets */; };
 		D84326F12ABA34C000D01A63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84326F02ABA34C000D01A63 /* Preview Assets.xcassets */; };
 		D84326FB2ABA34C000D01A63 /* VisionPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326FA2ABA34C000D01A63 /* VisionPOCTests.swift */; };
@@ -34,13 +43,23 @@
 /* Begin PBXFileReference section */
 		D81539EB2ABA3D6F00FD69CA /* MoviesGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesGrid.swift; sourceTree = "<group>"; };
 		D81539ED2ABA409E00FD69CA /* TraktMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktMovies.swift; sourceTree = "<group>"; };
-		D81539F42ABA42C100FD69CA /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		D81539F42ABA42C100FD69CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D81539F62ABA4DBD00FD69CA /* TraktService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktService.swift; sourceTree = "<group>"; };
 		D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktViewModel.swift; sourceTree = "<group>"; };
+		D81539FB2ABB7B7200FD69CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D81539FC2ABB845600FD69CA /* TraktManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktManager.swift; sourceTree = "<group>"; };
+		D81539FF2ABB856100FD69CA /* SKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKeychain.swift; sourceTree = "<group>"; };
+		D8153A012ABB860C00FD69CA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D8153A042ABB8B9B00FD69CA /* AuthenticationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInfo.swift; sourceTree = "<group>"; };
+		D8153A062ABB8DDE00FD69CA /* TokenCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCapture.swift; sourceTree = "<group>"; };
+		D8153A092ABB8F8000FD69CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8153A0B2ABB906D00FD69CA /* MissionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionControl.swift; sourceTree = "<group>"; };
+		D8153A0D2ABB935800FD69CA /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
+		D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIApplication.swift"; sourceTree = "<group>"; };
 		D84326E22ABA34BD00D01A63 /* VisionPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84326E62ABA34BD00D01A63 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionPOCApp.swift; sourceTree = "<group>"; };
-		D84326EB2ABA34BD00D01A63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D84326EB2ABA34BD00D01A63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D84326ED2ABA34C000D01A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D84326F02ABA34C000D01A63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84326F62ABA34C000D01A63 /* VisionPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				D81539F62ABA4DBD00FD69CA /* TraktService.swift */,
+				D81539FC2ABB845600FD69CA /* TraktManager.swift */,
+				D8153A062ABB8DDE00FD69CA /* TokenCapture.swift */,
 			);
 			path = Trakt;
 			sourceTree = "<group>";
@@ -93,7 +114,7 @@
 		D81539E82ABA3CF900FD69CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D81539ED2ABA409E00FD69CA /* TraktMovies.swift */,
+				D8153A032ABB8B8E00FD69CA /* Trakt */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,7 +130,10 @@
 		D81539EA2ABA3D0D00FD69CA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				D81539F42ABA42C100FD69CA /* URLConstants.swift */,
+				D81539F42ABA42C100FD69CA /* Constants.swift */,
+				D8153A012ABB860C00FD69CA /* Enums.swift */,
+				D8153A0D2ABB935800FD69CA /* SafariWebView.swift */,
+				D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -124,6 +148,7 @@
 		D81539F32ABA418700FD69CA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D81539FE2ABB854E00FD69CA /* Keychain */,
 				D81539E62ABA3CE900FD69CA /* Youtube */,
 				D81539E52ABA3CDF00FD69CA /* Trakt */,
 			);
@@ -136,6 +161,34 @@
 				D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */,
 			);
 			path = Trakt;
+			sourceTree = "<group>";
+		};
+		D81539FE2ABB854E00FD69CA /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				D81539FF2ABB856100FD69CA /* SKeychain.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		D8153A032ABB8B8E00FD69CA /* Trakt */ = {
+			isa = PBXGroup;
+			children = (
+				D81539ED2ABA409E00FD69CA /* TraktMovies.swift */,
+				D8153A042ABB8B9B00FD69CA /* AuthenticationInfo.swift */,
+			);
+			path = Trakt;
+			sourceTree = "<group>";
+		};
+		D8153A082ABB8F6D00FD69CA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */,
+				D8153A092ABB8F8000FD69CA /* AppDelegate.swift */,
+				D8153A0B2ABB906D00FD69CA /* MissionControl.swift */,
+				D84326EB2ABA34BD00D01A63 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		D84326D92ABA34BD00D01A63 = {
@@ -160,11 +213,11 @@
 		D84326E42ABA34BD00D01A63 /* VisionPOC */ = {
 			isa = PBXGroup;
 			children = (
+				D8153A082ABB8F6D00FD69CA /* Main */,
+				D81539FB2ABB7B7200FD69CA /* Info.plist */,
 				D81539E82ABA3CF900FD69CA /* Model */,
 				D81539E72ABA3CF100FD69CA /* View */,
 				D81539E92ABA3D0800FD69CA /* ViewModel */,
-				D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */,
-				D84326EB2ABA34BD00D01A63 /* ContentView.swift */,
 				D81539F32ABA418700FD69CA /* API */,
 				D81539EA2ABA3D0D00FD69CA /* Helpers */,
 				D81539F22ABA417000FD69CA /* Misc */,
@@ -305,13 +358,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8153A102ABB94DB00FD69CA /* Ext+UIApplication.swift in Sources */,
 				D81539EC2ABA3D6F00FD69CA /* MoviesGrid.swift in Sources */,
-				D81539F52ABA42C100FD69CA /* URLConstants.swift in Sources */,
+				D81539F52ABA42C100FD69CA /* Constants.swift in Sources */,
+				D8153A072ABB8DDE00FD69CA /* TokenCapture.swift in Sources */,
+				D8153A022ABB860C00FD69CA /* Enums.swift in Sources */,
 				D81539EE2ABA409E00FD69CA /* TraktMovies.swift in Sources */,
-				D84326EC2ABA34BD00D01A63 /* ContentView.swift in Sources */,
+				D84326EC2ABA34BD00D01A63 /* MainView.swift in Sources */,
 				D81539F72ABA4DBD00FD69CA /* TraktService.swift in Sources */,
 				D81539FA2ABA4DFE00FD69CA /* TraktViewModel.swift in Sources */,
+				D8153A0A2ABB8F8000FD69CA /* AppDelegate.swift in Sources */,
+				D8153A002ABB856100FD69CA /* SKeychain.swift in Sources */,
+				D81539FD2ABB845600FD69CA /* TraktManager.swift in Sources */,
+				D8153A0E2ABB935800FD69CA /* SafariWebView.swift in Sources */,
 				D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */,
+				D8153A052ABB8B9B00FD69CA /* AuthenticationInfo.swift in Sources */,
+				D8153A0C2ABB906D00FD69CA /* MissionControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +525,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"VisionPOC/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisionPOC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,6 +551,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"VisionPOC/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisionPOC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

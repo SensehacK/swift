@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  VisionPOC
 //
 //  Created by Save, Kautilya on 9/19/23.
@@ -9,9 +9,13 @@ import SwiftUI
 import RealityKit
 import RealityKitContent
 
-struct ContentView: View {
+struct MainView: View {
     
-    @StateObject var viewModel: TraktViewModel = TraktViewModel()
+    
+    @EnvironmentObject private var viewModel: TraktViewModel
+    
+    
+//    @StateObject var viewModel: TraktViewModel = TraktViewModel()
     @State var viewDidLoad: Bool = false
     
     
@@ -22,17 +26,17 @@ struct ContentView: View {
                 Text(movies.firstMovieName ?? "No Movie damn!")
             }
             Text("Hello Sensehack!")
+            
+            Button("Sign In Trakt TV") {
+                viewModel.showSignInUser()
+            }
+            
+            if let success = viewModel.traktTVApi {
+                Text(success)
+            }
+            
         }
         .navigationTitle("Content")
-//        .onAppear {
-//            Task {
-//            if !viewDidLoad {
-//                print("HASE on Appear")
-//                await viewModel.fetchData()
-//                viewDidLoad = true
-//                }
-//            }
-//        }
         .task {
             print("AHGAG23")
             if !viewDidLoad {
@@ -41,10 +45,13 @@ struct ContentView: View {
                 viewDidLoad = true
             }
         }
+        .fullScreenCover(isPresented: $viewModel.displaySafari) {
+            viewModel.showLoginSafari()
+        }
         .padding()
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    ContentView()
+    MainView()
 }
