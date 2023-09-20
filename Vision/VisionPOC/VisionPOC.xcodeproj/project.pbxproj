@@ -11,6 +11,8 @@
 		D81539EE2ABA409E00FD69CA /* TraktMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539ED2ABA409E00FD69CA /* TraktMovies.swift */; };
 		D81539F12ABA414E00FD69CA /* SwiftSense in Frameworks */ = {isa = PBXBuildFile; productRef = D81539F02ABA414E00FD69CA /* SwiftSense */; };
 		D81539F52ABA42C100FD69CA /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F42ABA42C100FD69CA /* URLConstants.swift */; };
+		D81539F72ABA4DBD00FD69CA /* TraktService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F62ABA4DBD00FD69CA /* TraktService.swift */; };
+		D81539FA2ABA4DFE00FD69CA /* TraktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */; };
 		D84326E82ABA34BD00D01A63 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D84326E72ABA34BD00D01A63 /* RealityKitContent */; };
 		D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */; };
 		D84326EC2ABA34BD00D01A63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326EB2ABA34BD00D01A63 /* ContentView.swift */; };
@@ -33,6 +35,8 @@
 		D81539EB2ABA3D6F00FD69CA /* MoviesGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesGrid.swift; sourceTree = "<group>"; };
 		D81539ED2ABA409E00FD69CA /* TraktMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktMovies.swift; sourceTree = "<group>"; };
 		D81539F42ABA42C100FD69CA /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		D81539F62ABA4DBD00FD69CA /* TraktService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktService.swift; sourceTree = "<group>"; };
+		D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktViewModel.swift; sourceTree = "<group>"; };
 		D84326E22ABA34BD00D01A63 /* VisionPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84326E62ABA34BD00D01A63 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionPOCApp.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		D81539E52ABA3CDF00FD69CA /* Trakt */ = {
 			isa = PBXGroup;
 			children = (
+				D81539F62ABA4DBD00FD69CA /* TraktService.swift */,
 			);
 			path = Trakt;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		D81539E92ABA3D0800FD69CA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D81539F82ABA4DF200FD69CA /* Trakt */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,6 +128,14 @@
 				D81539E52ABA3CDF00FD69CA /* Trakt */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		D81539F82ABA4DF200FD69CA /* Trakt */ = {
+			isa = PBXGroup;
+			children = (
+				D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */,
+			);
+			path = Trakt;
 			sourceTree = "<group>";
 		};
 		D84326D92ABA34BD00D01A63 = {
@@ -295,6 +309,8 @@
 				D81539F52ABA42C100FD69CA /* URLConstants.swift in Sources */,
 				D81539EE2ABA409E00FD69CA /* TraktMovies.swift in Sources */,
 				D84326EC2ABA34BD00D01A63 /* ContentView.swift in Sources */,
+				D81539F72ABA4DBD00FD69CA /* TraktService.swift in Sources */,
+				D81539FA2ABA4DFE00FD69CA /* TraktViewModel.swift in Sources */,
 				D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
