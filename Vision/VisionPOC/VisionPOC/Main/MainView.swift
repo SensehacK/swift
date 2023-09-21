@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+
+#if os(xrOS)
 import RealityKit
 import RealityKitContent
+#endif
 import SafariServices
 
 struct MainView: View {
@@ -73,6 +76,14 @@ struct MainView: View {
     }
 }
 
+#if os(xrOS)
 #Preview(windowStyle: .automatic) {
     MainView()
 }
+#endif
+
+#if !os(xrOS)
+#Preview {
+    MainView()
+}
+#endif

@@ -49,8 +49,29 @@ struct MovieDetailView: View {
     }
 }
 
+// MARK: - Preview
+//var viewModel: TraktViewModel = TraktViewModel()
+
+var movieView: TraktConsumableView? {
+    if case let .success(traktMovie) = TraktMovies.from(localJSON: "trakt_recent_movies"),
+       case let .success(tmdbMovie) = TMDBMovieAPI.from2(localJSON: "tmdb_movie") {
+        
+        let dummyImage = UIImage(named: "cloud.drizzle.fill")!
+        let tMovie = traktMovie.first!
+        
+        let movieView = TraktConsumableView(id: 12, traktDetails: tMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage, backgroundImage: dummyImage, trailerImage: "as23")
+        
+        return movieView
+    }
+    return nil
+}
+    
+    
+
+
+#if os(xrOS)
 #Preview(windowStyle: .automatic) {
-    var viewModel: TraktViewModel = TraktViewModel()
+    // Working Code
     if case let .success(traktMovie) = TraktMovies.from(localJSON: "trakt_recent_movies"),
        case let .success(tmdbMovie) = TMDBMovieAPI.from2(localJSON: "tmdb_movie") {
         
@@ -60,30 +81,30 @@ struct MovieDetailView: View {
         let movieView = TraktConsumableView(id: 12, traktDetails: tMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage, backgroundImage: dummyImage, trailerImage: "as23")
         
         MovieDetailView(movie: movieView)
-//            .environmentObject(viewModel)
+//            .environmentObject(Globals.traktViewModel)
         
     } else {
         MovieDetailView(movie: nil)
+//            .environmentObject(Globals.traktViewModel)
 //            .environmentObject(viewModel)
     }
     
+    // Working Code End
     
-//    guard case let .success(tmdbMovie) = TMDBMovieAPI.from(localJSON: "tmdb_movie") else {
-//        MovieDetailView()
-//        
-//    }
+    // New code
     
-    
-//    switch TMDBMovieAPI.from(localJSON: "tmdb_movie") {
-//    case .success(let movie):
-//        print("Success")
-//        MovieDetailView()
-//
-//    case .failure(let error):
-//        print("Failed")
-//        MovieDetailView()
-//        let movieView = TraktConsumableView(id: movie.id, traktDetails: , tMDBDetails: <#T##TMDBMovieAPI#>, posterImage: <#T##UIImage#>, backgroundImage: <#T##UIImage#>, trailerImage: <#T##String#>)
-//        MovieDetailView(movie: movie)
-   
-//    MovieDetailView(movie: )
+
 }
+
+#endif
+
+#if !os(xrOS)
+#Preview {
+    if let movieView {
+        MovieDetailView(movie: movieView)
+            .environmentObject(Globals.traktViewModel)
+    } else {
+        MovieDetailView(movie: nil)
+    }
+}
+#endif

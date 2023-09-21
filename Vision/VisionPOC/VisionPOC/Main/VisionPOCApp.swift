@@ -35,21 +35,23 @@ struct VisionPOCApp: App {
 //            }
 
             
-            // Testing right now
+            // Testing Navigation Views right now
             HomeNavigationView()
                 .environmentObject(viewModel)
             
             
             // Main Channel
-//            MainView()
-//                .environmentObject(viewModel)
-//                .onOpenURL { (url) in
-//                    // Handle url here
-//                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
-//                    // Parse the URL callback from Trakt API Oauth
-//                    TokenCapture.parseURLSchemeToExtractToken(url: url)
-//                    //                    viewModel.displaySafari = false
-//                }
+             /*
+            MainView()
+                .environmentObject(viewModel)
+                .onOpenURL { (url) in
+                    // Handle url here
+                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
+                    // Parse the URL callback from Trakt API Oauth
+                    TokenCapture.parseURLSchemeToExtractToken(url: url)
+                    //                    viewModel.displaySafari = false
+                }
+             */
         }
     }
 }

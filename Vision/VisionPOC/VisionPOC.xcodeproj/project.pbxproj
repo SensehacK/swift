@@ -35,6 +35,35 @@
 		D84326EE2ABA34C000D01A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84326ED2ABA34C000D01A63 /* Assets.xcassets */; };
 		D84326F12ABA34C000D01A63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84326F02ABA34C000D01A63 /* Preview Assets.xcassets */; };
 		D84326FB2ABA34C000D01A63 /* VisionPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326FA2ABA34C000D01A63 /* VisionPOCTests.swift */; };
+		D8F420752ABD09FD001C6732 /* iPadPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420742ABD09FD001C6732 /* iPadPOCApp.swift */; };
+		D8F420772ABD09FD001C6732 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420762ABD09FD001C6732 /* ContentView.swift */; };
+		D8F420792ABD09FD001C6732 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420782ABD09FD001C6732 /* Item.swift */; };
+		D8F4207B2ABD0A02001C6732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F4207A2ABD0A02001C6732 /* Assets.xcassets */; };
+		D8F4207F2ABD0A02001C6732 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F4207E2ABD0A02001C6732 /* Preview Assets.xcassets */; };
+		D8F420892ABD0A02001C6732 /* iPadPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420882ABD0A02001C6732 /* iPadPOCTests.swift */; };
+		D8F420932ABD0A02001C6732 /* iPadPOCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420922ABD0A02001C6732 /* iPadPOCUITests.swift */; };
+		D8F420952ABD0A02001C6732 /* iPadPOCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420942ABD0A02001C6732 /* iPadPOCUITestsLaunchTests.swift */; };
+		D8F4209F2ABD0A7B001C6732 /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F8B1B2ABCF539001288A6 /* HomeNavigationView.swift */; };
+		D8F420A02ABD0B01001C6732 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326EB2ABA34BD00D01A63 /* MainView.swift */; };
+		D8F420A12ABD0B27001C6732 /* TraktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */; };
+		D8F420A22ABD0B4B001C6732 /* tmdb_movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D83F3D142ABCD21200976685 /* tmdb_movie.json */; };
+		D8F420A32ABD0B4E001C6732 /* TMDBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A142ABBACA400FD69CA /* TMDBMovie.swift */; };
+		D8F420A42ABD0B52001C6732 /* TraktMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539ED2ABA409E00FD69CA /* TraktMovies.swift */; };
+		D8F420A52ABD0C44001C6732 /* MoviesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539EB2ABA3D6F00FD69CA /* MoviesGrid.swift */; };
+		D8F420A62ABD0CAC001C6732 /* TraktConsumableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */; };
+		D8F420A72ABD0CB7001C6732 /* TraktService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F62ABA4DBD00FD69CA /* TraktService.swift */; };
+		D8F420AA2ABD0CDB001C6732 /* SwiftSense in Frameworks */ = {isa = PBXBuildFile; productRef = D8F420A92ABD0CDB001C6732 /* SwiftSense */; };
+		D8F420AB2ABD0CF4001C6732 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0D2ABB935800FD69CA /* SafariWebView.swift */; };
+		D8F420AC2ABD0CFB001C6732 /* TraktManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539FC2ABB845600FD69CA /* TraktManager.swift */; };
+		D8F420AD2ABD0D46001C6732 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539F42ABA42C100FD69CA /* Constants.swift */; };
+		D8F420AE2ABD0D49001C6732 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A012ABB860C00FD69CA /* Enums.swift */; };
+		D8F420AF2ABD0D4D001C6732 /* Ext+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */; };
+		D8F420B02ABD0D50001C6732 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F3D192ABCDDF800976685 /* Decodable.swift */; };
+		D8F420B12ABD0D56001C6732 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F3D102ABCD07300976685 /* MovieDetailView.swift */; };
+		D8F420B32ABD0F31001C6732 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420B22ABD0F31001C6732 /* Global.swift */; };
+		D8F420B42ABD0F65001C6732 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420B22ABD0F31001C6732 /* Global.swift */; };
+		D8F420B52ABD0F83001C6732 /* SKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81539FF2ABB856100FD69CA /* SKeychain.swift */; };
+		D8F420B62ABD0F8B001C6732 /* AuthenticationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A042ABB8B9B00FD69CA /* AuthenticationInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +73,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = D84326E12ABA34BD00D01A63;
 			remoteInfo = VisionPOC;
+		};
+		D8F420852ABD0A02001C6732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D84326DA2ABA34BD00D01A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8F420712ABD09FD001C6732;
+			remoteInfo = iPadPOC;
+		};
+		D8F4208F2ABD0A02001C6732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D84326DA2ABA34BD00D01A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8F420712ABD09FD001C6732;
+			remoteInfo = iPadPOC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,6 +121,19 @@
 		D84326F02ABA34C000D01A63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84326F62ABA34C000D01A63 /* VisionPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84326FA2ABA34C000D01A63 /* VisionPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionPOCTests.swift; sourceTree = "<group>"; };
+		D8F420722ABD09FD001C6732 /* iPadPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F420742ABD09FD001C6732 /* iPadPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPOCApp.swift; sourceTree = "<group>"; };
+		D8F420762ABD09FD001C6732 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8F420782ABD09FD001C6732 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D8F4207A2ABD0A02001C6732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8F4207C2ABD0A02001C6732 /* iPadPOC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iPadPOC.entitlements; sourceTree = "<group>"; };
+		D8F4207E2ABD0A02001C6732 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D8F420842ABD0A02001C6732 /* iPadPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F420882ABD0A02001C6732 /* iPadPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPOCTests.swift; sourceTree = "<group>"; };
+		D8F4208E2ABD0A02001C6732 /* iPadPOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadPOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F420922ABD0A02001C6732 /* iPadPOCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPOCUITests.swift; sourceTree = "<group>"; };
+		D8F420942ABD0A02001C6732 /* iPadPOCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPOCUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D8F420B22ABD0F31001C6732 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +147,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D84326F32ABA34C000D01A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F4206F2ABD09FD001C6732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F420AA2ABD0CDB001C6732 /* SwiftSense in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F420812ABD0A02001C6732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F4208B2ABD0A02001C6732 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,7 +237,6 @@
 		D81539F22ABA417000FD69CA /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				D83F3D122ABCD1E600976685 /* New Group */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -208,6 +285,7 @@
 				D8153A092ABB8F8000FD69CA /* AppDelegate.swift */,
 				D8153A0B2ABB906D00FD69CA /* MissionControl.swift */,
 				D84326EB2ABA34BD00D01A63 /* MainView.swift */,
+				D8F420B22ABD0F31001C6732 /* Global.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -219,13 +297,6 @@
 				D8153A142ABBACA400FD69CA /* TMDBMovie.swift */,
 			);
 			path = TMDB;
-			sourceTree = "<group>";
-		};
-		D83F3D122ABCD1E600976685 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D83F3D132ABCD1F500976685 /* JSON */ = {
@@ -250,7 +321,11 @@
 				D84326E42ABA34BD00D01A63 /* VisionPOC */,
 				D84326E52ABA34BD00D01A63 /* Packages */,
 				D84326F92ABA34C000D01A63 /* VisionPOCTests */,
+				D8F420732ABD09FD001C6732 /* iPadPOC */,
+				D8F420872ABD0A02001C6732 /* iPadPOCTests */,
+				D8F420912ABD0A02001C6732 /* iPadPOCUITests */,
 				D84326E32ABA34BD00D01A63 /* Products */,
+				D8F420A82ABD0CDB001C6732 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +334,9 @@
 			children = (
 				D84326E22ABA34BD00D01A63 /* VisionPOC.app */,
 				D84326F62ABA34C000D01A63 /* VisionPOCTests.xctest */,
+				D8F420722ABD09FD001C6732 /* iPadPOC.app */,
+				D8F420842ABD0A02001C6732 /* iPadPOCTests.xctest */,
+				D8F4208E2ABD0A02001C6732 /* iPadPOCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,6 +382,51 @@
 			path = VisionPOCTests;
 			sourceTree = "<group>";
 		};
+		D8F420732ABD09FD001C6732 /* iPadPOC */ = {
+			isa = PBXGroup;
+			children = (
+				D8F420742ABD09FD001C6732 /* iPadPOCApp.swift */,
+				D8F420762ABD09FD001C6732 /* ContentView.swift */,
+				D8F420782ABD09FD001C6732 /* Item.swift */,
+				D8F4207A2ABD0A02001C6732 /* Assets.xcassets */,
+				D8F4207C2ABD0A02001C6732 /* iPadPOC.entitlements */,
+				D8F4207D2ABD0A02001C6732 /* Preview Content */,
+			);
+			path = iPadPOC;
+			sourceTree = "<group>";
+		};
+		D8F4207D2ABD0A02001C6732 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D8F4207E2ABD0A02001C6732 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D8F420872ABD0A02001C6732 /* iPadPOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8F420882ABD0A02001C6732 /* iPadPOCTests.swift */,
+			);
+			path = iPadPOCTests;
+			sourceTree = "<group>";
+		};
+		D8F420912ABD0A02001C6732 /* iPadPOCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8F420922ABD0A02001C6732 /* iPadPOCUITests.swift */,
+				D8F420942ABD0A02001C6732 /* iPadPOCUITestsLaunchTests.swift */,
+			);
+			path = iPadPOCUITests;
+			sourceTree = "<group>";
+		};
+		D8F420A82ABD0CDB001C6732 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,6 +469,62 @@
 			productReference = D84326F62ABA34C000D01A63 /* VisionPOCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D8F420712ABD09FD001C6732 /* iPadPOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8F4209C2ABD0A02001C6732 /* Build configuration list for PBXNativeTarget "iPadPOC" */;
+			buildPhases = (
+				D8F4206E2ABD09FD001C6732 /* Sources */,
+				D8F4206F2ABD09FD001C6732 /* Frameworks */,
+				D8F420702ABD09FD001C6732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPadPOC;
+			packageProductDependencies = (
+				D8F420A92ABD0CDB001C6732 /* SwiftSense */,
+			);
+			productName = iPadPOC;
+			productReference = D8F420722ABD09FD001C6732 /* iPadPOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8F420832ABD0A02001C6732 /* iPadPOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8F4209D2ABD0A02001C6732 /* Build configuration list for PBXNativeTarget "iPadPOCTests" */;
+			buildPhases = (
+				D8F420802ABD0A02001C6732 /* Sources */,
+				D8F420812ABD0A02001C6732 /* Frameworks */,
+				D8F420822ABD0A02001C6732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8F420862ABD0A02001C6732 /* PBXTargetDependency */,
+			);
+			name = iPadPOCTests;
+			productName = iPadPOCTests;
+			productReference = D8F420842ABD0A02001C6732 /* iPadPOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8F4208D2ABD0A02001C6732 /* iPadPOCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8F4209E2ABD0A02001C6732 /* Build configuration list for PBXNativeTarget "iPadPOCUITests" */;
+			buildPhases = (
+				D8F4208A2ABD0A02001C6732 /* Sources */,
+				D8F4208B2ABD0A02001C6732 /* Frameworks */,
+				D8F4208C2ABD0A02001C6732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8F420902ABD0A02001C6732 /* PBXTargetDependency */,
+			);
+			name = iPadPOCUITests;
+			productName = iPadPOCUITests;
+			productReference = D8F4208E2ABD0A02001C6732 /* iPadPOCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,6 +541,17 @@
 					D84326F52ABA34C000D01A63 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = D84326E12ABA34BD00D01A63;
+					};
+					D8F420712ABD09FD001C6732 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					D8F420832ABD0A02001C6732 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = D8F420712ABD09FD001C6732;
+					};
+					D8F4208D2ABD0A02001C6732 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = D8F420712ABD09FD001C6732;
 					};
 				};
 			};
@@ -383,6 +573,9 @@
 			targets = (
 				D84326E12ABA34BD00D01A63 /* VisionPOC */,
 				D84326F52ABA34C000D01A63 /* VisionPOCTests */,
+				D8F420712ABD09FD001C6732 /* iPadPOC */,
+				D8F420832ABD0A02001C6732 /* iPadPOCTests */,
+				D8F4208D2ABD0A02001C6732 /* iPadPOCUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -406,6 +599,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8F420702ABD09FD001C6732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F4207F2ABD0A02001C6732 /* Preview Assets.xcassets in Resources */,
+				D8F4207B2ABD0A02001C6732 /* Assets.xcassets in Resources */,
+				D8F420A22ABD0B4B001C6732 /* tmdb_movie.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F420822ABD0A02001C6732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F4208C2ABD0A02001C6732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -419,6 +636,7 @@
 				D81539EC2ABA3D6F00FD69CA /* MoviesGrid.swift in Sources */,
 				D81539F52ABA42C100FD69CA /* Constants.swift in Sources */,
 				D8153A072ABB8DDE00FD69CA /* TokenCapture.swift in Sources */,
+				D8F420B32ABD0F31001C6732 /* Global.swift in Sources */,
 				D8153A022ABB860C00FD69CA /* Enums.swift in Sources */,
 				D81539EE2ABA409E00FD69CA /* TraktMovies.swift in Sources */,
 				D84326EC2ABA34BD00D01A63 /* MainView.swift in Sources */,
@@ -445,6 +663,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8F4206E2ABD09FD001C6732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F420AF2ABD0D4D001C6732 /* Ext+UIApplication.swift in Sources */,
+				D8F420B52ABD0F83001C6732 /* SKeychain.swift in Sources */,
+				D8F420A32ABD0B4E001C6732 /* TMDBMovie.swift in Sources */,
+				D8F420772ABD09FD001C6732 /* ContentView.swift in Sources */,
+				D8F420792ABD09FD001C6732 /* Item.swift in Sources */,
+				D8F420B42ABD0F65001C6732 /* Global.swift in Sources */,
+				D8F420A52ABD0C44001C6732 /* MoviesGrid.swift in Sources */,
+				D8F420752ABD09FD001C6732 /* iPadPOCApp.swift in Sources */,
+				D8F420AB2ABD0CF4001C6732 /* SafariWebView.swift in Sources */,
+				D8F420A12ABD0B27001C6732 /* TraktViewModel.swift in Sources */,
+				D8F420AE2ABD0D49001C6732 /* Enums.swift in Sources */,
+				D8F420A42ABD0B52001C6732 /* TraktMovies.swift in Sources */,
+				D8F420AC2ABD0CFB001C6732 /* TraktManager.swift in Sources */,
+				D8F420A02ABD0B01001C6732 /* MainView.swift in Sources */,
+				D8F420B12ABD0D56001C6732 /* MovieDetailView.swift in Sources */,
+				D8F420B02ABD0D50001C6732 /* Decodable.swift in Sources */,
+				D8F420A62ABD0CAC001C6732 /* TraktConsumableView.swift in Sources */,
+				D8F420B62ABD0F8B001C6732 /* AuthenticationInfo.swift in Sources */,
+				D8F420AD2ABD0D46001C6732 /* Constants.swift in Sources */,
+				D8F4209F2ABD0A7B001C6732 /* HomeNavigationView.swift in Sources */,
+				D8F420A72ABD0CB7001C6732 /* TraktService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F420802ABD0A02001C6732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F420892ABD0A02001C6732 /* iPadPOCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F4208A2ABD0A02001C6732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F420932ABD0A02001C6732 /* iPadPOCUITests.swift in Sources */,
+				D8F420952ABD0A02001C6732 /* iPadPOCUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -452,6 +715,16 @@
 			isa = PBXTargetDependency;
 			target = D84326E12ABA34BD00D01A63 /* VisionPOC */;
 			targetProxy = D84326F72ABA34C000D01A63 /* PBXContainerItemProxy */;
+		};
+		D8F420862ABD0A02001C6732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8F420712ABD09FD001C6732 /* iPadPOC */;
+			targetProxy = D8F420852ABD0A02001C6732 /* PBXContainerItemProxy */;
+		};
+		D8F420902ABD0A02001C6732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8F420712ABD09FD001C6732 /* iPadPOC */;
+			targetProxy = D8F4208F2ABD0A02001C6732 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -667,6 +940,172 @@
 			};
 			name = Release;
 		};
+		D8F420962ABD0A02001C6732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPadPOC/iPadPOC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPadPOC/Preview Content\"";
+				DEVELOPMENT_TEAM = 64SHA98X9Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sensehack.iPadPOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8F420972ABD0A02001C6732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPadPOC/iPadPOC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPadPOC/Preview Content\"";
+				DEVELOPMENT_TEAM = 64SHA98X9Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sensehack.iPadPOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D8F420982ABD0A02001C6732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64SHA98X9Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sensehack.iPadPOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPadPOC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iPadPOC";
+			};
+			name = Debug;
+		};
+		D8F420992ABD0A02001C6732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64SHA98X9Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sensehack.iPadPOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPadPOC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iPadPOC";
+			};
+			name = Release;
+		};
+		D8F4209A2ABD0A02001C6732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64SHA98X9Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sensehack.iPadPOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPadPOC;
+			};
+			name = Debug;
+		};
+		D8F4209B2ABD0A02001C6732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64SHA98X9Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sensehack.iPadPOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPadPOC;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -697,6 +1136,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D8F4209C2ABD0A02001C6732 /* Build configuration list for PBXNativeTarget "iPadPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8F420962ABD0A02001C6732 /* Debug */,
+				D8F420972ABD0A02001C6732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8F4209D2ABD0A02001C6732 /* Build configuration list for PBXNativeTarget "iPadPOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8F420982ABD0A02001C6732 /* Debug */,
+				D8F420992ABD0A02001C6732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8F4209E2ABD0A02001C6732 /* Build configuration list for PBXNativeTarget "iPadPOCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8F4209A2ABD0A02001C6732 /* Debug */,
+				D8F4209B2ABD0A02001C6732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -719,6 +1185,11 @@
 		D84326E72ABA34BD00D01A63 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		D8F420A92ABD0CDB001C6732 /* SwiftSense */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D81539EF2ABA414E00FD69CA /* XCRemoteSwiftPackageReference "swift-sense" */;
+			productName = SwiftSense;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

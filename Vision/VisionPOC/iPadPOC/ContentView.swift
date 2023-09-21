@@ -1,24 +1,25 @@
 //
-//  HomeNavigationView.swift
-//  VisionPOC
+//  ContentView.swift
+//  iPadPOC
 //
 //  Created by Save, Kautilya on 9/21/23.
 //
 
-import Foundation
-
 import SwiftUI
+import SwiftData
 
-struct HomeNavigationView: View {
-    
-    @EnvironmentObject private var viewModel: TraktViewModel
+
+
+struct iPadHomeView: View {
     @State var text: String = ""
+    @EnvironmentObject private var viewModel: TraktViewModel
     
     var body: some View {
-        //        firstNavigationSplitView
+
         secondNavigationView
     }
 }
+
 
 // MARK: - Preview
 #if os(xrOS)
@@ -29,41 +30,13 @@ struct HomeNavigationView: View {
 
 #if !os(xrOS)
 #Preview {
-    HomeNavigationView()
+    HomeNavigationView()
 }
 #endif
 
+extension iPadHomeView {
 
 
-extension HomeNavigationView {
-    private var firstNavigationSplitView: some View {
-        Group {
-            NavigationSplitView {
-                TabView {
-                    Text("Tab One")
-                        .tabItem { Label("Featured", systemImage: "star") }
-                        .onAppear { text = "Tab One's Items" }
-                    Text("Tab Two")
-                        .tabItem { Label("List", systemImage: "list.bullet") }
-                        .onAppear { text = "Items of Tab Two" }
-                }.tabViewStyle(.page)
-                List {
-                    Text(text)
-                        .onChange(of: text) { _, newValue in
-                            text = newValue
-                        }
-                }
-            } detail: {
-                // some code
-            }
-            .navigationTitle("Content")
-            .padding()
-        }
-    }
-    
-    
-    
-    
     private var secondNavigationView: some View {
         
         
@@ -117,4 +90,5 @@ extension HomeNavigationView {
         }
     }
 }
+
 

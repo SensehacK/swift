@@ -76,6 +76,17 @@ struct MoviesGrid: View {
     }
 }
 
+
+// MARK: - Preview
+#if os(xrOS)
 #Preview(windowStyle: .automatic) {
     MoviesGrid(userMovies: [])
 }
+#endif
+
+#if !os(xrOS)
+#Preview {
+    MoviesGrid(userMovies: [])
+}
+#endif
+
