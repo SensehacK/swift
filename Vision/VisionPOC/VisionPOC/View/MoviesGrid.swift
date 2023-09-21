@@ -12,7 +12,7 @@ struct MoviesGrid: View {
     // Layout Guide
     
     let layout = [
-        GridItem(.adaptive(minimum: 200, maximum: 400))
+        GridItem(.adaptive(minimum: 300, maximum: 800))
     ]
     
     var names: [String] = ["heart.fill",
@@ -28,45 +28,51 @@ struct MoviesGrid: View {
     ]
     
     let userMovies: [TraktConsumableView]
-//    let userMovies: TraktMovies
+    //    let userMovies: TraktMovies
     
     var body: some View {
-        VStack {
-            
-            Text("Your Movies")
-            
-            
-            LazyVGrid(columns: layout) {
-
-                ForEach(userMovies, id: \.id) { movie in
+        
+        
+        ScrollView {
+            VStack {
+                
+                Text("Your Movies")
+                
+                
+                LazyVGrid(columns: layout) {
                     
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8, content: {
-                        Text(movie.title)
+                    ForEach(userMovies, id: \.id) { movie in
                         
+                        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8, content: {
+                            Text(movie.title)
+                            
+                            
+                            Image(uiImage: movie.posterImage)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 700, height: 500)
+                        })
                         
-                        Image(uiImage: movie.posterImage)
+                    }
+                    
+                    /* System Emojis Trials
+                    ForEach(names, id: \.self) { name in
+                        Image(systemName: name)
+                            .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 300, height: 300)
-                    })
-                    
+                            .frame(width: 200, height: 100, alignment: .center)
+                        
+                    }
+                     */
                 }
                 
-//                ForEach(names, id: \.self) { name in
-//                    Image(systemName: name)
-//                        .renderingMode(.original)
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 200, height: 100, alignment: .center)
-//                    
-//                }
+                
+                
             }
-            
-            
-            
+            .navigationTitle("Content")
+            .padding()
         }
-        .navigationTitle("Content")
-        .padding()
     }
 }
 

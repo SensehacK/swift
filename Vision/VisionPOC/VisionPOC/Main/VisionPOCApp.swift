@@ -19,40 +19,25 @@ struct VisionPOCApp: App {
     var body: some Scene {
         WindowGroup {
             
-            
-            
-            if case let .success(traktMovie) = TraktMovies.from(localJSON: "trakt_recent_movies"),
-               case let .success(tmdbMovie) = TMDBMovieAPI.from2(localJSON: "tmdb_movie"),
-               let oneMovie = traktMovie.first {
-                
-                
-                
-                let dummyImage = UIImage(named: "movie_background_test")!
-                let dummyImage2 = UIImage(named: "movie_poster_test")!
-                Text("Hello Here!")
-                let movieView = TraktConsumableView(id: 12, traktDetails: oneMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage2, backgroundImage: dummyImage, trailerImage: "as23")
-                
-                MovieDetailView(movie: movieView)
-                
-                
-                
-                
-            } else {
-                MovieDetailView(movie: nil)
-            }
-            
-//            if let movieView = Self.doGetData() {
-//                Text("Hello Her 221421341 e!")
+            // Movie Detail View
+//            if case let .success(traktMovie) = TraktMovies.from(localJSON: "trakt_recent_movies"),
+//               case let .success(tmdbMovie) = TMDBMovieAPI.from2(localJSON: "tmdb_movie"),
+//               let oneMovie = traktMovie.first {
+//                let dummyImage = UIImage(named: "movie_background_test")!
+//                let dummyImage2 = UIImage(named: "movie_poster_test")!
+//                Text("Hello Here!")
+//                let movieView = TraktConsumableView(id: 12, traktDetails: oneMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage2, backgroundImage: dummyImage, trailerImage: "as23")
+//                
 //                MovieDetailView(movie: movieView)
-//            }
-//            
-//            else {
+//
+//            } else {
 //                MovieDetailView(movie: nil)
 //            }
+
             
-            
-            
-            
+            // Testing right now
+            HomeNavigationView()
+                .environmentObject(viewModel)
             
             
             // Main Channel

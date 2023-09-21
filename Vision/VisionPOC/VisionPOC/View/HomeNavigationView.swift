@@ -10,10 +10,12 @@ import Foundation
 import SwiftUI
 
 struct HomeNavigationView: View {
+    
+    @EnvironmentObject private var viewModel: TraktViewModel
     @State var text: String = ""
     
     var body: some View {
-//        firstNavigationSplitView
+        //        firstNavigationSplitView
         secondNavigationView
     }
 }
@@ -63,11 +65,47 @@ extension HomeNavigationView {
                 .onAppear { text = "Tab One's Items" }
             
             
-            Text("Tab Two")
+            movieDetailView
                 .tabItem { Label("List", systemImage: "list.bullet") }
                 .onAppear { text = "Items of Tab Two" }
+            
+
+            movieGridView
+                .tabItem { Label("List", systemImage: "list.bullet") }
+                .onAppear { text = "Items of Tab Three" }
             
             
         }
     }
+    
+    
+    
+    private var movieDetailView: some View {
+        
+        Group {
+            if case let .success(traktMovie) = TraktMovies.from(localJSON: "trakt_recent_movies"),
+               case let .success(tmdbMovie) = TMDBMovieAPI.from2(localJSON: "tmdb_movie"),
+               let oneMovie = traktMovie.first {
+                let dummyImage = UIImage(named: "movie_background_test")!
+                let dummyImage2 = UIImage(named: "movie_poster_test")!
+                
+                let movieView = TraktConsumableView(id: 12, traktDetails: oneMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage2, backgroundImage: dummyImage, trailerImage: "as23")
+                
+                MovieDetailView(movie: movieView)
+                
+                
+            }
+        }
+    }
+    
+    
+    
+    private var movieGridView: some View {
+       
+        Group {
+            MainView()
+                .environmentObject(viewModel)
+        }
+    }
 }
+

@@ -37,11 +37,7 @@ struct TraktConsumableView: Identifiable {
     
     var overview: String { tMDBDetails.overview }
     
-    
-    
-    
-    
-    
+
     
 }
 
