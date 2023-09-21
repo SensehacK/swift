@@ -31,7 +31,7 @@ class TraktViewModel: ObservableObject {
         print("Fetching movies??")
         movies = await serviceFetcher.fetchTrakts()
         guard let allMovies = movies?.allMovies else { return }
-        let randomID = allMovies.randomElement()?.movie.ids.tmdb ?? 149
+//        let randomID = allMovies.randomElement()?.movie.ids.tmdb ?? 149
 //        let movie = await serviceFetcher.fetchSingleMovieDetails(id: randomID)
 //        print("HEELLASOLFOAJGOAFGKMAWFMFA")
 //        print(movie?.originalTitle)

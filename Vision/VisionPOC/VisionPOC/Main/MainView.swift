@@ -30,7 +30,6 @@ struct MainView: View {
             
             if let success = viewModel.traktTVApi {
                 Text(success)
-//                viewModel.displaySafari = false
                 if let movieViewData = viewModel.moviesViewData {
                     Text("Another If condition check!")
                     let movies = movieViewData.values.compactMap { $0 }

@@ -7,7 +7,7 @@
 
 import Foundation
 // MARK: - TraktMovie
-struct TraktMovie: Codable {
+struct TraktMovieAPI: Codable {
     let id: Int
     let watchedAt: String
     let action: Action
@@ -44,4 +44,4 @@ enum TypeEnum: String, Codable {
     case movie = "movie"
 }
 
-typealias TraktMovies = [TraktMovie]
+typealias TraktMovies = [TraktMovieAPI]

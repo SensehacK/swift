@@ -10,17 +10,18 @@ import UIKit
 
 struct TraktConsumableView: Identifiable {
     let id: Int
-    private let movieDetails: TraktMovie
-    
+    private let traktDetails: TraktMovieAPI
+    private let tMDBDetails: TMDBMovieAPI
     let posterImage: UIImage
     let backgroundImage: UIImage
     let trailerImage: String
 
     
     
-    init(id: Int, movieDetails: TraktMovie, posterImage: UIImage, backgroundImage: UIImage, trailerImage: String) {
+    init(id: Int, traktDetails: TraktMovieAPI, tMDBDetails: TMDBMovieAPI, posterImage: UIImage, backgroundImage: UIImage, trailerImage: String) {
         self.id = id
-        self.movieDetails = movieDetails
+        self.traktDetails = traktDetails
+        self.tMDBDetails = tMDBDetails
         self.posterImage = posterImage
         self.backgroundImage = backgroundImage
         self.trailerImage = trailerImage
@@ -28,8 +29,13 @@ struct TraktConsumableView: Identifiable {
     
     
     var title: String {
-        movieDetails.movie.title
+        traktDetails.movie.title
     }
+    
+    
+    var detail: TMDBMovieAPI { tMDBDetails }
+    
+    var overview: String { tMDBDetails.overview }
     
     
     
@@ -58,7 +64,7 @@ struct TraktViewData {
     }
     
     
-    func getMovie(id: Int) -> TraktMovie? {
+    func getMovie(id: Int) -> TraktMovieAPI? {
         traktMovies.filter { $0.id == id }.first
     }
     

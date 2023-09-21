@@ -24,6 +24,10 @@
 		D8153A102ABB94DB00FD69CA /* Ext+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */; };
 		D8153A122ABBA94300FD69CA /* TraktConsumableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */; };
 		D8153A152ABBACA400FD69CA /* TMDBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A142ABBACA400FD69CA /* TMDBMovie.swift */; };
+		D83F3D112ABCD07300976685 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F3D102ABCD07300976685 /* MovieDetailView.swift */; };
+		D83F3D152ABCD21200976685 /* tmdb_movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D83F3D142ABCD21200976685 /* tmdb_movie.json */; };
+		D83F3D182ABCD86A00976685 /* trakt_recent_movies.json in Resources */ = {isa = PBXBuildFile; fileRef = D83F3D172ABCD86A00976685 /* trakt_recent_movies.json */; };
+		D83F3D1A2ABCDDF800976685 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F3D192ABCDDF800976685 /* Decodable.swift */; };
 		D84326E82ABA34BD00D01A63 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D84326E72ABA34BD00D01A63 /* RealityKitContent */; };
 		D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */; };
 		D84326EC2ABA34BD00D01A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326EB2ABA34BD00D01A63 /* MainView.swift */; };
@@ -60,6 +64,10 @@
 		D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIApplication.swift"; sourceTree = "<group>"; };
 		D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktConsumableView.swift; sourceTree = "<group>"; };
 		D8153A142ABBACA400FD69CA /* TMDBMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovie.swift; sourceTree = "<group>"; };
+		D83F3D102ABCD07300976685 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		D83F3D142ABCD21200976685 /* tmdb_movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tmdb_movie.json; sourceTree = "<group>"; };
+		D83F3D172ABCD86A00976685 /* trakt_recent_movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trakt_recent_movies.json; sourceTree = "<group>"; };
+		D83F3D192ABCDDF800976685 /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
 		D84326E22ABA34BD00D01A63 /* VisionPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84326E62ABA34BD00D01A63 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionPOCApp.swift; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				D81539EB2ABA3D6F00FD69CA /* MoviesGrid.swift */,
+				D83F3D102ABCD07300976685 /* MovieDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +148,7 @@
 				D8153A012ABB860C00FD69CA /* Enums.swift */,
 				D8153A0D2ABB935800FD69CA /* SafariWebView.swift */,
 				D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */,
+				D83F3D192ABCDDF800976685 /* Decodable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 		D81539F22ABA417000FD69CA /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				D83F3D122ABCD1E600976685 /* New Group */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		D8153A032ABB8B8E00FD69CA /* Trakt */ = {
 			isa = PBXGroup;
 			children = (
+				D83F3D162ABCD84700976685 /* JSON */,
 				D81539ED2ABA409E00FD69CA /* TraktMovies.swift */,
 				D8153A042ABB8B9B00FD69CA /* AuthenticationInfo.swift */,
 			);
@@ -200,9 +212,33 @@
 		D8153A132ABBAC5200FD69CA /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				D83F3D132ABCD1F500976685 /* JSON */,
 				D8153A142ABBACA400FD69CA /* TMDBMovie.swift */,
 			);
 			path = TMDB;
+			sourceTree = "<group>";
+		};
+		D83F3D122ABCD1E600976685 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D83F3D132ABCD1F500976685 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D83F3D142ABCD21200976685 /* tmdb_movie.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		D83F3D162ABCD84700976685 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D83F3D172ABCD86A00976685 /* trakt_recent_movies.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		D84326D92ABA34BD00D01A63 = {
@@ -353,8 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83F3D182ABCD86A00976685 /* trakt_recent_movies.json in Resources */,
 				D84326F12ABA34C000D01A63 /* Preview Assets.xcassets in Resources */,
 				D84326EE2ABA34C000D01A63 /* Assets.xcassets in Resources */,
+				D83F3D152ABCD21200976685 /* tmdb_movie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,9 +423,11 @@
 				D81539FA2ABA4DFE00FD69CA /* TraktViewModel.swift in Sources */,
 				D8153A0A2ABB8F8000FD69CA /* AppDelegate.swift in Sources */,
 				D8153A002ABB856100FD69CA /* SKeychain.swift in Sources */,
+				D83F3D1A2ABCDDF800976685 /* Decodable.swift in Sources */,
 				D81539FD2ABB845600FD69CA /* TraktManager.swift in Sources */,
 				D8153A0E2ABB935800FD69CA /* SafariWebView.swift in Sources */,
 				D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */,
+				D83F3D112ABCD07300976685 /* MovieDetailView.swift in Sources */,
 				D8153A052ABB8B9B00FD69CA /* AuthenticationInfo.swift in Sources */,
 				D8153A0C2ABB906D00FD69CA /* MissionControl.swift in Sources */,
 			);

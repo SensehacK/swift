@@ -11,7 +11,7 @@ import UIKit
 protocol TraktService {
     
     func fetchTrakts() async -> TraktViewData?
-    func fetchAllRecentMoviesDetailsWithImagesAsync(movies: [TraktMovie]) async throws -> [Int: TraktConsumableView]?
+    func fetchAllRecentMoviesDetailsWithImagesAsync(movies: [TraktMovieAPI]) async throws -> [Int: TraktConsumableView]?
 //    func fetchSingleMovieDetailView(movie: TraktMovie, tmdbMovieID: Int) async throws -> TraktConsumableView
     func fetchSingleMovieDetails(id: Int) async -> TMDBMovieAPI?
 }
@@ -26,7 +26,7 @@ class TraktDataFetcher: TraktService {
         
         do {
             
-            let data = try await AsyncNetwork.shared.fetchDataArray(url: URLConstants.traktMovieTestURL, type: TraktMovie.self)
+            let data = try await AsyncNetwork.shared.fetchDataArray(url: URLConstants.traktMovieTestURL, type: TraktMovieAPI.self)
             
             let traktViewData: TraktViewData = .init(movies: data, id: 0)
             
@@ -77,7 +77,7 @@ class TraktDataFetcher: TraktService {
     
     
     
-    func fetchAllRecentMoviesDetailsWithImagesAsync(movies: [TraktMovie]) async throws -> [Int: TraktConsumableView]? {
+    func fetchAllRecentMoviesDetailsWithImagesAsync(movies: [TraktMovieAPI]) async throws -> [Int: TraktConsumableView]? {
             // run your Async work
             let traktViewAsync = try? await self.fetchTraktAsyncTaskGroup(movies: movies)
 
@@ -110,7 +110,7 @@ class TraktDataFetcher: TraktService {
 // MARK: - Fetching TraktMovie Details with Image Concurrently - Async
 extension TraktDataFetcher {
     
-    private func fetchTraktAsyncTaskGroup(movies: [TraktMovie]) async throws -> [Int: TraktConsumableView] {
+    private func fetchTraktAsyncTaskGroup(movies: [TraktMovieAPI]) async throws -> [Int: TraktConsumableView] {
         return try await withThrowingTaskGroup(of: TraktConsumableView?.self) { [weak self] group in
             guard let self = self else { throw URLError(.backgroundSessionInUseByAnotherProcess) }
             var movieDict: [Int: TraktConsumableView] = [:]
@@ -137,7 +137,7 @@ extension TraktDataFetcher {
         }
     }
 
-    private func fetchSingleMovieDetailView(movie: TraktMovie, tmdbMovieID: Int) async throws -> TraktConsumableView {
+    func fetchSingleMovieDetailView(movie: TraktMovieAPI, tmdbMovieID: Int) async throws -> TraktConsumableView {
         
         guard let movieDetail = await fetchSingleMovieDetails(id: tmdbMovieID) else {
             print("Error fetching poke detail")
@@ -158,12 +158,10 @@ extension TraktDataFetcher {
         guard let backgroundURL = URL(string: movieBackgroundURL) else { throw URLError(.badURL) }
         let (backgroundImgData, _) = try await URLSession.shared.data(from: backgroundURL)
         guard let backgroundImage = UIImage(data: backgroundImgData) else { throw URLError(.badURL) }
-        
-        
-        let defaultImage: UIImage = UIImage(systemName: "globe")!
 
         let movieDetailView = TraktConsumableView(id: movie.id,
-                                                  movieDetails: movie,
+                                                  traktDetails: movie,
+                                                  tMDBDetails: movieDetail,
                                                   posterImage: posterImage,
                                                   backgroundImage: backgroundImage,
                                                   trailerImage: movieDetail.homepage)
