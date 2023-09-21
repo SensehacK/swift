@@ -6,12 +6,14 @@
 //
 
 import SwiftSense
-import Foundation
+import UIKit
 
 protocol TraktService {
     
     func fetchTrakts() async -> TraktViewData?
-//    func fetchTraktDetails(id: Int) async -> TraktDetailAPI?
+    func fetchAllRecentMoviesDetailsWithImagesAsync(movies: [TraktMovie]) async throws -> [Int: TraktConsumableView]?
+//    func fetchSingleMovieDetailView(movie: TraktMovie, tmdbMovieID: Int) async throws -> TraktConsumableView
+    func fetchSingleMovieDetails(id: Int) async -> TMDBMovieAPI?
 }
 
 
@@ -26,23 +28,9 @@ class TraktDataFetcher: TraktService {
             
             let data = try await AsyncNetwork.shared.fetchDataArray(url: URLConstants.traktMovieTestURL, type: TraktMovie.self)
             
-            
             let traktViewData: TraktViewData = .init(movies: data, id: 0)
             
             return traktViewData
-            
-//            for (index, trakt) in data.enumerated() {
-//                traktViewData.append(TraktViewData(Trakt: Trakt, id: index+1))
-//            }
-            
-//            let data = try await NetworkManager.shared.fetchData(url: URLConstants.traktMovieTestURL)
-//            
-//            let decodedData = try JSONDecoder().decode(TraktAPI.self, from: data)
-//            var TraktViewData: [TraktViewData] = []
-//            for (index, Trakt) in decodedData.results.enumerated() {
-//                TraktViewData.append(TraktViewData(Trakt: Trakt, id: index+1))
-//            }
-//
         } catch {
             print(error.localizedDescription)
         }
@@ -87,20 +75,102 @@ class TraktDataFetcher: TraktService {
     }
     
     
-//    func fetchTraktDetails(id: Int) async -> TraktDetailAPI? {
-//        
-//        do {
-//            let url = URLConstants.TraktBaseURL + String(id)
-//            let data = try await NetworkManager.shared.fetchData(url: url)
-//            let decodedData = try JSONDecoder().decode(TraktDetailAPI.self, from: data)
-//            return decodedData
-//        } catch {
-//            print(error)
-//            print(error.localizedDescription)
-//        }
-//
-//        return nil
-//    }
+    
+    
+    func fetchAllRecentMoviesDetailsWithImagesAsync(movies: [TraktMovie]) async throws -> [Int: TraktConsumableView]? {
+            // run your Async work
+            let traktViewAsync = try? await self.fetchTraktAsyncTaskGroup(movies: movies)
+
+            return traktViewAsync
+        
+    }
+    
+    
+    func fetchSingleMovieDetails(id: Int) async -> TMDBMovieAPI? {
+        
+        do {
+            let url = URLConstants.movieBaseURL + String(id) + URLConstants.tmdbAPIKeyParam
+            let data = try await NetworkManager.shared.fetchData(url: url)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let decodedData = try decoder.decode(TMDBMovieAPI.self, from: data)
+            return decodedData
+        } catch {
+            print(error)
+            print(error.localizedDescription)
+        }
+
+        return nil
+    }
+    
+    
+}
+
+
+// MARK: - Fetching TraktMovie Details with Image Concurrently - Async
+extension TraktDataFetcher {
+    
+    private func fetchTraktAsyncTaskGroup(movies: [TraktMovie]) async throws -> [Int: TraktConsumableView] {
+        return try await withThrowingTaskGroup(of: TraktConsumableView?.self) { [weak self] group in
+            guard let self = self else { throw URLError(.backgroundSessionInUseByAnotherProcess) }
+            var movieDict: [Int: TraktConsumableView] = [:]
+//            movieDict.reserveCapacity(15)
+
+            for movie in movies {
+                group.addTask {
+                    try await self.fetchSingleMovieDetailView(movie: movie, tmdbMovieID: movie.movie.ids.tmdb)
+                }
+            }
+
+            
+            // Resolve it using Dictionary Approach
+            for try await image in group {
+                if let image = image {
+                    let index = image.id
+//                    print("Inserting at Index: \(index)")
+                    movieDict[index] = image
+
+                }
+            }
+            print("Done fetching All trakt Async Concurrently")
+            return movieDict
+        }
+    }
+
+    private func fetchSingleMovieDetailView(movie: TraktMovie, tmdbMovieID: Int) async throws -> TraktConsumableView {
+        
+        guard let movieDetail = await fetchSingleMovieDetails(id: tmdbMovieID) else {
+            print("Error fetching poke detail")
+            throw URLError(.badURL)
+        }
+
+        
+        let moviePosterURL = URLConstants.movieImageBaseURL + Resolution.Poster.w500.rawValue + movieDetail.posterPath
+        let movieBackgroundURL = URLConstants.movieImageBaseURL + Resolution.Background.w1280.rawValue + movieDetail.backdropPath
+        
+        print("Movie Posters")
+        
+        guard let posterURL = URL(string: moviePosterURL) else { throw URLError(.badURL) }
+        let (posterImgData, _) = try await URLSession.shared.data(from: posterURL)
+        guard let posterImage = UIImage(data: posterImgData) else { throw URLError(.badURL) }
+        
+        
+        guard let backgroundURL = URL(string: movieBackgroundURL) else { throw URLError(.badURL) }
+        let (backgroundImgData, _) = try await URLSession.shared.data(from: backgroundURL)
+        guard let backgroundImage = UIImage(data: backgroundImgData) else { throw URLError(.badURL) }
+        
+        
+        let defaultImage: UIImage = UIImage(systemName: "globe")!
+
+        let movieDetailView = TraktConsumableView(id: movie.id,
+                                                  movieDetails: movie,
+                                                  posterImage: posterImage,
+                                                  backgroundImage: backgroundImage,
+                                                  trailerImage: movieDetail.homepage)
+        return movieDetailView
+    }
+    
+    
     
     
 }
@@ -121,16 +191,7 @@ class NetworkManager {
             throw URLError(.badURL)
         }
         
-        // Manifest the URL Request with appropriate HEaders
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.addValue("2" , forHTTPHeaderField: "trakt-api-version")
-        urlRequest.addValue(APIKeys.trakt, forHTTPHeaderField: "trakt-api-key")
-        
-        
-
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let response = response as? HTTPURLResponse,
               (200..<300).contains(response.statusCode)

@@ -22,6 +22,8 @@
 		D8153A0C2ABB906D00FD69CA /* MissionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0B2ABB906D00FD69CA /* MissionControl.swift */; };
 		D8153A0E2ABB935800FD69CA /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0D2ABB935800FD69CA /* SafariWebView.swift */; };
 		D8153A102ABB94DB00FD69CA /* Ext+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */; };
+		D8153A122ABBA94300FD69CA /* TraktConsumableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */; };
+		D8153A152ABBACA400FD69CA /* TMDBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A142ABBACA400FD69CA /* TMDBMovie.swift */; };
 		D84326E82ABA34BD00D01A63 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D84326E72ABA34BD00D01A63 /* RealityKitContent */; };
 		D84326EA2ABA34BD00D01A63 /* VisionPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */; };
 		D84326EC2ABA34BD00D01A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326EB2ABA34BD00D01A63 /* MainView.swift */; };
@@ -56,6 +58,8 @@
 		D8153A0B2ABB906D00FD69CA /* MissionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionControl.swift; sourceTree = "<group>"; };
 		D8153A0D2ABB935800FD69CA /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIApplication.swift"; sourceTree = "<group>"; };
+		D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktConsumableView.swift; sourceTree = "<group>"; };
+		D8153A142ABBACA400FD69CA /* TMDBMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovie.swift; sourceTree = "<group>"; };
 		D84326E22ABA34BD00D01A63 /* VisionPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84326E62ABA34BD00D01A63 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		D84326E92ABA34BD00D01A63 /* VisionPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionPOCApp.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		D81539E82ABA3CF900FD69CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8153A132ABBAC5200FD69CA /* TMDB */,
 				D8153A032ABB8B8E00FD69CA /* Trakt */,
 			);
 			path = Model;
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				D81539F92ABA4DFE00FD69CA /* TraktViewModel.swift */,
+				D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */,
 			);
 			path = Trakt;
 			sourceTree = "<group>";
@@ -189,6 +195,14 @@
 				D84326EB2ABA34BD00D01A63 /* MainView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D8153A132ABBAC5200FD69CA /* TMDB */ = {
+			isa = PBXGroup;
+			children = (
+				D8153A142ABBACA400FD69CA /* TMDBMovie.swift */,
+			);
+			path = TMDB;
 			sourceTree = "<group>";
 		};
 		D84326D92ABA34BD00D01A63 = {
@@ -359,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8153A102ABB94DB00FD69CA /* Ext+UIApplication.swift in Sources */,
+				D8153A122ABBA94300FD69CA /* TraktConsumableView.swift in Sources */,
 				D81539EC2ABA3D6F00FD69CA /* MoviesGrid.swift in Sources */,
 				D81539F52ABA42C100FD69CA /* Constants.swift in Sources */,
 				D8153A072ABB8DDE00FD69CA /* TokenCapture.swift in Sources */,
@@ -366,6 +381,7 @@
 				D81539EE2ABA409E00FD69CA /* TraktMovies.swift in Sources */,
 				D84326EC2ABA34BD00D01A63 /* MainView.swift in Sources */,
 				D81539F72ABA4DBD00FD69CA /* TraktService.swift in Sources */,
+				D8153A152ABBACA400FD69CA /* TMDBMovie.swift in Sources */,
 				D81539FA2ABA4DFE00FD69CA /* TraktViewModel.swift in Sources */,
 				D8153A0A2ABB8F8000FD69CA /* AppDelegate.swift in Sources */,
 				D8153A002ABB856100FD69CA /* SKeychain.swift in Sources */,

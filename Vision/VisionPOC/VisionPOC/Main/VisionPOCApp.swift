@@ -24,7 +24,7 @@ struct VisionPOCApp: App {
                     print("Hello Vision POC SwiftUI - Did I get a callback here!")
                     // Parse the URL callback from Trakt API Oauth
                     TokenCapture.parseURLSchemeToExtractToken(url: url)
-                    viewModel.displaySafari = false
+//                    viewModel.displaySafari = false
                 }
         }
     }

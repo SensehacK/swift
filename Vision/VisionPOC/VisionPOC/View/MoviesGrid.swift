@@ -12,7 +12,7 @@ struct MoviesGrid: View {
     // Layout Guide
     
     let layout = [
-        GridItem(.adaptive(minimum: 160, maximum: 400))
+        GridItem(.adaptive(minimum: 200, maximum: 400))
     ]
     
     var names: [String] = ["heart.fill",
@@ -27,8 +27,8 @@ struct MoviesGrid: View {
                            
     ]
     
-    let userMovies: TraktMovies
-    
+    let userMovies: [TraktConsumableView]
+//    let userMovies: TraktMovies
     
     var body: some View {
         VStack {
@@ -37,19 +37,29 @@ struct MoviesGrid: View {
             
             
             LazyVGrid(columns: layout) {
-                ForEach(0..<20) {
-                    Text("Movie # \($0)")
-                    //                    AsyncImage(url: <#T##URL?#>, scale: <#T##CGFloat#>, content: <#T##(Image) -> View#>, placeholder: <#T##() -> View#>)
-                }
-                
-                ForEach(names, id: \.self) { name in
-                    Image(systemName: name)
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 100, alignment: .center)
+
+                ForEach(userMovies, id: \.id) { movie in
+                    
+                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8, content: {
+                        Text(movie.title)
+                        
+                        
+                        Image(uiImage: movie.posterImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 300, height: 300)
+                    })
                     
                 }
+                
+//                ForEach(names, id: \.self) { name in
+//                    Image(systemName: name)
+//                        .renderingMode(.original)
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 200, height: 100, alignment: .center)
+//                    
+//                }
             }
             
             

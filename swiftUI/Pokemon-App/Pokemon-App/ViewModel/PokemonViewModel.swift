@@ -129,10 +129,10 @@ class PokemonViewModel: ObservableObject {
     private func fetchPokemonsAsyncTaskGroup(pokemons: [PokemonViewData]) async throws -> [Int: PokemonDetailViewData] {
         return try await withThrowingTaskGroup(of: PokemonDetailViewData?.self) { [weak self] group in
             guard let self = self else { throw URLError(.backgroundSessionInUseByAnotherProcess) }
-            var images: [PokemonDetailViewData?] = [PokemonDetailViewData]()
+            
             var pokemonDict: [Int: PokemonDetailViewData] = [:]
             
-            images.reserveCapacity(151)
+            pokemonDict.reserveCapacity(151)
             
             for pokemon in pokemons {
                 group.addTask {

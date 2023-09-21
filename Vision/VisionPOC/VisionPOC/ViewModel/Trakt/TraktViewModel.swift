@@ -13,6 +13,7 @@ class TraktViewModel: ObservableObject {
     
     
     @Published var movies: TraktViewData?
+    @Published var moviesViewData: [Int: TraktConsumableView]?
     
     @Published var traktTVApi: String?
     @Published var displaySafari: Bool = false
@@ -24,21 +25,26 @@ class TraktViewModel: ObservableObject {
          serviceFetcher: TraktService = TraktDataFetcher.shared) {
         self.movies = movies
         self.serviceFetcher = serviceFetcher
-        
     }
     
     func fetchData() async {
         print("Fetching movies??")
         movies = await serviceFetcher.fetchTrakts()
+        guard let allMovies = movies?.allMovies else { return }
+        let randomID = allMovies.randomElement()?.movie.ids.tmdb ?? 149
+//        let movie = await serviceFetcher.fetchSingleMovieDetails(id: randomID)
+//        print("HEELLASOLFOAJGOAFGKMAWFMFA")
+//        print(movie?.originalTitle)
+//        print(movie?.posterPath)
+        moviesViewData = try? await serviceFetcher.fetchAllRecentMoviesDetailsWithImagesAsync(movies: allMovies)
     }
     
     
     func showSignInUser() {
         displaySafari = true
         setupObservers()
-//        presentLogIn()
-        
-        
+        // presentLogIn()
+
     }
     
     func showLoginSafari() {
@@ -47,6 +53,7 @@ class TraktViewModel: ObservableObject {
     }
     
     func refreshUI() {
+        displaySafari = false
         self.traktTVApi = "Success Callback!"
     }
     
@@ -58,14 +65,7 @@ private extension TraktViewModel {
     func presentLogIn() {
         guard let oauthURL = TraktManager.sharedManager.oauthURL else { return }
 
-//        let traktAuth = SFSafariViewController(url: oauthURL)
-//        present(traktAuth, animated: true, completion: nil)
-//        
-        
-        // 1
         let vc = SFSafariViewController(url: oauthURL)
-        
-        // 2
         UIApplication.shared.firstKeyWindow?.rootViewController?.present(vc, animated: true)
         
     }
@@ -73,9 +73,7 @@ private extension TraktViewModel {
     
     func setupObservers() {
         NotificationCenter.default.addObserver(forName: .TraktSignedIn, object: nil, queue: nil) { [weak self] _ in
-            
-            UIApplication.shared.firstKeyWindow?.rootViewController?.dismiss(animated: true)
-//            self?.dismiss(animated: true, completion: nil) // Dismiss the SFSafariViewController
+            UIApplication.shared.firstKeyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
             self?.refreshUI()
         }
     }
@@ -83,25 +81,4 @@ private extension TraktViewModel {
 
 
 
-struct TraktViewData {
-//    let id: Int
-    private let traktMovies: TraktMovies
-    
-    init(movies: TraktMovies, id: Int) {
-        self.traktMovies = movies
-//        self.id = id
-    }
 
-    var firstMovieName: String? {
-        traktMovies.first?.movie.title
-    }
-    
-    
-    func getMovie(id: Int) -> TraktMovie? {
-        traktMovies.filter { $0.id == id }.first
-    }
-    
-    var allMovies: TraktMovies {
-        traktMovies
-    }
-}

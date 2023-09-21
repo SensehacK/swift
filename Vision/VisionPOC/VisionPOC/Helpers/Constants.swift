@@ -11,11 +11,31 @@ import Foundation
 struct URLConstants {
     static let traktMovieTestURL = "https://api.trakt.tv/users/sensehack/history/movies/"
     static let tMovieDBTestURL = "https://api.themoviedb.org/3/movie/100402?api_key=\(APIKeys.tmdb)&language=en-US"
-    static let movieBaseURL = "https://pokeapi.co/api/v2/pokemon/"
+    static let movieBaseURL = "https://api.themoviedb.org/3/movie/"
+    static let tmdbAPIKeyParam = "?api_key=\(APIKeys.tmdb)&language=en-US"
+    
+    
+    static let movieImageBaseURL = "https://image.tmdb.org/t/p/"
+    
     
 }
 
 
 
 
+//https://image.tmdb.org/t/p/w1280/fK40VGYIm7hmKrLJ26fgPQU0qRG.jpg
+// https://image.tmdb.org/t/p/w500/neZ0ykEsPqxamsX6o5QNUFILQrz.jpg
+enum Resolution {
+    
+    enum Poster: String {
+        case w500
+        
+    }
+    
+    
+    enum Background: String {
+        case w1280
+    }
+    
+    
 }
