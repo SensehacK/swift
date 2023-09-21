@@ -30,9 +30,10 @@ struct MovieDetailView: View {
                             .frame(width: 300, height: 300)
                         
                         Image(uiImage: movie.backgroundImage)
-//                            .resizable()
+                            .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 600, height: 400)
+                            .frame(minWidth: 400, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+
                         
 //                    })
                 } else {

@@ -30,7 +30,7 @@ struct VisionPOCApp: App {
                 let dummyImage = UIImage(named: "movie_background_test")!
                 let dummyImage2 = UIImage(named: "movie_poster_test")!
                 Text("Hello Here!")
-                let movieView = TraktConsumableView(id: 12, traktDetails: oneMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage, backgroundImage: dummyImage2, trailerImage: "as23")
+                let movieView = TraktConsumableView(id: 12, traktDetails: oneMovie, tMDBDetails: tmdbMovie, posterImage: dummyImage2, backgroundImage: dummyImage, trailerImage: "as23")
                 
                 MovieDetailView(movie: movieView)
                 
