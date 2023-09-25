@@ -115,9 +115,9 @@ public class TraktManager {
             } else {
                 // Save to keychain
                 let succeeded = SKeychain.setString(value: newValue!, forKey: accessTokenKey)
-#if DEBUG
+                #if DEBUG
                 print("Saved access token: \(succeeded)")
-#endif
+                #endif
             }
         }
     }
@@ -146,9 +146,9 @@ public class TraktManager {
             } else {
                 // Save to keychain
                 let succeeded = SKeychain.setString(value: newValue!, forKey: refreshTokenKey)
-#if DEBUG
+                #if DEBUG
                 print("Saved refresh token: \(succeeded)")
-#endif
+                #endif
             }
         }
     }

@@ -24,6 +24,11 @@
 		D8153A102ABB94DB00FD69CA /* Ext+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */; };
 		D8153A122ABBA94300FD69CA /* TraktConsumableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */; };
 		D8153A152ABBACA400FD69CA /* TMDBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A142ABBACA400FD69CA /* TMDBMovie.swift */; };
+		D819FE902AC20FD2001F86C2 /* MissionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A0B2ABB906D00FD69CA /* MissionControl.swift */; };
+		D819FE922AC21012001F86C2 /* iPadAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819FE912AC21012001F86C2 /* iPadAppDelegate.swift */; };
+		D819FE932AC21065001F86C2 /* TokenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8153A062ABB8DDE00FD69CA /* TokenCapture.swift */; };
+		D819FE952AC212F8001F86C2 /* trakt_recent_movies.json in Resources */ = {isa = PBXBuildFile; fileRef = D83F3D172ABCD86A00976685 /* trakt_recent_movies.json */; };
+		D819FE962AC21327001F86C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84326ED2ABA34C000D01A63 /* Assets.xcassets */; };
 		D81F8B1C2ABCF539001288A6 /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F8B1B2ABCF539001288A6 /* HomeNavigationView.swift */; };
 		D83F3D112ABCD07300976685 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F3D102ABCD07300976685 /* MovieDetailView.swift */; };
 		D83F3D152ABCD21200976685 /* tmdb_movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D83F3D142ABCD21200976685 /* tmdb_movie.json */; };
@@ -108,6 +113,8 @@
 		D8153A0F2ABB94DB00FD69CA /* Ext+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIApplication.swift"; sourceTree = "<group>"; };
 		D8153A112ABBA94300FD69CA /* TraktConsumableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktConsumableView.swift; sourceTree = "<group>"; };
 		D8153A142ABBACA400FD69CA /* TMDBMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovie.swift; sourceTree = "<group>"; };
+		D819FE912AC21012001F86C2 /* iPadAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadAppDelegate.swift; sourceTree = "<group>"; };
+		D819FE942AC210F6001F86C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D81F8B1B2ABCF539001288A6 /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
 		D83F3D102ABCD07300976685 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		D83F3D142ABCD21200976685 /* tmdb_movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tmdb_movie.json; sourceTree = "<group>"; };
@@ -385,12 +392,14 @@
 		D8F420732ABD09FD001C6732 /* iPadPOC */ = {
 			isa = PBXGroup;
 			children = (
+				D819FE942AC210F6001F86C2 /* Info.plist */,
 				D8F420742ABD09FD001C6732 /* iPadPOCApp.swift */,
 				D8F420762ABD09FD001C6732 /* ContentView.swift */,
 				D8F420782ABD09FD001C6732 /* Item.swift */,
 				D8F4207A2ABD0A02001C6732 /* Assets.xcassets */,
 				D8F4207C2ABD0A02001C6732 /* iPadPOC.entitlements */,
 				D8F4207D2ABD0A02001C6732 /* Preview Content */,
+				D819FE912AC21012001F86C2 /* iPadAppDelegate.swift */,
 			);
 			path = iPadPOC;
 			sourceTree = "<group>";
@@ -603,9 +612,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D819FE952AC212F8001F86C2 /* trakt_recent_movies.json in Resources */,
 				D8F4207F2ABD0A02001C6732 /* Preview Assets.xcassets in Resources */,
 				D8F4207B2ABD0A02001C6732 /* Assets.xcassets in Resources */,
 				D8F420A22ABD0B4B001C6732 /* tmdb_movie.json in Resources */,
+				D819FE962AC21327001F86C2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,8 +680,10 @@
 			files = (
 				D8F420AF2ABD0D4D001C6732 /* Ext+UIApplication.swift in Sources */,
 				D8F420B52ABD0F83001C6732 /* SKeychain.swift in Sources */,
+				D819FE932AC21065001F86C2 /* TokenCapture.swift in Sources */,
 				D8F420A32ABD0B4E001C6732 /* TMDBMovie.swift in Sources */,
 				D8F420772ABD09FD001C6732 /* ContentView.swift in Sources */,
+				D819FE902AC20FD2001F86C2 /* MissionControl.swift in Sources */,
 				D8F420792ABD09FD001C6732 /* Item.swift in Sources */,
 				D8F420B42ABD0F65001C6732 /* Global.swift in Sources */,
 				D8F420A52ABD0C44001C6732 /* MoviesGrid.swift in Sources */,
@@ -685,6 +698,7 @@
 				D8F420B02ABD0D50001C6732 /* Decodable.swift in Sources */,
 				D8F420A62ABD0CAC001C6732 /* TraktConsumableView.swift in Sources */,
 				D8F420B62ABD0F8B001C6732 /* AuthenticationInfo.swift in Sources */,
+				D819FE922AC21012001F86C2 /* iPadAppDelegate.swift in Sources */,
 				D8F420AD2ABD0D46001C6732 /* Constants.swift in Sources */,
 				D8F4209F2ABD0A7B001C6732 /* HomeNavigationView.swift in Sources */,
 				D8F420A72ABD0CB7001C6732 /* TraktService.swift in Sources */,
@@ -859,6 +873,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VisionPOC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Vision Trakt";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -885,6 +900,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VisionPOC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Vision Trakt";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -953,6 +969,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPadPOC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "iPad Trakt";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -991,6 +1009,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPadPOC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "iPad Trakt";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

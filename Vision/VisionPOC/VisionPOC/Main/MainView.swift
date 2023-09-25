@@ -26,11 +26,13 @@ struct MainView: View {
     var body: some View {
         VStack {
             
-            if let movieViewData = viewModel.moviesViewData {
-                let movies = movieViewData.values.compactMap { $0 }
-                MoviesGrid(userMovies: movies)
-            }
+            // Good catch of this UI duplicate bug since I totally forgot about Oauth flow while testing hardcoding values.
+//            if let movieViewData = viewModel.moviesViewData {
+//                let movies = movieViewData.values.compactMap { $0 }
+//                MoviesGrid(userMovies: movies)
+//            }
             
+            // Oauth Sign In Conditional UI
             if let success = viewModel.traktTVApi {
                 Text(success)
                 if let movieViewData = viewModel.moviesViewData {
@@ -40,20 +42,23 @@ struct MainView: View {
                 }
 
                 
-            } else {
-                if let movies = viewModel.movies {
-                    Text("See this data ???")
-                    Text(movies.firstMovieName ?? "No Movie damn!")
+            }
+            // Non Oauth Hardcoded data.
+            else {
+                
+                if let movieViewData = viewModel.moviesViewData {
+                    let movies = movieViewData.values.compactMap { $0 }
+                    MoviesGrid(userMovies: movies)
                 }
+                
+//                if let movies = viewModel.movies {
+//                    Text("See this data ???")
+//                    Text(movies.firstMovieName ?? "No Movie damn!")
+//                }
                 Text("Hello Sensehack!")
                 
                 Button("Sign In Trakt TV") {
                     viewModel.showSignInUser()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                        print(viewModel.displaySafari)
-                        viewModel.displaySafari = false
-                        print("Hello Dismissal")
-                    }
                 }
             }
             

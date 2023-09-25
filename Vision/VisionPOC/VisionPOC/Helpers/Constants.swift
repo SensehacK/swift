@@ -21,6 +21,18 @@ struct URLConstants {
 }
 
 
+struct APIKeys {
+    static let trakt = "YOUR_API_KEY"
+    static let tmdb = "YOUR_API_KEY"
+}
+
+
+
+struct TraktAPI {
+    static let clientId = "YOUR_API_CLIENT_ID"
+    static let clientSecret = "YOUR_API_SECRET_KEY"
+    static let redirectURI = "visionP:"
+}
 
 
 //https://image.tmdb.org/t/p/w1280/fK40VGYIm7hmKrLJ26fgPQU0qRG.jpg

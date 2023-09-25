@@ -31,11 +31,8 @@ class TraktViewModel: ObservableObject {
         print("Fetching movies??")
         movies = await serviceFetcher.fetchTrakts()
         guard let allMovies = movies?.allMovies else { return }
-//        let randomID = allMovies.randomElement()?.movie.ids.tmdb ?? 149
-//        let movie = await serviceFetcher.fetchSingleMovieDetails(id: randomID)
-//        print("HEELLASOLFOAJGOAFGKMAWFMFA")
-//        print(movie?.originalTitle)
-//        print(movie?.posterPath)
+        
+        // FIXME: You can work on the order of async list and images appropriately. Not a biggie but the order does matter when getting last watch movies or tv show assets.
         moviesViewData = try? await serviceFetcher.fetchAllRecentMoviesDetailsWithImagesAsync(movies: allMovies)
     }
     
@@ -54,6 +51,7 @@ class TraktViewModel: ObservableObject {
     
     func refreshUI() {
         displaySafari = false
+        // TODO: Append the network calls with appropriate signed in User and make all the network request using Oauth instead of my personal access tokens.
         self.traktTVApi = "Success Callback!"
     }
     

@@ -21,6 +21,9 @@ struct iPadHomeView: View {
 }
 
 
+
+
+
 // MARK: - Preview
 #if os(xrOS)
 #Preview(windowStyle: .automatic) {
@@ -30,7 +33,7 @@ struct iPadHomeView: View {
 
 #if !os(xrOS)
 #Preview {
-    HomeNavigationView()
+    HomeNavigationView()
 }
 #endif
 
@@ -42,13 +45,13 @@ extension iPadHomeView {
         
         TabView {
             
-            Text("Tab One")
-                .tabItem { Label("Featured", systemImage: "star") }
-                .onAppear { text = "Tab One's Items" }
+//            Text("Tab One")
+//                .tabItem { Label("Featured", systemImage: "star") }
+//                .onAppear { text = "Tab One's Items" }
             
             
             movieDetailView
-                .tabItem { Label("List", systemImage: "list.bullet") }
+                .tabItem { Label("Featured", systemImage: "list.bullet") }
                 .onAppear { text = "Items of Tab Two" }
             
 
