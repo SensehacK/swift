@@ -42,6 +42,30 @@ class TraktViewModel: ObservableObject {
         moviesViewData = try? await serviceFetcher.fetchAllRecentMoviesDetailsWithImagesAsync(movies: allMovies)
     }
     
+    private func setupObservers() {
+        print("$$$$ Setup Observers ")
+
+        NotificationCenter.default.publisher(for: .TraktSignedIn)
+            .sink { [weak self] _ in
+                self?.dismissLogIn()
+                print(" Combine: :: Did we get trackSigned In observer returned! ")
+                self?.displaySafari = false
+            }.store(in: &cancellables)
+            
+        
+        $displaySafari
+            .filter { $0 }
+            .sink { _ in self.presentLogIn() }
+            .store(in: &cancellables)
+        
+        $displaySafari
+            .dropFirst()
+            .filter { !$0 }
+            .sink { _ in self.refreshUI() }
+            .store(in: &cancellables)
+        
+    }
+    
     func listenerToChangesDebug() {
         $moviesViewData.sink { _ in
             print("Changes in ViewModel")
@@ -59,24 +83,10 @@ class TraktViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    
-    func showSignInUser() {
-        displaySafari = true
-        
-//        presentLogIn()
 
-    }
-    
-//    func showLoginSafari() {
-//        print("Here in state change")
-//        presentLogIn()
-//    }
-    
     func refreshUI() {
         print("In refresh UI ?")
-        
-//        displaySafari = false
-//        dismissLogIn()
+
         // TODO: Append the network calls with appropriate signed in User and make all the network request using Oauth instead of my personal access tokens.
         self.traktTVApi = "Success Callback!"
     }
@@ -96,43 +106,10 @@ private extension TraktViewModel {
     
     
     func dismissLogIn() {
-
         UIApplication.shared.firstKeyWindow?.rootViewController?.dismiss(animated: true)
-        
     }
     
-    func setupObservers() {
-        print("$$$$ Setup Observers ")
-//        traktCallback?.cancel()
-//        NotificationCenter.default.removeObserver(self, name: .TraktSignedIn, object: nil)
-//        
-//        NotificationCenter.default.addObserver(forName: .TraktSignedIn, object: nil, queue: nil) { [weak self] _ in
-//            UIApplication.shared.firstKeyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
-//            print("Did we get trackSigned In observer returned! ")
-//            self?.displaySafari = false
-////            self?.refreshUI()
-//        }
-        
-        NotificationCenter.default.publisher(for: .TraktSignedIn)
-            .sink { [weak self] _ in
-                UIApplication.shared.firstKeyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
-                print(" Combine: :: Did we get trackSigned In observer returned! ")
-                self?.displaySafari = false
-            }.store(in: &cancellables)
-            
-        
-        $displaySafari
-            .filter { $0 }
-            .sink { _ in self.presentLogIn() }
-            .store(in: &cancellables)
-        
-        $displaySafari
-            .dropFirst()
-            .filter { !$0 }
-            .sink { _ in self.refreshUI() }
-            .store(in: &cancellables)
-        
-    }
+    
 }
 
 

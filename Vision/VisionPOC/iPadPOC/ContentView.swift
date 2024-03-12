@@ -25,13 +25,13 @@ struct iPadHomeView: View {
 
 
 // MARK: - Preview
-#if os(xrOS)
+#if os(visionOS)
 #Preview(windowStyle: .automatic) {
     HomeNavigationView()
 }
 #endif
 
-#if !os(xrOS)
+#if !os(visionOS)
 #Preview {
     HomeNavigationView()
 }

@@ -156,10 +156,6 @@ public class TraktManager {
     
     // MARK: - Lifecycle
     
-//    public init() {
-//        
-//    }
-    
     public init(session: URLSessionProtocol = URLSession(configuration: .default)) {
         self.session = session
     }
@@ -174,7 +170,6 @@ public class TraktManager {
         
         self.baseURL = !staging ? "trakt.tv" : "staging.trakt.tv"
         self.APIBaseURL = !staging ? "api.trakt.tv" : "api-staging.trakt.tv"
-//        self.oauthURL = URL(string: "https://\(baseURL!)/oauth/authorize?response_type=code&client_id=\(clientID)&redirect_uri=\(redirectURI)")
         self.oauthURL = URL(string: "https://\(baseURL!)/oauth/authorize?client_id=\(clientID)&redirect_uri=\(redirectURI)&response_type=code")
     }
     
@@ -376,7 +371,6 @@ public class TraktManager {
         }.resume()
     }
     
-//     */
 }
 
 // To not have to insert as? Error everytime

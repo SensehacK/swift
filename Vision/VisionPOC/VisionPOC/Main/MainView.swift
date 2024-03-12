@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-#if os(xrOS)
+#if os(visionOS)
 import RealityKit
 import RealityKitContent
 #endif
@@ -17,21 +17,11 @@ struct MainView: View {
     
     
     @EnvironmentObject private var viewModel: TraktViewModel
-    
-    
-//    @StateObject var viewModel: TraktViewModel = TraktViewModel()
     @State var viewDidLoad: Bool = false
-    
-    
+
     var body: some View {
         VStack {
-            
-            // Good catch of this UI duplicate bug since I totally forgot about Oauth flow while testing hardcoding values.
-//            if let movieViewData = viewModel.moviesViewData {
-//                let movies = movieViewData.values.compactMap { $0 }
-//                MoviesGrid(userMovies: movies)
-//            }
-            
+
             // Oauth Sign In Conditional UI
             if let success = viewModel.traktTVApi {
                 Text(success)
@@ -51,14 +41,10 @@ struct MainView: View {
                     MoviesGrid(userMovies: movies)
                 }
                 
-//                if let movies = viewModel.movies {
-//                    Text("See this data ???")
-//                    Text(movies.firstMovieName ?? "No Movie damn!")
-//                }
                 Text("Hello Sensehack!")
                 
                 Button("Sign In Trakt TV") {
-                    viewModel.showSignInUser()
+                    viewModel.displaySafari = true
                 }
             }
             
@@ -72,22 +58,17 @@ struct MainView: View {
                 viewDidLoad = true
             }
         }
-        .fullScreenCover(isPresented: $viewModel.displaySafari) {
-//            viewModel.showLoginSafari()
-            SafariWebView(url: TraktManager.sharedManager.oauthURL!)
-                .ignoresSafeArea()
-        }
         .padding()
     }
 }
 
-#if os(xrOS)
+#if os(visionOS)
 #Preview(windowStyle: .automatic) {
     MainView()
 }
 #endif
 
-#if !os(xrOS)
+#if !os(visionOS)
 #Preview {
     MainView()
 }

@@ -20,14 +20,14 @@ struct HomeNavigationView: View {
 }
 
 // MARK: - Preview
-#if os(xrOS)
+#if os(visionOS)
 #Preview(windowStyle: .automatic) {
     HomeNavigationView()
 //    HomeNavigationView(viewModel2: TraktViewModel())
 }
 #endif
 
-#if !os(xrOS)
+#if !os(visionOS)
 #Preview {
     HomeNavigationView()
 }

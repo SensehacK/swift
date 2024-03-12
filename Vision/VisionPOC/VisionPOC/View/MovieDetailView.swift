@@ -69,7 +69,7 @@ var movieView: TraktConsumableView? {
     
 
 
-#if os(xrOS)
+#if os(visionOS)
 #Preview(windowStyle: .automatic) {
     // Working Code
     if case let .success(traktMovie) = TraktMovies.from(localJSON: "trakt_recent_movies"),
@@ -98,7 +98,7 @@ var movieView: TraktConsumableView? {
 
 #endif
 
-#if !os(xrOS)
+#if !os(visionOS)
 #Preview {
     if let movieView {
         MovieDetailView(movie: movieView)
