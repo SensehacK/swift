@@ -24,6 +24,7 @@ struct TraktMovieAPI: Codable {
 enum Action: String, Codable {
     case checkin = "checkin"
     case watch = "watch"
+    case scrobble = "scrobble"
 }
 
 // MARK: - Movie

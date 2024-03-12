@@ -28,7 +28,7 @@ class VSPAppDelegate: NSObject, UIApplicationDelegate {
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        print("Hello - Did I get a callback here!")
+        print("Hello Vision - Did I get a callback here!")
         // Parse the URL callback from Trakt API Oauth
         TokenCapture.parseURLSchemeToExtractToken(url: url)
         

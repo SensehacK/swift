@@ -14,8 +14,6 @@ struct VisionPOCApp: App {
     @UIApplicationDelegateAdaptor var delegate: VSPAppDelegate
     
     @StateObject var viewModel: TraktViewModel = TraktViewModel()
-    
-    
     var body: some Scene {
         WindowGroup {
             
@@ -37,12 +35,23 @@ struct VisionPOCApp: App {
             // */
             
             // Testing Navigation Views right now
+//            HomeNavigationView()
+//                .environmentObject(viewModel)
+            
+            // Current Working solution
             HomeNavigationView()
                 .environmentObject(viewModel)
-            
-            
+                .onOpenURL { (url) in
+                    // Handle url here
+                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
+                    // Parse the URL callback from Trakt API Oauth
+                    TokenCapture.parseURLSchemeToExtractToken(url: url)
+                    //                    viewModel.displaySafari = false
+                }
+
             // Main Channel
-             /*
+            /*
+//            HomeNavigationView() // this gives `onChange(of:Bool) multiple updates per frame. Dont know the reason.
             MainView()
                 .environmentObject(viewModel)
                 .onOpenURL { (url) in
@@ -52,7 +61,7 @@ struct VisionPOCApp: App {
                     TokenCapture.parseURLSchemeToExtractToken(url: url)
                     //                    viewModel.displaySafari = false
                 }
-             */
+//             */
         }
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 public extension Notification.Name {
+    /// Things to check here for preview!
     static let TraktAccountStatusDidChange = Notification.Name(rawValue: "signedInToTrakt")
     
     static let TraktSignedIn = Notification.Name(rawValue: "TraktSignedIn")
@@ -173,7 +174,8 @@ public class TraktManager {
         
         self.baseURL = !staging ? "trakt.tv" : "staging.trakt.tv"
         self.APIBaseURL = !staging ? "api.trakt.tv" : "api-staging.trakt.tv"
-        self.oauthURL = URL(string: "https://\(baseURL!)/oauth/authorize?response_type=code&client_id=\(clientID)&redirect_uri=\(redirectURI)")
+//        self.oauthURL = URL(string: "https://\(baseURL!)/oauth/authorize?response_type=code&client_id=\(clientID)&redirect_uri=\(redirectURI)")
+        self.oauthURL = URL(string: "https://\(baseURL!)/oauth/authorize?client_id=\(clientID)&redirect_uri=\(redirectURI)&response_type=code")
     }
     
     ///*

@@ -29,6 +29,7 @@ struct TokenCapture {
                     }
                 }
             } catch {
+                print(String(describing: error))
                 print(error.localizedDescription)
             }
         }

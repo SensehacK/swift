@@ -32,6 +32,7 @@ class TraktDataFetcher: TraktService {
             
             return traktViewData
         } catch {
+            print(String(describing: error))
             print(error.localizedDescription)
         }
         
@@ -65,6 +66,7 @@ class TraktDataFetcher: TraktService {
             return traktViewData
 
         } catch {
+            print(String(describing: error))
             print(error.localizedDescription)
         }
         
@@ -97,6 +99,7 @@ class TraktDataFetcher: TraktService {
             return decodedData
         } catch {
             print(error)
+            print(String(describing: error))
             print(error.localizedDescription)
         }
 

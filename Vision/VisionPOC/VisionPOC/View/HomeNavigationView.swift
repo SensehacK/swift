@@ -12,10 +12,9 @@ import SwiftUI
 struct HomeNavigationView: View {
     
     @EnvironmentObject private var viewModel: TraktViewModel
-    @State var text: String = ""
+//    @ObservedObject var viewModel2: TraktViewModel
     
     var body: some View {
-        //        firstNavigationSplitView
         secondNavigationView
     }
 }
@@ -24,6 +23,7 @@ struct HomeNavigationView: View {
 #if os(xrOS)
 #Preview(windowStyle: .automatic) {
     HomeNavigationView()
+//    HomeNavigationView(viewModel2: TraktViewModel())
 }
 #endif
 
@@ -36,52 +36,26 @@ struct HomeNavigationView: View {
 
 
 extension HomeNavigationView {
-    private var firstNavigationSplitView: some View {
-        Group {
-            NavigationSplitView {
-                TabView {
-                    Text("Tab One")
-                        .tabItem { Label("Featured", systemImage: "star") }
-                        .onAppear { text = "Tab One's Items" }
-                    Text("Tab Two")
-                        .tabItem { Label("List", systemImage: "list.bullet") }
-                        .onAppear { text = "Items of Tab Two" }
-                }.tabViewStyle(.page)
-                List {
-                    Text(text)
-                        .onChange(of: text) { _, newValue in
-                            text = newValue
-                        }
-                }
-            } detail: {
-                // some code
-            }
-            .navigationTitle("Content")
-            .padding()
-        }
-    }
-    
-    
-    
-    
+
     private var secondNavigationView: some View {
-        
+//        movieGridView
+//            .tabItem { Label("List", systemImage: "list.bullet") }
         
         TabView {
             
             Text("Tab One")
                 .tabItem { Label("Featured", systemImage: "star") }
-                .onAppear { text = "Tab One's Items" }
+//                .onAppear { text = "Tab One's Items" }
             
             
             movieDetailView
                 .tabItem { Label("List", systemImage: "list.bullet") }
-                .onAppear { text = "Items of Tab Two" }
+//                .onAppear { text = "Items of Tab Two" }
             
 
             movieGridView
                 .tabItem { Label("List", systemImage: "list.bullet") }
-                .onAppear { text = "Items of Tab Three" }
+//                .onAppear { text = "Items of Tab Three" }
             
             
         }
@@ -112,6 +86,7 @@ extension HomeNavigationView {
     private var movieGridView: some View {
        
         Group {
+//            MainView(viewModel: viewModel2)
             MainView()
                 .environmentObject(viewModel)
         }
