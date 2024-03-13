@@ -1,7 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "reality",
+      "filename" : "Mid Layer.png",
+      "idiom" : "vision",
       "scale" : "2x"
     }
   ],

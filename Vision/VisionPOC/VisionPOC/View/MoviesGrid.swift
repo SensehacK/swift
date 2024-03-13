@@ -86,7 +86,7 @@ struct MoviesGrid: View {
 
 #if !os(visionOS)
 #Preview {
-    MoviesGrid(userMovies: [])
+    MoviesGrid(userMovies: [])
 }
 #endif
 

@@ -13,7 +13,7 @@ struct VisionPOCApp: App {
     // App Delegate
     @UIApplicationDelegateAdaptor var delegate: VSPAppDelegate
     
-    @StateObject var viewModel: TraktViewModel = TraktViewModel()
+//    @StateObject var viewModel: TraktViewModel = TraktViewModel()
     var body: some Scene {
         WindowGroup {
             
@@ -33,21 +33,24 @@ struct VisionPOCApp: App {
                 MovieDetailView(movie: nil)
             }
             // */
+            let videoData: VideoData = VideoData(body: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+            VideoView()
+//            VideoView(videoData: videoData)
             
             // Testing Navigation Views right now
 //            HomeNavigationView()
 //                .environmentObject(viewModel)
             
             // Current Working solution
-            HomeNavigationView()
-                .environmentObject(viewModel)
-                .onOpenURL { (url) in
-                    // Handle url here
-                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
-                    // Parse the URL callback from Trakt API Oauth
-                    TokenCapture.parseURLSchemeToExtractToken(url: url)
+//            HomeNavigationView()
+//                .environmentObject(viewModel)
+//                .onOpenURL { (url) in
+//                    // Handle url here
+//                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
+//                    // Parse the URL callback from Trakt API Oauth
+//                    TokenCapture.parseURLSchemeToExtractToken(url: url)
                     //                    viewModel.displaySafari = false
-                }
+//                }
 
             // Main Channel
             /*
