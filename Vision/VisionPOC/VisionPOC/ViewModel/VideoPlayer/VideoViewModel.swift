@@ -41,12 +41,16 @@ class VideoViewModel: ObservableObject {
             let dummyVideoData = VideoData(body: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4")
             let dummy3DVideo = VideoData(body: "https://devstreaming-cdn.apple.com/videos/streaming/examples/historic_planet_content_2023-10-26-3d-video/DoVi_P20_34000_t2160p/prog_index.m3u8")
 
-        
+            let dummySpatialVideo = VideoData(body: "")
+
 //            let tempVideo = createLocalVideoAsset() ?? dummyVideoData
-            let tempVideo = dummy3DVideo // dummyVideoData
+//            let tempVideo = dummy3DVideo // dummyVideoData
+            let tempVideo = createLocalVideoAsset(type: .Bunny_SpatialMVHEVC) ?? dummyVideoData
             videoData = tempVideo
-//            createPlayer(.local(file: tempVideo.body))
-            createPlayer(.remote(url: tempVideo.body))
+            
+            // 
+            createPlayer(.local(file: tempVideo.body))
+//            createPlayer(.remote(url: tempVideo.body))
         }
         
                 
@@ -55,15 +59,38 @@ class VideoViewModel: ObservableObject {
     }
     
     
-    func createLocalVideoAsset() -> VideoData? {
+    func createLocalVideoAsset(type : LocalVideoType) -> VideoData? {
         // bbb_sunflower_1080p_30fps_stereo_abl
         // bbb_sunflower_2160p_60fps_stereo_abl
         let path1 = "bbb_sunflower_1080p_30fps_stereo_abl"
         let path1_ext = "mp4"
         let path2 = "TheOffice-S06xE13"
         let path2_ext = "avi"
-        guard let path = Bundle.main.path(forResource: path1, ofType: path1_ext) else {
-            debugPrint("video.m4v not found")
+        
+        let filePath: String
+        let filePathExt: String
+        
+        switch type {
+        case .Bunny_SBS1080P:
+            filePath = "bbb_sunflower_1080p_30fps_stereo_abl"
+            filePathExt = "mp4"
+        
+        case .Bunny_SBS2160P:
+            filePath = "bbb_sunflower_2160p_60fps_stereo_abl"
+            filePathExt = "mp4"
+            
+        case .Bunny_SpatialMVHEVC:
+            filePath = "new_spatial"
+            filePathExt = "mov"
+            
+        case .Office_AVI:
+            filePath = "TheOffice"
+            filePathExt = "avi"
+        }
+        
+        
+        guard let path = Bundle.main.path(forResource: filePath, ofType: filePathExt) else {
+            debugPrint("video \(filePath).\(filePathExt) not found")
             return nil
         }
         
@@ -113,4 +140,14 @@ struct VideoData: Identifiable {
 enum VideoSource {
     case local(file: String)
     case remote(url: String)
+}
+
+
+
+enum LocalVideoType {
+    case Bunny_SBS2160P
+    case Bunny_SBS1080P
+    case Bunny_SpatialMVHEVC
+    case Office_AVI
+    
 }
