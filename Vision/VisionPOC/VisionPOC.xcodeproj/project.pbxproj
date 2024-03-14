@@ -43,6 +43,7 @@
 		D84326F12ABA34C000D01A63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84326F02ABA34C000D01A63 /* Preview Assets.xcassets */; };
 		D84326FB2ABA34C000D01A63 /* VisionPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84326FA2ABA34C000D01A63 /* VisionPOCTests.swift */; };
 		D8AE8C872BA22CCF00A32F0F /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE8C862BA22CCF00A32F0F /* PlayerView.swift */; };
+		D8AE8C8A2BA231B700A32F0F /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE8C892BA231B700A32F0F /* VideoViewModel.swift */; };
 		D8AE8C8C2BA23B8F00A32F0F /* CustomVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE8C8B2BA23B8F00A32F0F /* CustomVideoView.swift */; };
 		D8F420752ABD09FD001C6732 /* iPadPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420742ABD09FD001C6732 /* iPadPOCApp.swift */; };
 		D8F420772ABD09FD001C6732 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F420762ABD09FD001C6732 /* ContentView.swift */; };

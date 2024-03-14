@@ -11,23 +11,17 @@ import AVKit
 struct VideoView: View {
     
     @State var videoData: VideoData?
-    
-    @State var player: PlayerView?
-    
+
     @StateObject var videoVM: VideoViewModel = VideoViewModel()
     
     var body: some View {
         
-        
-        if let videoData,
-           let url = URL(string: videoData.body) {
-            PlayerView(itemURL: url)
-        }
-        
-        
         Button("Play Full Video") {
             print("Playing full video")
-            videoVM.createPlayer()
+            if let videoData {
+                videoVM.videoData = videoData
+            }
+            videoVM.initializePlayer()
         }
         .onChange(of: videoVM.player, {
             // Auto Play
@@ -45,13 +39,7 @@ struct VideoView: View {
         // Handle the dismissing action.
         print("Did dismiss called.")
     }
-    
-    
-    func createPlayer(playbackURL: URL) -> any View {
-        let customAVController = AVPlayerViewController()
-        player = PlayerView(itemURL: playbackURL, controller: customAVController)
-        return player
-    }
+
 }
 
 
