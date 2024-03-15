@@ -10,27 +10,75 @@ import AVKit
 
 struct VideoView: View {
     
-    @State var videoData: VideoData?
+//    @State var videoData: VideoData?
 
-    @StateObject var videoVM: VideoViewModel = VideoViewModel()
+//    @StateObject var videoVM: VideoViewModel = VideoViewModel()
+    
+//    @Environment(VideoViewModel.self) private var videoVM
+    
+//    @EnvironmentObject private var videoVM: VideoViewModel
+    
+    @Environment(VideoViewModel.self) private var videoVM
+    
+//    @State var player: AVPlayer?
+    //    let mediaView: TraktConsumableView
+////    let name: String
+    
+    @State var showVideo: Bool = false
+    
     
     var body: some View {
         
-        Button("Play Full Video") {
-            print("Playing full video")
-            if let videoData {
-                videoVM.videoData = videoData
+        switch videoVM.presentation {
+            
+        case .fullWindow:
+            videoVM.player
+            
+        case .showUI:
+            Button("Play Full Video") {
+                print("Playing full video")
+                videoVM.initializePlayer()
             }
-            videoVM.initializePlayer()
+            //            .onChange(of: videoVM.avPlayer, {
+            //                 videoVM.play()
+            //            })
+            
         }
-        .onChange(of: videoVM.player, {
-            // Auto Play
-            videoVM.player?.player.play()
-        })
-        .fullScreenCover(item: $videoVM.player,
-                         onDismiss: didDismiss) { playerView in
-            playerView
-        }
+       
+        
+        
+        
+//        if let playerView = videoVM.player {
+//            playerView
+//        } else {
+//            Button("Play Full Video") {
+//                print("Playing full video")
+//    //            if let videoData {
+//    //                videoVM.videoData = videoData
+//    //            }
+//                videoVM.initializePlayer()
+//    //            videoVM.player
+//            }
+//            .onChange(of: videoVM.avPlayer, {
+//                 // Auto Play
+//                 videoVM.play()
+//            })
+//        }
+        
+        
+//        .onChange(of: videoVM.player, {
+//            // Auto Play
+//            videoVM.play()
+//        })
+//        .fullScreenCover(item: $showVideo,
+//                         onDismiss: didDismiss) { playerView in
+//            playerView
+//        }
+        
+//         .fullScreenCover(item: $videoVM.player,
+//                          onDismiss: didDismiss) { playerView in
+//             playerView
+//         }
 
     }
     
@@ -38,6 +86,7 @@ struct VideoView: View {
     func didDismiss() {
         // Handle the dismissing action.
         print("Did dismiss called.")
+        videoVM.dismissVideo()
     }
 
 }
@@ -47,7 +96,8 @@ struct VideoView: View {
 #if os(visionOS)
 #Preview(windowStyle: .automatic) {
     let videoData: VideoData = VideoData(body: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
-    VideoView(videoData: videoData)
+//    VideoView(videoData: videoData)
+    VideoView()
 }
 #endif
 

@@ -20,7 +20,8 @@ struct CustomVideoView: View {
         if let videoData,
            let playbackURL = URL(string: videoData.body) {
             let customAVController = AVPlayerViewController()
-            PlayerView(itemURL: playbackURL, controller: customAVController)
+//            PlayerView(itemURL: playbackURL, controller: customAVController)
+            PlayerView()
             
         } else {
             Text("Can't play video")

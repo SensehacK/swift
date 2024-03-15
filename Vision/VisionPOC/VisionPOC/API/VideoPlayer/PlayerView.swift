@@ -6,21 +6,45 @@
 //
 
 import SwiftUI
-import AVFoundation
 import AVKit
 
 
-struct PlayerView: UIViewControllerRepresentable, Identifiable {
+struct PlayerView: UIViewControllerRepresentable {
     
-    let id = UUID().uuidString
-    let itemURL: URL
-    var controller: AVPlayerViewController = AVPlayerViewController()
-    var player: AVPlayer = AVPlayer()
+//    let id = UUID().uuidString
+//    let itemURL: URL
+//    var controller: AVPlayerViewController?
+//    var player: AVPlayer = AVPlayer()
+//    @EnvironmentObject private var viewModel: VideoViewModel
+    @Environment(VideoViewModel.self) private var viewModel
     
-    func makeUIViewController(context: Context) -> some UIViewController {
+//    func makeUIViewController(context: Context) -> some UIViewController {
+//        
+//        
+//        
+//        
+//        let controller: AVPlayerViewController = AVPlayerViewController()
+//        controller.player = player
+//        controller.player?.replaceCurrentItem(with: AVPlayerItem(url: itemURL))
+//        
+////        controller.player?.play()
+//        return controller
+//    }
+    
+    func makeUIViewController(context: Context) -> AVPlayerViewController {
         
-        controller.player = player
-        controller.player?.replaceCurrentItem(with: AVPlayerItem(url: itemURL))
+        // Create a player view controller.
+        let controller = viewModel.makePlayerViewController()
+        
+        if let playbackURL: URL = viewModel.playbackURL {
+            print("Got PlaybackURL!")
+            let playerItem = AVPlayerItem(url: playbackURL)
+            controller.player?.replaceCurrentItem(with: playerItem)
+            logger.debug("🍿 \(playbackURL) enqueued for playback.")
+        }
+//        controller.player = player1111
+        
+        
 //        controller.player?.play()
         return controller
     }
@@ -33,6 +57,10 @@ struct PlayerView: UIViewControllerRepresentable, Identifiable {
 }
 
 
-extension PlayerView : Equatable {
-    
-}
+//extension PlayerView : Equatable {
+//    
+//}
+
+import os
+/// A global logger for the app.
+let logger = Logger()

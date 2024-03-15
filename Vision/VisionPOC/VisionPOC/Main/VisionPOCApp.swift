@@ -13,6 +13,8 @@ struct VisionPOCApp: App {
     // App Delegate
     @UIApplicationDelegateAdaptor var delegate: VSPAppDelegate
     
+    @State private var videoVM = VideoViewModel()
+    
 //    @StateObject var viewModel: TraktViewModel = TraktViewModel()
     var body: some Scene {
         WindowGroup {
@@ -34,9 +36,14 @@ struct VisionPOCApp: App {
             }
             // */
             let videoData: VideoData = VideoData(body: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
-            VideoView()
+//            VideoView()
 //            VideoView(videoData: videoData)
             
+            VideoView()
+                .environment(videoVM)
+//            VideoView()
+//                .environmentObject(videoVM)
+//            
             // Testing Navigation Views right now
 //            HomeNavigationView()
 //                .environmentObject(viewModel)
