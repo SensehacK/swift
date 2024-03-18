@@ -15,7 +15,7 @@ struct VisionPOCApp: App {
     
     @State private var videoVM = VideoViewModel()
     
-//    @StateObject var viewModel: TraktViewModel = TraktViewModel()
+    @StateObject var viewModel: TraktViewModel = TraktViewModel()
     var body: some Scene {
         WindowGroup {
             
@@ -39,25 +39,24 @@ struct VisionPOCApp: App {
 //            VideoView()
 //            VideoView(videoData: videoData)
             
-            VideoView()
-                .environment(videoVM)
+//            VideoView()
+//                .environment(videoVM)
 //            VideoView()
 //                .environmentObject(videoVM)
 //            
             // Testing Navigation Views right now
-//            HomeNavigationView()
-//                .environmentObject(viewModel)
+//            HomeNavigation/(viewModel)
             
             // Current Working solution
-//            HomeNavigationView()
-//                .environmentObject(viewModel)
-//                .onOpenURL { (url) in
-//                    // Handle url here
-//                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
-//                    // Parse the URL callback from Trakt API Oauth
-//                    TokenCapture.parseURLSchemeToExtractToken(url: url)
-                    //                    viewModel.displaySafari = false
-//                }
+            HomeNavigationView()
+                .environmentObject(viewModel)
+                .onOpenURL { (url) in
+                    // Handle url here
+                    print("Hello Vision POC SwiftUI - Did I get a callback here!")
+                    // Parse the URL callback from Trakt API Oauth
+                    TokenCapture.parseURLSchemeToExtractToken(url: url)
+//                                        viewModel.displaySafari = false
+                }
 
             // Main Channel
             /*

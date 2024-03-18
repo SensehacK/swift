@@ -351,7 +351,15 @@ public class TraktManager {
                 print(authenticationInfo)
                 print("[\(#function)] Access token is \(String(describing: welf.accessToken))")
                 print("[\(#function)] Refresh token is \(String(describing: welf.refreshToken))")
+                print("Authentication Info")
+                print("[\(#function)] Access token is \(String(describing: authenticationInfo.accessToken))")
+                print("[\(#function)] Refresh token is \(String(describing: authenticationInfo.refreshToken))")
                 #endif
+                
+                print("$$$$ Debug Previous token set? ??")
+                print(APIKeys.trakt)
+                // Set app token
+//                APIKeys.updateTrakt(token: authenticationInfo.accessToken)
                 
                 welf.accessToken = authenticationInfo.accessToken
                 welf.refreshToken = authenticationInfo.refreshToken

@@ -9,17 +9,18 @@ import AVFoundation
 import AVKit
 import Combine
 
-@Observable
+@Observable 
 class VideoViewModel:  Equatable {
     static func == (lhs: VideoViewModel, rhs: VideoViewModel) -> Bool {
 //        lhs.videoData?.id == rhs.videoData?.id
+        
         lhs.playbackURL == rhs.playbackURL
     }
         
     
     // U
     var player: PlayerView?
-    var avPlayer: AVPlayer? = AVPlayer()
+    var avPlayer: AVPlayer = AVPlayer()
 //    var videoData: VideoData?
     
     private var playerViewController: AVPlayerViewController? = nil
@@ -46,6 +47,7 @@ class VideoViewModel:  Equatable {
         
     }
     
+    @MainActor 
     func initializePlayer() {
 //        if let videoData  {
 //            createPlayer(.remote(url: videoData.body))
@@ -67,7 +69,8 @@ class VideoViewModel:  Equatable {
 //            let tempVideo =  dummyVideoData //  dummy3DVideo
 //            let tempVideo = createLocalVideoAsset(type: .Bunny_SpatialMVHEVC) ?? dummyVideoData
 //        let tempVideo = createLocalVideoAsset(type: .Office_AVI) ?? dummyLocalData
-            let tempVideo = createLocalVideoAsset(type: LocalVideoType.randomElement()) ?? dummyLocalData
+        let tempVideo = createLocalVideoAsset(type: LocalVideoType.Bunny_SpatialMVHEVC) ?? dummyLocalData
+//            let tempVideo = createLocalVideoAsset(type: LocalVideoType.randomElement()) ?? dummyLocalData
 //            videoData = tempVideo
             
             print("Video playback: \(tempVideo.body)")
@@ -84,13 +87,6 @@ class VideoViewModel:  Equatable {
     
     
     func createLocalVideoAsset(type : LocalVideoType) -> VideoData? {
-        // bbb_sunflower_1080p_30fps_stereo_abl
-        // bbb_sunflower_2160p_60fps_stereo_abl
-        let path1 = "bbb_sunflower_1080p_30fps_stereo_abl"
-        let path1_ext = "mp4"
-        let path2 = "TheOffice-S06xE13"
-        let path2_ext = "avi"
-        
         let filePath: String
         let filePathExt: String
         
@@ -107,7 +103,7 @@ class VideoViewModel:  Equatable {
             filePath = "new_spatial"
             filePathExt = "mov"
             
-        case .Office_AVI:
+        case .jon_stewart:
             filePath = "jon_stewart"
             filePathExt = "mov"
         }
@@ -122,33 +118,24 @@ class VideoViewModel:  Equatable {
         return videoData
     }
     
+    @MainActor
     func createPlayer(_ source: VideoSource) {
         print("In create player!")
-//        let customAVController = AVPlayerViewController()
         var playbackURL: URL?
         switch source {
             
         case .local(let filePath):
             playbackURL = URL(fileURLWithPath: filePath)
-        
-            
+
         case .remote(let urlPath):
             playbackURL = URL(string: urlPath)
         }
         
-//
-//            print("Local Player")
-//            player = PlayerView(itemURL: localURL, controller: customAVController)
-        
         if let playbackURL {
             print("Created Player")
-//            player = PlayerView(itemURL: playbackURL)
             player = PlayerView()
             presentation = .fullWindow
-                
             self.playbackURL = playbackURL
-//            avPlayer = player?.player
-//            player = PlayerView(itemURL: playbackURL, controller: customAVController)
         } else {
             print("FAilure creating playback")
         }
@@ -166,11 +153,22 @@ class VideoViewModel:  Equatable {
         return customAVController
     }
     
+    @MainActor
+    func loadVideo() {
+        guard let playbackURL else { return }
+        // Create a new player item and set it as the player's current item.
+        let playerItem = AVPlayerItem(url: playbackURL)
+        
+        // Set the new player item as current, and begin loading its data.
+        avPlayer.replaceCurrentItem(with: playerItem)
+        logger.debug("🍿 \(playbackURL) enqueued for playback.")
+    }
     
     
+    @MainActor
     func dismissVideo() {
         print("Dismiss Video? ??")
-        avPlayer?.replaceCurrentItem(with: nil)
+        avPlayer.replaceCurrentItem(with: nil)
         presentation = .showUI
         playbackURL = nil
         playerViewController = nil
@@ -179,7 +177,7 @@ class VideoViewModel:  Equatable {
     }
     
     func play() {
-        avPlayer?.play()
+        avPlayer.play()
     }
     
     
@@ -205,8 +203,7 @@ enum LocalVideoType : CaseIterable {
     case Bunny_SBS2160P
     case Bunny_SBS1080P
     case Bunny_SpatialMVHEVC
-    case Office_AVI
-    
+    case jon_stewart
 }
 
 

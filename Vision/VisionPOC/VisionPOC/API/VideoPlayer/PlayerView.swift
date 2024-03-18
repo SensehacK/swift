@@ -8,7 +8,7 @@
 import SwiftUI
 import AVKit
 
-
+@MainActor
 struct PlayerView: UIViewControllerRepresentable {
     
 //    let id = UUID().uuidString
@@ -31,17 +31,20 @@ struct PlayerView: UIViewControllerRepresentable {
 //        return controller
 //    }
     
+    @MainActor
     func makeUIViewController(context: Context) -> AVPlayerViewController {
         
         // Create a player view controller.
         let controller = viewModel.makePlayerViewController()
         
-        if let playbackURL: URL = viewModel.playbackURL {
-            print("Got PlaybackURL!")
-            let playerItem = AVPlayerItem(url: playbackURL)
-            controller.player?.replaceCurrentItem(with: playerItem)
-            logger.debug("🍿 \(playbackURL) enqueued for playback.")
-        }
+//        if let playbackURL: URL = viewModel.playbackURL {
+//            print("Got PlaybackURL!")
+//            let playerItem = AVPlayerItem(url: playbackURL)
+//            controller.player?.replaceCurrentItem(with: playerItem)
+//            logger.debug("🍿 \(playbackURL) enqueued for playback.")
+//        }
+        
+        viewModel.loadVideo()
 //        controller.player = player1111
         
         

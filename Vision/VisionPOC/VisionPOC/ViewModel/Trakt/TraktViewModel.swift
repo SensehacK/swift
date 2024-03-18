@@ -46,7 +46,9 @@ class TraktViewModel: ObservableObject {
         print("$$$$ Setup Observers ")
 
         NotificationCenter.default.publisher(for: .TraktSignedIn)
-            .sink { [weak self] _ in
+            .sink { [weak self] token in
+                print("$$$$ Notification unfurling token!")
+                print(token.userInfo?["token"])
                 self?.dismissLogIn()
                 print(" Combine: :: Did we get trackSigned In observer returned! ")
                 self?.displaySafari = false
@@ -86,9 +88,14 @@ class TraktViewModel: ObservableObject {
 
     func refreshUI() {
         print("In refresh UI ?")
-
-        // TODO: Append the network calls with appropriate signed in User and make all the network request using Oauth instead of my personal access tokens.
-        self.traktTVApi = "Success Callback!"
+        Task {
+            await fetchData()
+            // TODO: Append the network calls with appropriate signed in User and make all the network request using Oauth instead of my personal access tokens.
+            self.traktTVApi = "Success Callback!"
+        }
+        
+        
+        
     }
     
  

@@ -19,10 +19,12 @@ struct TokenCapture {
             do {
                 try TraktManager.sharedManager.getTokenFromAuthorizationCode(code: code) { result in
                     switch result {
-                    case .success:
-                        print("Signed in to Trakt")
+                    case .success(let token) :
+                        print("Signed in to Trakt: \(token)")
                         DispatchQueue.main.async {
-                            NotificationCenter.default.post(name: .TraktSignedIn, object: nil)
+                            NotificationCenter.default.post(name: .TraktSignedIn,
+                                                            object: nil,
+                                                            userInfo: ["token" : token])
                         }
                     case .failure(let err):
                         print("Failed to sign in to Trakt \(err)")

@@ -54,7 +54,7 @@ struct MainView: View {
             print("AHGAG23")
             if !viewDidLoad {
                 print("HASE")
-                await viewModel.fetchData()
+//                await viewModel.fetchData()
                 viewDidLoad = true
             }
         }

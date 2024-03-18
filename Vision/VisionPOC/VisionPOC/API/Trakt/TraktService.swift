@@ -53,7 +53,7 @@ class TraktDataFetcher: TraktService {
             urlRequest.httpMethod = "GET"
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.addValue("2" , forHTTPHeaderField: "trakt-api-version")
-            urlRequest.addValue(APIKeys.trakt, forHTTPHeaderField: "trakt-api-key")
+            urlRequest.addValue(TraktAPI.clientId, forHTTPHeaderField: "trakt-api-key")
             
 //            let data = try await NetworkManager.shared.fetchData(url: URLConstants.traktMovieTestURL)
             
@@ -212,6 +212,7 @@ class NetworkManager {
               (200..<300).contains(response.statusCode)
         else {
             print("Error here")
+            print(response as? HTTPURLResponse)
             throw URLError(.badServerResponse)
         }
 

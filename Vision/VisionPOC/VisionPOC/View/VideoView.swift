@@ -24,7 +24,7 @@ struct VideoView: View {
     //    let mediaView: TraktConsumableView
 ////    let name: String
     
-    @State var showVideo: Bool = false
+//    @State var showVideo: Bool = false
     
     
     var body: some View {
@@ -83,7 +83,7 @@ struct VideoView: View {
     }
     
     
-    func didDismiss() {
+    @MainActor func didDismiss() {
         // Handle the dismissing action.
         print("Did dismiss called.")
         videoVM.dismissVideo()

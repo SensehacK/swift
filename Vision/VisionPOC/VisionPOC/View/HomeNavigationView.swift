@@ -13,6 +13,7 @@ struct HomeNavigationView: View {
     
     @EnvironmentObject private var viewModel: TraktViewModel
 //    @ObservedObject var viewModel2: TraktViewModel
+    @State private var videoVM = VideoViewModel()
     
     var body: some View {
         secondNavigationView
@@ -47,6 +48,9 @@ extension HomeNavigationView {
                 .tabItem { Label("Featured", systemImage: "star") }
 //                .onAppear { text = "Tab One's Items" }
             
+            VideoView()
+                .environment(videoVM)
+                .tabItem { Label("Video player", systemImage: "4k.tv") }
             
             movieDetailView
                 .tabItem { Label("List", systemImage: "list.bullet") }
